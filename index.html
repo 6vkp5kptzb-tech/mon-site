@@ -3,9 +3,95 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mon-site</title>
+  <title>Prénom — Éducateur, IA, data et trail</title>
+  <meta name="description" content="Site perso : éducateur, passionné d'IA, de data et de trail. Mes morceaux créés avec Suno, mes projets et mes sorties.">
+  <meta name="theme-color" content="#0b0f14">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <h1>Mon site</h1>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-dot" aria-hidden="true"></span>Prénom</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Accueil</a></li>
+          <li><a href="musique.html">Musique</a></li>
+          <li><a href="passions.html">Passions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">// salut 👋</span>
+        <h1>Moi c'est <span class="accent">Prénom</span>.</h1>
+        <p class="lead">
+          Éducateur le jour, bidouilleur d'IA et de data le soir, et dès que je peux, je file sur les sentiers.
+          Ici je partage ce que je crée et ce qui me fait vibrer.
+        </p>
+        <ul class="tags" aria-label="Centres d'intérêt">
+          <li class="tag">Éducation</li>
+          <li class="tag">Agents IA</li>
+          <li class="tag">Modèles locaux</li>
+          <li class="tag">Power BI</li>
+          <li class="tag">Trail</li>
+          <li class="tag">Musique Suno</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="musique.html">Écouter mes morceaux</a>
+          <a class="btn btn-ghost" href="passions.html">Voir mes passions</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Par où tu commences ?</h2>
+          <p>Trois portes d'entrée, choisis la tienne.</p>
+        </div>
+        <div class="grid">
+          <article class="card card-link">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h3><a href="musique.html">Musique <span class="arrow">→</span></a></h3>
+            <p>Mon Top 50 de morceaux créés avec Suno, et quelques vidéos YouTube à découvrir.</p>
+          </article>
+
+          <article class="card card-link">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+            </div>
+            <h3><a href="passions.html">Passions <span class="arrow">→</span></a></h3>
+            <p>L'IA (agents, modèles en local), mes tableaux de bord Power BI et mes sorties trail.</p>
+          </article>
+
+          <article class="card card-link">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            </div>
+            <h3><a href="contact.html">Contact <span class="arrow">→</span></a></h3>
+            <p>Envie d'échanger sur un projet, un morceau ou une course ? C'est par ici.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Prénom</span>
+      <span>Fait main, en HTML, CSS et JS.</span>
+    </div>
+  </footer>
 </body>
 </html>

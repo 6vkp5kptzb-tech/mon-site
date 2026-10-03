@@ -1,0 +1,33 @@
+{
+  "videos": [
+    {
+      "titre": "Vidéo à mettre en avant n°1",
+      "description": "Remplace youtubeId par l'identifiant de ta vidéo (la partie après v= dans l'URL).",
+      "youtubeId": ""
+    },
+    {
+      "titre": "Vidéo à mettre en avant n°2",
+      "description": "Exemple : https://www.youtube.com/watch?v=XXXXXXXXXXX → \"XXXXXXXXXXX\".",
+      "youtubeId": ""
+    },
+    {
+      "titre": "Vidéo à mettre en avant n°3",
+      "description": "Ajoute ou retire des blocs pour changer le nombre de vidéos.",
+      "youtubeId": ""
+    }
+  ],
+  "morceaux": [
+    { "rang": 1,  "titre": "Crête au lever du jour", "style": "Synthwave", "date": "2026-09-14", "lien": "https://suno.com/" },
+    { "rang": 2,  "titre": "Modèle local",           "style": "Électro",   "date": "2026-08-30", "lien": "https://suno.com/" },
+    { "rang": 3,  "titre": "Dénivelé positif",       "style": "Rock",      "date": "2026-08-02", "lien": "https://suno.com/" },
+    { "rang": 4,  "titre": "Tableau de bord",        "style": "Lo-fi",     "date": "2026-07-19", "lien": "https://suno.com/" },
+    { "rang": 5,  "titre": "Brume sur le sentier",   "style": "Ambient",   "date": "2026-07-05", "lien": "https://suno.com/" },
+    { "rang": 6,  "titre": "Agent autonome",         "style": "Électro",   "date": "2026-06-21", "lien": "https://suno.com/" },
+    { "rang": 7,  "titre": "Ravito de minuit",       "style": "Folk",      "date": "2026-06-08", "lien": "https://suno.com/" },
+    { "rang": 8,  "titre": "Neurones",               "style": "Synthwave", "date": "2026-05-24", "lien": "https://suno.com/" },
+    { "rang": 9,  "titre": "Dernier kilomètre",      "style": "Rock",      "date": "2026-05-10", "lien": "https://suno.com/" },
+    { "rang": 10, "titre": "Requête DAX",            "style": "Lo-fi",     "date": "2026-04-26", "lien": "https://suno.com/" },
+    { "rang": 11, "titre": "Lignes de crête",        "style": "Ambient",   "date": "2026-04-12", "lien": "https://suno.com/" },
+    { "rang": 12, "titre": "Éducation buissonnière", "style": "Folk",      "date": "2026-03-29", "lien": "https://suno.com/" }
+  ]
+}

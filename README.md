@@ -17,7 +17,6 @@ favicon.svg       Icône de l'onglet
 
 ## Modifier le contenu
 
-- **Ton prénom** : remplace « Prénom » dans les 4 fichiers HTML.
 - **Morceaux** : édite `data/musique.json`, tableau `morceaux`. Un morceau =
   `{ "rang": 1, "titre": "...", "style": "...", "date": "AAAA-MM-JJ", "lien": "https://suno.com/song/..." }`.
   Seuls les 50 premiers sont affichés. Les styles du filtre se remplissent tout seuls.

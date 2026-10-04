@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact — Yannick</title>
-  <meta name="description" content="Me contacter.">
+  <title>Article — Yannick</title>
+  <meta name="description" content="Un article de Yannick.">
   <meta name="theme-color" content="#0b0f14">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
@@ -23,34 +23,18 @@
         <ul class="nav-list">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="musique.html">Musique</a></li>
-          <li><a href="articles.html">Articles</a></li>
+          <li><a href="articles.html" aria-current="page">Articles</a></li>
           <li><a href="passions.html">Passions</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="contenu">
-    <header class="page-head">
-      <div class="container">
-        <span class="eyebrow">// contact</span>
-        <h1>On se parle ?</h1>
-      </div>
-    </header>
-
-    <section class="section">
-      <div class="container">
-        <!-- Ajoute ici tes liens (réseaux, e-mail) quand tu seras prêt. -->
-        <div class="empty-state">
-          <h2>Bientôt ici</h2>
-          <p>Mes réseaux et mon adresse e-mail arrivent très vite. En attendant, va écouter un morceau !</p>
-          <div class="actions" style="justify-content:center">
-            <a class="btn btn-primary" href="musique.html">Aller à la musique</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <article class="article" id="article" aria-live="polite">
+      <div class="container article-container"></div>
+    </article>
   </main>
 
   <footer class="site-footer">

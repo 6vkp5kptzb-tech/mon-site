@@ -40,9 +40,8 @@
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  // ---------- Accueil : 5 dernières publications du blog WordPress ----------
-  var postsEl = document.getElementById("posts");
-  if (postsEl) loadPosts(postsEl);
+  // ---------- Articles : carrousel (accueil), liste et page article ----------
+  initArticles();
 
   // ---------- Page Musique ----------
   var tracksEl = document.getElementById("tracks");
@@ -202,102 +201,318 @@
     return li;
   }
 
-  // ---------- Publications du blog ----------
-  // API REST de WordPress (permaliens « simples », d'où ?rest_route=).
-  // En cas d'échec, on garde la liste écrite en dur dans index.html.
-  function loadPosts(container) {
-    var blog = "https://yanncath1967.eu/";
-    var api = blog + "?rest_route=/wp/v2/posts&per_page=5&_embed=1";
+  // ---------- Articles (data/articles.json) ----------
+  function initArticles() {
+    var carouselEl = document.getElementById("carousel");
+    var listEl = document.getElementById("articles-list");
+    var articleEl = document.getElementById("article");
+    if (!carouselEl && !listEl && !articleEl) return;
 
-    fetch(api)
+    fetch("data/articles.json")
       .then(function (res) {
         if (!res.ok) throw new Error("HTTP " + res.status);
         return res.json();
       })
-      .then(function (posts) {
-        if (!Array.isArray(posts) || !posts.length) return;
-        container.innerHTML = "";
-        posts.slice(0, 5).forEach(function (p, i) {
-          container.appendChild(renderPost(p, i === 0, blog));
+      .then(function (data) {
+        var articles = (data.articles || []).slice().sort(function (a, b) {
+          return (b.date || "").localeCompare(a.date || "");
         });
+        if (carouselEl) initCarousel(carouselEl, articles.slice(0, 5));
+        if (listEl) renderList(listEl, articles);
+        if (articleEl) renderArticle(articleEl, articles);
       })
-      .catch(function () { /* contenu de secours conservé */ });
+      .catch(function () {
+        var msg = el("p", "notice");
+        msg.textContent =
+          "Impossible de charger les articles. Si tu ouvres le fichier directement " +
+          "depuis ton disque, lance plutôt un petit serveur local (voir le README).";
+        if (carouselEl) { carouselEl.hidden = false; carouselEl.replaceChildren(msg); }
+        if (listEl) listEl.replaceWith(msg);
+        if (articleEl) articleEl.querySelector(".container").replaceChildren(msg);
+      });
   }
 
-  function renderPost(p, featured, blog) {
-    var embedded = p._embedded || {};
-    var media = (embedded["wp:featuredmedia"] || [])[0] || {};
-    var sizes = (media.media_details && media.media_details.sizes) || {};
-    var size = (featured ? sizes.large || sizes.medium_large : sizes.medium_large || sizes.large) || sizes.full || {};
-    var imgSrc = size.source_url || media.source_url;
+  function articleUrl(a) {
+    return "article.html?a=" + encodeURIComponent(a.slug);
+  }
 
-    var cats = [].concat.apply([], embedded["wp:term"] || []).filter(function (t) {
-      return t && t.taxonomy === "category";
-    });
+  // Carte d'article (carrousel et liste)
+  function renderCard(a, tag) {
+    var card = el(tag || "article", "post");
 
-    var article = el("article", featured ? "post post-featured" : "post");
-
-    if (isSafeUrl(imgSrc)) {
-      var mediaBox = el("div", "post-media");
+    if (a.image) {
+      var media = el("div", "post-media");
       var img = document.createElement("img");
-      img.src = imgSrc;
+      img.src = a.image;
       img.alt = "";
       img.loading = "lazy";
-      if (size.width && size.height) { img.width = size.width; img.height = size.height; }
-      mediaBox.appendChild(img);
-      article.appendChild(mediaBox);
+      media.appendChild(img);
+      card.appendChild(media);
     }
 
     var body = el("div", "post-body");
-
-    var meta = el("div", "post-meta");
-    if (cats.length) {
-      var cat = el("span", "post-cat");
-      cat.textContent = htmlToText(cats[0].name);
-      meta.appendChild(cat);
-    }
-    var date = document.createElement("time");
-    date.dateTime = (p.date || "").slice(0, 10);
-    date.textContent = formatDate(date.dateTime, "long");
-    meta.appendChild(date);
-    body.appendChild(meta);
+    body.appendChild(renderMeta(a));
 
     var h3 = el("h3", "post-title");
-    var link = document.createElement("a");
-    link.href = p.link && p.link.indexOf(blog) === 0 ? p.link : blog;
-    link.target = "_blank";
-    link.rel = "noopener";
-    link.textContent = htmlToText(p.title && p.title.rendered) || "Sans titre";
+    var link = el("a");
+    link.href = articleUrl(a);
+    link.textContent = a.titre;
     h3.appendChild(link);
     body.appendChild(h3);
 
-    var excerpt = htmlToText(p.excerpt && p.excerpt.rendered)
-      .replace(/\s*(\[(…|&hellip;|\.\.\.)\]|Lire la suite.*)$/i, "");
-    if (excerpt) {
+    if (a.extrait) {
       var ex = el("p", "post-excerpt");
-      ex.textContent = truncate(excerpt, featured ? 220 : 120);
+      ex.textContent = a.extrait;
       body.appendChild(ex);
     }
 
-    article.appendChild(body);
-    return article;
+    card.appendChild(body);
+    return card;
   }
 
-  // Convertit du HTML WordPress en texte brut (le <template> n'exécute rien).
-  function htmlToText(html) {
-    var t = document.createElement("template");
-    t.innerHTML = html || "";
-    return (t.content.textContent || "").replace(/\s+/g, " ").trim();
+  function renderMeta(a) {
+    var meta = el("div", "post-meta");
+    if (a.categorie) {
+      var cat = el("span", "post-cat");
+      cat.textContent = a.categorie;
+      meta.appendChild(cat);
+    }
+    var date = document.createElement("time");
+    date.dateTime = a.date;
+    date.textContent = formatDate(a.date, "long");
+    meta.appendChild(date);
+    return meta;
   }
 
-  function truncate(s, max) {
-    if (s.length <= max) return s;
-    return s.slice(0, s.lastIndexOf(" ", max)).replace(/[\s,;:.]+$/, "") + "…";
+  // ---------- Carrousel de l'accueil ----------
+  function initCarousel(root, articles) {
+    var track = document.getElementById("carousel-track");
+    var dotsBox = document.getElementById("carousel-dots");
+    var pauseBtn = document.getElementById("carousel-pause");
+    var DELAY = 5000;
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var current = 0;
+    var timer = null;
+    var paused = reduceMotion; // pas de défilement auto si l'utilisateur limite les animations
+    var hovered = false;
+
+    var dots = articles.map(function (a, i) {
+      var li = renderCard(a, "li");
+      li.className = "post carousel-slide";
+      li.setAttribute("role", "group");
+      li.setAttribute("aria-roledescription", "diapositive");
+      li.setAttribute("aria-label", (i + 1) + " sur " + articles.length);
+      track.appendChild(li);
+
+      var dot = el("button", "carousel-dot");
+      dot.type = "button";
+      dot.setAttribute("aria-label", "Aller à l'article " + (i + 1));
+      dot.addEventListener("click", function () { goTo(i); });
+      dotsBox.appendChild(dot);
+      return dot;
+    });
+    var slides = Array.from(track.children);
+    root.hidden = false;
+
+    // Nombre de cartes entièrement visibles (3, 2 ou 1 selon la largeur)
+    function perView() {
+      var w = slides[0].getBoundingClientRect().width;
+      return w ? Math.max(1, Math.round(track.clientWidth / w)) : 1;
+    }
+    function lastIndex() { return Math.max(0, slides.length - perView()); }
+    function slideLeft(i) { return slides[i].offsetLeft - slides[0].offsetLeft; }
+
+    function goTo(i) {
+      var max = lastIndex();
+      current = i > max ? 0 : i < 0 ? max : i; // on boucle aux extrémités
+      track.scrollTo({ left: slideLeft(current), behavior: reduceMotion ? "auto" : "smooth" });
+      restart();
+    }
+
+    function updateDots() {
+      var max = lastIndex();
+      dots.forEach(function (d, i) {
+        d.hidden = i > max;
+        d.setAttribute("aria-current", i === current ? "true" : "false");
+      });
+    }
+
+    // Suit le défilement manuel (doigt, molette, pavé tactile)
+    var scrollTimer;
+    track.addEventListener("scroll", function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function () {
+        var left = track.scrollLeft;
+        var best = 0;
+        slides.forEach(function (s, i) {
+          if (Math.abs(slideLeft(i) - left) < Math.abs(slideLeft(best) - left)) best = i;
+        });
+        current = Math.min(best, lastIndex());
+        updateDots();
+      }, 80);
+    });
+
+    root.querySelectorAll("[data-dir]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        goTo(current + Number(btn.getAttribute("data-dir")));
+      });
+    });
+
+    function restart() {
+      clearInterval(timer);
+      updateDots();
+      if (!paused && !hovered) timer = setInterval(function () { goTo(current + 1); }, DELAY);
+    }
+
+    function setPaused(p) {
+      paused = p;
+      root.classList.toggle("is-paused", p);
+      pauseBtn.setAttribute("aria-label", p ? "Relancer le défilement" : "Mettre le défilement en pause");
+      restart();
+    }
+    pauseBtn.addEventListener("click", function () { setPaused(!paused); });
+
+    // Pause pendant le survol ou quand le focus clavier est dans le carrousel
+    root.addEventListener("mouseenter", function () { hovered = true; restart(); });
+    root.addEventListener("mouseleave", function () { hovered = false; restart(); });
+    root.addEventListener("focusin", function () { hovered = true; restart(); });
+    root.addEventListener("focusout", function (e) {
+      if (!root.contains(e.relatedTarget)) { hovered = false; restart(); }
+    });
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) clearInterval(timer); else restart();
+    });
+    window.addEventListener("resize", updateDots);
+
+    setPaused(paused);
   }
 
-  function isSafeUrl(url) {
-    return typeof url === "string" && /^https:\/\//.test(url);
+  // ---------- Page Articles ----------
+  function renderList(container, articles) {
+    container.replaceChildren.apply(container, articles.map(function (a) { return renderCard(a); }));
   }
+
+  // ---------- Page Article ----------
+  function renderArticle(root, articles) {
+    var box = root.querySelector(".container");
+    var slug = new URLSearchParams(location.search).get("a");
+    var a = articles.find(function (x) { return x.slug === slug; });
+
+    if (!a) {
+      document.title = "Article introuvable — Yannick";
+      var empty = el("div", "empty-state");
+      var h1 = el("h1");
+      h1.textContent = "Article introuvable";
+      var p = el("p");
+      p.textContent = "Cet article n'existe pas ou a été déplacé.";
+      var back = el("a", "btn btn-primary");
+      back.href = "articles.html";
+      back.textContent = "Voir tous les articles";
+      empty.append(h1, p, back);
+      box.replaceChildren(empty);
+      return;
+    }
+
+    document.title = a.titre + " — Yannick";
+    var desc = document.querySelector('meta[name="description"]');
+    if (desc && a.extrait) desc.content = a.extrait;
+
+    var backLink = el("a", "back-link");
+    backLink.href = "articles.html";
+    backLink.textContent = "← Toutes les publications";
+
+    var head = el("header", "article-head");
+    var title = el("h1");
+    title.textContent = a.titre;
+    head.append(renderMeta(a), title);
+
+    box.replaceChildren(backLink, head);
+
+    // Image principale, sauf si l'article commence déjà par cette image
+    var first = (a.contenu || [])[0];
+    if (a.image && !(first && first.type === "image" && first.src === a.image)) {
+      var cover = el("figure", "article-cover");
+      var img = document.createElement("img");
+      img.src = a.image;
+      img.alt = a.imageAlt || "";
+      cover.appendChild(img);
+      box.appendChild(cover);
+    }
+
+    var body = el("div", "article-body");
+    (a.contenu || []).forEach(function (b) {
+      var node = renderBlock(b);
+      if (node) body.appendChild(node);
+    });
+    box.appendChild(body);
+  }
+
+  // Un bloc de contenu = un objet { "type": ..., ... } dans data/articles.json
+  function renderBlock(b) {
+    var node;
+    switch (b.type) {
+      case "titre":
+        node = el("h2");
+        node.textContent = b.texte;
+        return node;
+
+      case "texte":
+        node = el("p");
+        node.textContent = b.texte;
+        return node;
+
+      case "image":
+        node = el("figure");
+        var img = document.createElement("img");
+        img.src = b.src;
+        img.alt = b.alt || "";
+        img.loading = "lazy";
+        node.appendChild(img);
+        if (b.legende) {
+          var cap = el("figcaption");
+          cap.textContent = b.legende;
+          node.appendChild(cap);
+        }
+        return node;
+
+      case "youtube":
+        node = el("div", "video-frame article-video");
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(b.id) + "?rel=0";
+        iframe.title = b.titre || "Vidéo YouTube";
+        iframe.loading = "lazy";
+        iframe.allow = "accelerometer; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        node.appendChild(iframe);
+        return node;
+
+      case "compte-a-rebours":
+        node = el("div", "countdown");
+        var label = el("p", "countdown-label");
+        var value = el("p", "countdown-value");
+        node.append(label, value);
+        var target = new Date(b.date + "T00:00:00").getTime();
+        var tick = function () {
+          var ms = target - Date.now();
+          label.textContent = (b.texte || "") + " :";
+          if (ms <= 0) {
+            value.textContent = "C'est maintenant ! 🎉";
+            return;
+          }
+          var days = Math.floor(ms / 864e5);
+          var h = Math.floor(ms % 864e5 / 36e5);
+          var m = Math.floor(ms % 36e5 / 6e4);
+          var s = Math.floor(ms % 6e4 / 1e3);
+          value.textContent = days + " j " + pad(h) + " h " + pad(m) + " min " + pad(s) + " s";
+          setTimeout(tick, 1000);
+        };
+        tick();
+        return node;
+    }
+    return null;
+  }
+
+  function pad(n) { return String(n).padStart(2, "0"); }
 
   // ---------- Utilitaires ----------
   function el(tag, cls) {

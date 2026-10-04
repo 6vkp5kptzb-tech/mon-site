@@ -23,9 +23,9 @@
         <ul class="nav-list">
           <li><a href="index.html" aria-current="page">Accueil</a></li>
           <li><a href="musique.html">Musique</a></li>
+          <li><a href="articles.html">Articles</a></li>
           <li><a href="passions.html">Passions</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="https://yanncath1967.eu/" target="_blank" rel="noopener">Blog <span aria-hidden="true">↗</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
         </ul>
       </nav>
     </div>
@@ -60,49 +60,26 @@
         <div class="section-head section-head-row">
           <div>
             <h2 id="posts-title">Dernières publications</h2>
-            <p>Les 5 derniers articles de mon blog.</p>
+            <p>Mes 5 derniers articles.</p>
           </div>
-          <a class="btn btn-ghost" href="https://yanncath1967.eu/" target="_blank" rel="noopener">Tout le blog ↗</a>
+          <a class="btn btn-ghost" href="articles.html">Toutes les publications</a>
         </div>
 
-        <!-- Contenu de secours : remplacé au chargement par les 5 derniers articles du blog (js/main.js). -->
-        <div class="posts" id="posts">
-          <article class="post post-featured">
-            <div class="post-media"><img src="https://i0.wp.com/yanncath1967.eu/wp-content/uploads/2025/10/photo-1695144244472-a4543101ef35-scaled.jpeg?fit=640%2C360&amp;ssl=1" alt="" loading="lazy" width="640" height="360"></div>
-            <div class="post-body">
-              <div class="post-meta"><span class="post-cat">Entreprises technologiques</span><time datetime="2025-10-12">12 octobre 2025</time></div>
-              <h3 class="post-title"><a href="https://yanncath1967.eu/?p=390" target="_blank" rel="noopener">Suno AI : Un Aperçu de son Histoire et de ses Chiffres Clés</a></h3>
-              <p class="post-excerpt">Suno AI est une entreprise technologique émergente qui se spécialise dans le domaine de l'intelligence artificielle…</p>
-            </div>
-          </article>
-          <article class="post">
-            <div class="post-media"><img src="https://i0.wp.com/yanncath1967.eu/wp-content/uploads/2024/04/Marathon2024.jpg?fit=500%2C500&amp;ssl=1" alt="" loading="lazy" width="500" height="500"></div>
-            <div class="post-body">
-              <div class="post-meta"><span class="post-cat">Sport</span><time datetime="2024-04-21">21 avril 2024</time></div>
-              <h3 class="post-title"><a href="https://yanncath1967.eu/?p=233" target="_blank" rel="noopener">Marathon de Paris 2024</a></h3>
-            </div>
-          </article>
-          <article class="post">
-            <div class="post-media"><img src="https://i0.wp.com/yanncath1967.eu/wp-content/uploads/2024/02/pexels-photo-518557.jpeg?fit=640%2C427&amp;ssl=1" alt="" loading="lazy" width="640" height="427"></div>
-            <div class="post-body">
-              <div class="post-meta"><span class="post-cat">Vacances</span><time datetime="2024-02-08">8 février 2024</time></div>
-              <h3 class="post-title"><a href="https://yanncath1967.eu/?p=200" target="_blank" rel="noopener">Les vacances en Javascript</a></h3>
-            </div>
-          </article>
-          <article class="post">
-            <div class="post-media"><img src="https://i0.wp.com/yanncath1967.eu/wp-content/uploads/2024/01/image.jpg?fit=640%2C804&amp;ssl=1" alt="" loading="lazy" width="640" height="804"></div>
-            <div class="post-body">
-              <div class="post-meta"><span class="post-cat">Sport</span><time datetime="2024-01-01">1 janvier 2024</time></div>
-              <h3 class="post-title"><a href="https://yanncath1967.eu/?p=162" target="_blank" rel="noopener">Mon année 2023</a></h3>
-            </div>
-          </article>
-          <article class="post">
-            <div class="post-media"><img src="https://i0.wp.com/yanncath1967.eu/wp-content/uploads/2023/12/artworks-000511978965-ge0mz7-t500x500.jpg?fit=500%2C500&amp;ssl=1" alt="" loading="lazy" width="500" height="500"></div>
-            <div class="post-body">
-              <div class="post-meta"><span class="post-cat">Musique</span><time datetime="2023-12-31">31 décembre 2023</time></div>
-              <h3 class="post-title"><a href="https://yanncath1967.eu/?p=96" target="_blank" rel="noopener">RAMMSTEIN : Deutschland</a></h3>
-            </div>
-          </article>
+        <div class="carousel" id="carousel" role="region" aria-roledescription="carrousel" aria-label="Dernières publications" hidden>
+          <ul class="carousel-track" id="carousel-track"></ul>
+          <div class="carousel-controls">
+            <button class="carousel-btn" type="button" data-dir="-1" aria-label="Article précédent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <div class="carousel-dots" id="carousel-dots"></div>
+            <button class="carousel-btn" type="button" data-dir="1" aria-label="Article suivant">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <button class="carousel-btn carousel-pause" type="button" id="carousel-pause" aria-label="Mettre le défilement en pause">
+              <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+              <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

@@ -14,7 +14,10 @@ article.html      Page d'un article (article.html?a=slug)
 contact.html      Contact (à compléter)
 css/style.css     Styles (couleurs en haut du fichier, dans :root)
 js/main.js        Menu, page Musique, carrousel et articles
-data/musique.json Liste des morceaux
+data/musique.xlsx Liste des morceaux (à modifier dans Excel)
+data/musique.json Généré depuis l'Excel (ne pas modifier à la main)
+mettre-a-jour-musique.bat  Convertit l'Excel en JSON (double-clic)
+outils/           Script de conversion Excel → JSON (Python)
 data/videos.json  Vidéos YouTube de la page Vidéos
 data/articles.json Articles (titre, date, image, contenu)
 images/articles/  Images des articles
@@ -23,11 +26,13 @@ favicon.svg       Icône de l'onglet
 
 ## Modifier le contenu
 
-- **Morceaux** : édite `data/musique.json`, tableau `morceaux`. Un morceau =
-  `{ "titre": "...", "style": "...", "date": "AAAA-MM-JJ", "lien": "https://suno.com/song/...", "sunoId": "..." }`.
-  `sunoId` = l'identifiant du morceau (la partie après `suno.com/embed/` ou `suno.com/song/`) :
-  il active le lecteur embarqué, chargé seulement au clic sur « Écouter ». Sans `sunoId`,
-  le bouton ouvre `lien` dans un nouvel onglet. Les styles du filtre se remplissent tout seuls.
+- **Morceaux** : ouvre `data/musique.xlsx` dans Excel, une ligne par morceau
+  (colonnes `titre`, `style`, `date` au format JJ/MM/AAAA, `lien`, `sunoId`). Enregistre,
+  puis **double-clique sur `mettre-a-jour-musique.bat`** : il régénère `data/musique.json`.
+  `sunoId` est facultatif : s'il est vide et que le lien est de la forme `https://suno.com/song/...`,
+  il est repris tout seul. Avec un `sunoId`, « Écouter » ouvre le lecteur embarqué ; sinon le lien
+  s'ouvre dans un nouvel onglet. Les styles du filtre se remplissent tout seuls.
+  Pense à envoyer les deux fichiers (`.xlsx` et `.json`) sur GitHub. Seul Python est nécessaire.
 - **Vidéos** : édite `data/videos.json`, tableau `videos`. Une vidéo =
   `{ "titre": "...", "chaine": "...", "lien": "https://www.youtube.com/watch?v=...", "commentaire": "..." }`.
   Colle simplement le lien YouTube (watch, youtu.be ou shorts) ; `chaine` et `commentaire` sont facultatifs.

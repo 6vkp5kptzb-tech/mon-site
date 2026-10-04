@@ -1,16 +1,7 @@
 {
   "morceaux": [
     {"titre": "The light that found me", "style": "Progressive space rock", "date": "2026-10-02", "lien": "https://suno.com/song/10f113e9-004b-4024-aa37-335b23b6bf0b", "sunoId": "10f113e9-004b-4024-aa37-335b23b6bf0b"},
-    {"titre": "Modèle local", "style": "Électro", "date": "2026-08-30", "lien": "https://suno.com/"},
-    {"titre": "Dénivelé positif", "style": "Rock", "date": "2026-08-02", "lien": "https://suno.com/"},
-    {"titre": "Tableau de bord", "style": "Lo-fi", "date": "2026-07-19", "lien": "https://suno.com/"},
-    {"titre": "Brume sur le sentier", "style": "Ambient", "date": "2026-07-05", "lien": "https://suno.com/"},
-    {"titre": "Agent autonome", "style": "Électro", "date": "2026-06-21", "lien": "https://suno.com/"},
-    {"titre": "Ravito de minuit", "style": "Folk", "date": "2026-06-08", "lien": "https://suno.com/"},
-    {"titre": "Neurones", "style": "Synthwave", "date": "2026-05-24", "lien": "https://suno.com/"},
-    {"titre": "Dernier kilomètre", "style": "Rock", "date": "2026-05-10", "lien": "https://suno.com/"},
-    {"titre": "Requête DAX", "style": "Lo-fi", "date": "2026-04-26", "lien": "https://suno.com/"},
-    {"titre": "Lignes de crête", "style": "Ambient", "date": "2026-04-12", "lien": "https://suno.com/"},
-    {"titre": "Éducation buissonnière", "style": "Folk", "date": "2026-03-29", "lien": "https://suno.com/"}
+    {"titre": "Schwarze Rose", "style": "Électro", "date": "2026-08-30", "lien": "https://suno.com/song/37a2be0d-8ed7-4d96-8cfc-dfef8f1651e8", "sunoId": "37a2be0d-8ed7-4d96-8cfc-dfef8f1651e8"},
+    {"titre": "Nur Frieden wartet", "style": "Darkwave", "date": "2026-08-02", "lien": "https://suno.com/song/a3706049-29ef-431c-b33c-797113ff4df4", "sunoId": "a3706049-29ef-431c-b33c-797113ff4df4"}
   ]
 }

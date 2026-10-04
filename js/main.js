@@ -43,91 +43,34 @@
   // ---------- Articles : carrousel (accueil), liste et page article ----------
   initArticles();
 
+  // ---------- Page Vidéos ----------
+  initVideos();
+
   // ---------- Page Musique ----------
   var tracksEl = document.getElementById("tracks");
-  var videosEl = document.getElementById("videos");
-  if (!tracksEl && !videosEl) return;
+  if (!tracksEl) return;
 
-  fetch("data/musique.json")
+  fetch("data/musique.json", { cache: "no-cache" })
     .then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
     })
     .then(function (data) {
-      if (videosEl) renderVideos(videosEl, data.videos || []);
-      if (tracksEl) initTop50(tracksEl, data.morceaux || []);
+      initCompositions(tracksEl, data.morceaux || []);
     })
     .catch(function () {
-      var msg =
+      tracksEl.outerHTML =
         '<p class="notice">Impossible de charger la liste des morceaux. ' +
         "Si tu ouvres le fichier directement depuis ton disque, lance plutôt " +
         "un petit serveur local (voir le README).</p>";
-      if (tracksEl) tracksEl.outerHTML = msg;
-      if (videosEl) videosEl.innerHTML = "";
     });
 
-  // ---------- Vidéos YouTube (chargées au clic) ----------
-  function renderVideos(container, videos) {
-    container.innerHTML = "";
-    videos.forEach(function (v) {
-      var article = el("article", "video");
-      var frame = el("div", "video-frame");
-
-      if (v.youtubeId) {
-        var img = document.createElement("img");
-        img.src = "https://i.ytimg.com/vi/" + encodeURIComponent(v.youtubeId) + "/hqdefault.jpg";
-        img.alt = "";
-        img.loading = "lazy";
-        img.width = 480;
-        img.height = 360;
-
-        var btn = el("button", "video-play");
-        btn.type = "button";
-        btn.setAttribute("aria-label", "Lire la vidéo : " + v.titre);
-        btn.addEventListener("click", function () {
-          var iframe = document.createElement("iframe");
-          iframe.src =
-            "https://www.youtube-nocookie.com/embed/" +
-            encodeURIComponent(v.youtubeId) + "?autoplay=1&rel=0";
-          iframe.title = v.titre;
-          iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
-          iframe.allowFullscreen = true;
-          frame.innerHTML = "";
-          frame.appendChild(iframe);
-        });
-
-        frame.appendChild(img);
-        frame.appendChild(btn);
-      } else {
-        var ph = el("div", "video-placeholder");
-        ph.textContent = "Vidéo à venir";
-        frame.appendChild(ph);
-      }
-
-      var body = el("div", "video-body");
-      var h3 = el("h3");
-      h3.textContent = v.titre;
-      body.appendChild(h3);
-      if (v.description) {
-        var p = el("p");
-        p.textContent = v.description;
-        body.appendChild(p);
-      }
-
-      article.appendChild(frame);
-      article.appendChild(body);
-      container.appendChild(article);
-    });
-  }
-
-  // ---------- Top 50 : recherche, filtre, tri ----------
-  function initTop50(list, morceaux) {
+  // ---------- Mes compositions : recherche, filtre, tri ----------
+  function initCompositions(list, morceaux) {
     var search = document.getElementById("search");
     var styleSel = document.getElementById("style-filter");
     var sortSel = document.getElementById("sort");
     var count = document.getElementById("result-count");
-
-    morceaux = morceaux.slice(0, 50);
 
     var styles = Array.from(new Set(morceaux.map(function (m) { return m.style; })))
       .filter(Boolean)
@@ -149,9 +92,8 @@
       });
 
       rows.sort(function (a, b) {
-        if (sort === "date") return (b.date || "").localeCompare(a.date || "");
         if (sort === "titre") return a.titre.localeCompare(b.titre, "fr");
-        return a.rang - b.rang;
+        return (b.date || "").localeCompare(a.date || "");
       });
 
       list.innerHTML = "";
@@ -171,9 +113,6 @@
   function renderTrack(m) {
     var li = el("li", "track");
 
-    var rank = el("span", "track-rank");
-    rank.textContent = String(m.rang).padStart(2, "0");
-
     var info = el("div");
     var title = el("p", "track-title");
     title.textContent = m.titre;
@@ -188,17 +127,128 @@
     info.appendChild(title);
     info.appendChild(meta);
 
-    var link = el("a", "track-link");
-    link.href = m.lien;
-    link.target = "_blank";
-    link.rel = "noopener";
-    link.textContent = "Écouter ↗";
-    link.setAttribute("aria-label", "Écouter " + m.titre + " sur Suno (nouvel onglet)");
-
-    li.appendChild(rank);
     li.appendChild(info);
-    li.appendChild(link);
+
+    if (m.sunoId) {
+      // Lecteur Suno embarqué, chargé seulement au clic
+      var btn = el("button", "track-link");
+      btn.type = "button";
+      btn.textContent = "▶ Écouter";
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Écouter " + m.titre);
+      var player = el("div", "track-player");
+      player.hidden = true;
+
+      btn.addEventListener("click", function () {
+        var open = player.hidden;
+        if (open && !player.firstChild) {
+          var iframe = document.createElement("iframe");
+          iframe.src = "https://suno.com/embed/" + encodeURIComponent(m.sunoId);
+          iframe.title = "Lecteur Suno : " + m.titre;
+          iframe.allow = "autoplay; encrypted-media; fullscreen";
+          iframe.allowFullscreen = true;
+          iframe.loading = "lazy";
+          iframe.referrerPolicy = "no-referrer-when-downgrade";
+          player.appendChild(iframe);
+        }
+        if (!open) player.innerHTML = ""; // arrête la lecture en refermant
+        player.hidden = !open;
+        btn.textContent = open ? "✕ Fermer" : "▶ Écouter";
+        btn.setAttribute("aria-expanded", String(open));
+      });
+
+      li.appendChild(btn);
+      li.appendChild(player);
+    } else {
+      var link = el("a", "track-link");
+      link.href = m.lien;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = "Écouter ↗";
+      link.setAttribute("aria-label", "Écouter " + m.titre + " sur Suno (nouvel onglet)");
+      li.appendChild(link);
+    }
     return li;
+  }
+
+  // ---------- Vidéos YouTube (data/videos.json), chargées au clic ----------
+  function initVideos() {
+    var container = document.getElementById("videos");
+    if (!container) return;
+
+    fetch("data/videos.json", { cache: "no-cache" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        var videos = (data.videos || []).filter(function (v) { return youtubeId(v.lien); });
+        container.innerHTML = "";
+        if (!videos.length) {
+          container.innerHTML = '<p class="notice">Aucune vidéo pour le moment.</p>';
+          return;
+        }
+        videos.forEach(function (v) { container.appendChild(renderVideo(v)); });
+      })
+      .catch(function () {
+        container.innerHTML =
+          '<p class="notice">Impossible de charger les vidéos. Si tu ouvres le fichier directement ' +
+          "depuis ton disque, lance plutôt un petit serveur local (voir le README).</p>";
+      });
+  }
+
+  // Accepte un lien YouTube complet (watch?v=, youtu.be/, embed/, shorts/) ou l'identifiant seul
+  function youtubeId(lien) {
+    if (!lien) return "";
+    var m = String(lien).match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/);
+    if (m) return m[1];
+    return /^[\w-]{11}$/.test(lien) ? lien : "";
+  }
+
+  function renderVideo(v) {
+    var id = youtubeId(v.lien);
+    var article = el("article", "video");
+    var frame = el("div", "video-frame");
+
+    var img = document.createElement("img");
+    img.src = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg";
+    img.alt = "";
+    img.loading = "lazy";
+
+    var btn = el("button", "video-play");
+    btn.type = "button";
+    btn.setAttribute("aria-label", "Lire la vidéo : " + v.titre);
+    btn.addEventListener("click", function () {
+      var iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+      iframe.title = v.titre;
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allowFullscreen = true;
+      frame.replaceChildren(iframe);
+    });
+
+    frame.appendChild(img);
+    frame.appendChild(btn);
+
+    var body = el("div", "video-body");
+    if (v.chaine) {
+      var src = el("p", "video-source");
+      src.textContent = v.chaine;
+      body.appendChild(src);
+    }
+    var h3 = el("h3");
+    h3.textContent = v.titre;
+    body.appendChild(h3);
+    if (v.commentaire) {
+      var p = el("p");
+      p.textContent = v.commentaire;
+      body.appendChild(p);
+    }
+
+    article.appendChild(frame);
+    article.appendChild(body);
+    return article;
   }
 
   // ---------- Articles (data/articles.json) ----------
@@ -208,7 +258,7 @@
     var articleEl = document.getElementById("article");
     if (!carouselEl && !listEl && !articleEl) return;
 
-    fetch("data/articles.json")
+    fetch("data/articles.json", { cache: "no-cache" })
       .then(function (res) {
         if (!res.ok) throw new Error("HTTP " + res.status);
         return res.json();
@@ -217,8 +267,10 @@
         var articles = (data.articles || []).slice().sort(function (a, b) {
           return (b.date || "").localeCompare(a.date || "");
         });
-        if (carouselEl) initCarousel(carouselEl, articles.slice(0, 5));
-        if (listEl) renderList(listEl, articles);
+        // Les articles marqués "passions": true ne s'affichent que sur la page Passions
+        var publies = articles.filter(function (a) { return !a.passions; });
+        if (carouselEl) initCarousel(carouselEl, publies.slice(0, 5));
+        if (listEl) renderList(listEl, publies);
         if (articleEl) renderArticle(articleEl, articles);
       })
       .catch(function () {

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Article — Yannick</title>
-  <meta name="description" content="Un article de Yannick.">
+  <title>Vidéos — Yannick</title>
+  <meta name="description" content="Des vidéos YouTube que j'apprécie et que j'ai envie de partager.">
   <meta name="theme-color" content="#0b0f14">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
@@ -23,8 +23,8 @@
         <ul class="nav-list">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="musique.html">Musique</a></li>
-          <li><a href="videos.html">Vidéos</a></li>
-          <li><a href="articles.html" aria-current="page">Articles</a></li>
+          <li><a href="videos.html" aria-current="page">Vidéos</a></li>
+          <li><a href="articles.html">Articles</a></li>
           <li><a href="passions.html">Passions</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -33,9 +33,24 @@
   </header>
 
   <main id="contenu">
-    <article class="article" id="article" aria-live="polite">
-      <div class="container article-container"></div>
-    </article>
+    <header class="page-head">
+      <div class="container">
+        <span class="eyebrow">// vidéos</span>
+        <h1>Vidéos coup de cœur</h1>
+        <p class="lead">
+          Des vidéos YouTube que j'apprécie et que j'ai envie de partager :
+          musique, sport, IA… et tout ce qui m'a marqué.
+        </p>
+      </div>
+    </header>
+
+    <section class="section" aria-label="Vidéos">
+      <div class="container">
+        <div class="video-grid" id="videos">
+          <p class="notice">Chargement des vidéos…</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

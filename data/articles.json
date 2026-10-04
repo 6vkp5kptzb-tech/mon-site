@@ -89,6 +89,7 @@
     },
     {
       "slug": "marathon-de-paris-2024",
+      "passions": true,
       "titre": "Marathon de Paris 2024",
       "date": "2024-04-21",
       "categorie": "Sport",
@@ -132,6 +133,7 @@
     },
     {
       "slug": "mon-annee-2023",
+      "passions": true,
       "titre": "Mon année 2023",
       "date": "2024-01-01",
       "categorie": "Sport",

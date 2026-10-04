@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Musique — Yannick</title>
-  <meta name="description" content="Mon Top 50 de morceaux créés avec Suno et mes vidéos YouTube.">
+  <meta name="description" content="Mes compositions créées avec Suno, à écouter directement sur le site.">
   <meta name="theme-color" content="#0b0f14">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
@@ -23,6 +23,7 @@
         <ul class="nav-list">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="musique.html" aria-current="page">Musique</a></li>
+          <li><a href="videos.html">Vidéos</a></li>
           <li><a href="articles.html">Articles</a></li>
           <li><a href="passions.html">Passions</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -43,23 +44,11 @@
       </div>
     </header>
 
-    <section class="section" aria-labelledby="videos-titre">
-      <div class="container">
-        <div class="section-head">
-          <h2 id="videos-titre">En vidéo</h2>
-          <p>Quelques morceaux que j'ai mis en images sur YouTube.</p>
-        </div>
-        <div class="video-grid" id="videos">
-          <p class="notice">Chargement des vidéos…</p>
-        </div>
-      </div>
-    </section>
-
     <section class="section" aria-labelledby="top-titre">
       <div class="container">
         <div class="section-head">
-          <h2 id="top-titre">Top 50</h2>
-          <p>Mes morceaux préférés, classés. Clique sur « Écouter » pour les lancer sur Suno.</p>
+          <h2 id="top-titre">Mes compositions</h2>
+          <p>Mes morceaux, du plus récent au plus ancien. Clique sur « Écouter » pour les lancer directement ici.</p>
         </div>
 
         <div class="toolbar">
@@ -76,7 +65,6 @@
           <div class="field">
             <label for="sort">Trier par</label>
             <select id="sort">
-              <option value="rang">Classement</option>
               <option value="date">Plus récents</option>
               <option value="titre">Titre (A → Z)</option>
             </select>
@@ -84,7 +72,7 @@
         </div>
 
         <p class="result-count" id="result-count" aria-live="polite"></p>
-        <ol class="tracks" id="tracks"></ol>
+        <ul class="tracks" id="tracks"></ul>
       </div>
     </section>
   </main>

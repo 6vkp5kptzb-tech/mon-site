@@ -22,6 +22,9 @@ favicon.svg       Icône de l'onglet
   Seuls les 50 premiers sont affichés. Les styles du filtre se remplissent tout seuls.
 - **Vidéos** : même fichier, tableau `videos`. `youtubeId` = la partie après `v=` dans l'URL YouTube.
   Les vidéos ne se chargent qu'au clic (page plus rapide, pas de cookie YouTube avant le clic).
+- **Dernières publications (accueil)** : chargées automatiquement depuis l'API du blog WordPress
+  (yanncath1967.eu). Rien à faire quand tu publies un article. Si le blog ne répond pas, l'accueil
+  affiche la liste écrite en dur dans `index.html` (section `#posts`).
 - **Couleurs** : variables `--accent`, `--bg`, etc. en haut de `css/style.css`.
 
 ## Voir le site en local

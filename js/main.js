@@ -10,16 +10,28 @@
   var nav = document.getElementById("site-nav");
 
   if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("is-open");
+    var setMenu = function (open) {
+      nav.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+    };
+
+    toggle.addEventListener("click", function () {
+      setMenu(!nav.classList.contains("is-open"));
     });
 
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && nav.classList.contains("is-open")) {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
+        setMenu(false);
         toggle.focus();
+      }
+    });
+
+    // Fermer en cliquant ailleurs ou sur un lien du menu
+    document.addEventListener("click", function (e) {
+      if (!nav.classList.contains("is-open")) return;
+      if (!toggle.contains(e.target) && (!nav.contains(e.target) || e.target.closest("a"))) {
+        setMenu(false);
       }
     });
   }
@@ -27,6 +39,10 @@
   // ---------- Année du pied de page ----------
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
+
+  // ---------- Accueil : 5 dernières publications du blog WordPress ----------
+  var postsEl = document.getElementById("posts");
+  if (postsEl) loadPosts(postsEl);
 
   // ---------- Page Musique ----------
   var tracksEl = document.getElementById("tracks");
@@ -186,6 +202,103 @@
     return li;
   }
 
+  // ---------- Publications du blog ----------
+  // API REST de WordPress (permaliens « simples », d'où ?rest_route=).
+  // En cas d'échec, on garde la liste écrite en dur dans index.html.
+  function loadPosts(container) {
+    var blog = "https://yanncath1967.eu/";
+    var api = blog + "?rest_route=/wp/v2/posts&per_page=5&_embed=1";
+
+    fetch(api)
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (posts) {
+        if (!Array.isArray(posts) || !posts.length) return;
+        container.innerHTML = "";
+        posts.slice(0, 5).forEach(function (p, i) {
+          container.appendChild(renderPost(p, i === 0, blog));
+        });
+      })
+      .catch(function () { /* contenu de secours conservé */ });
+  }
+
+  function renderPost(p, featured, blog) {
+    var embedded = p._embedded || {};
+    var media = (embedded["wp:featuredmedia"] || [])[0] || {};
+    var sizes = (media.media_details && media.media_details.sizes) || {};
+    var size = (featured ? sizes.large || sizes.medium_large : sizes.medium_large || sizes.large) || sizes.full || {};
+    var imgSrc = size.source_url || media.source_url;
+
+    var cats = [].concat.apply([], embedded["wp:term"] || []).filter(function (t) {
+      return t && t.taxonomy === "category";
+    });
+
+    var article = el("article", featured ? "post post-featured" : "post");
+
+    if (isSafeUrl(imgSrc)) {
+      var mediaBox = el("div", "post-media");
+      var img = document.createElement("img");
+      img.src = imgSrc;
+      img.alt = "";
+      img.loading = "lazy";
+      if (size.width && size.height) { img.width = size.width; img.height = size.height; }
+      mediaBox.appendChild(img);
+      article.appendChild(mediaBox);
+    }
+
+    var body = el("div", "post-body");
+
+    var meta = el("div", "post-meta");
+    if (cats.length) {
+      var cat = el("span", "post-cat");
+      cat.textContent = htmlToText(cats[0].name);
+      meta.appendChild(cat);
+    }
+    var date = document.createElement("time");
+    date.dateTime = (p.date || "").slice(0, 10);
+    date.textContent = formatDate(date.dateTime, "long");
+    meta.appendChild(date);
+    body.appendChild(meta);
+
+    var h3 = el("h3", "post-title");
+    var link = document.createElement("a");
+    link.href = p.link && p.link.indexOf(blog) === 0 ? p.link : blog;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = htmlToText(p.title && p.title.rendered) || "Sans titre";
+    h3.appendChild(link);
+    body.appendChild(h3);
+
+    var excerpt = htmlToText(p.excerpt && p.excerpt.rendered)
+      .replace(/\s*(\[(…|&hellip;|\.\.\.)\]|Lire la suite.*)$/i, "");
+    if (excerpt) {
+      var ex = el("p", "post-excerpt");
+      ex.textContent = truncate(excerpt, featured ? 220 : 120);
+      body.appendChild(ex);
+    }
+
+    article.appendChild(body);
+    return article;
+  }
+
+  // Convertit du HTML WordPress en texte brut (le <template> n'exécute rien).
+  function htmlToText(html) {
+    var t = document.createElement("template");
+    t.innerHTML = html || "";
+    return (t.content.textContent || "").replace(/\s+/g, " ").trim();
+  }
+
+  function truncate(s, max) {
+    if (s.length <= max) return s;
+    return s.slice(0, s.lastIndexOf(" ", max)).replace(/[\s,;:.]+$/, "") + "…";
+  }
+
+  function isSafeUrl(url) {
+    return typeof url === "string" && /^https:\/\//.test(url);
+  }
+
   // ---------- Utilitaires ----------
   function el(tag, cls) {
     var node = document.createElement(tag);
@@ -197,10 +310,10 @@
     return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   }
 
-  function formatDate(iso) {
+  function formatDate(iso, month) {
     if (!iso) return "";
     var d = new Date(iso + "T00:00:00");
     if (isNaN(d)) return iso;
-    return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+    return d.toLocaleDateString("fr-FR", { day: "numeric", month: month || "short", year: "numeric" });
   }
 })();

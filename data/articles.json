@@ -1,6 +1,89 @@
 {
   "articles": [
     {
+      "slug": "univers-bloc",
+      "titre": "L'univers bloc : et si le temps ne s'écoulait pas ?",
+      "date": "2026-10-05",
+      "categorie": "Sciences",
+      "image": "images/articles/univers-bloc.svg",
+      "imageAlt": "Un bloc d'espace-temps découpé en tranches, du passé au futur, avec la tranche du présent mise en évidence",
+      "extrait": "Passé, présent et futur existeraient tous au même titre, dans un bloc d'espace-temps à quatre dimensions. Tour d'horizon d'une idée qui bouscule notre façon de penser le temps.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "L'univers bloc, c'est une façon de penser le temps. Le passé, le présent et le futur y existent tous au même titre, dans un « bloc » d'espace-temps à quatre dimensions : trois d'espace et une de temps. Dans cette idée, le temps ne « s'écoule » pas vraiment. C'est plutôt une dimension déjà toute entière là, un peu comme l'espace."
+        },
+        {
+          "type": "titre",
+          "texte": "L'idée de base"
+        },
+        {
+          "type": "texte",
+          "texte": "Chaque événement de l'histoire de l'univers, du Big Bang à ta naissance en passant par demain matin, correspond à un point fixe de l'espace-temps. Le sentiment que le temps passe viendrait de la manière dont nous percevons le monde. Ce ne serait pas une propriété réelle de l'univers."
+        },
+        {
+          "type": "texte",
+          "texte": "Le physicien Fabrizio Bucella le compare à un film. Voir l'univers bloc, c'est voir la pellicule entière d'un coup, du début à la fin. Nous, nous ne vivons qu'une image après l'autre."
+        },
+        {
+          "type": "youtube",
+          "id": "Pnp0I1-qpA4",
+          "format": "vertical",
+          "titre": "La théorie la plus folle : l'Univers Bloc (L'Arbre Du Savoir)"
+        },
+        {
+          "type": "titre",
+          "texte": "Pourquoi Einstein y mène"
+        },
+        {
+          "type": "texte",
+          "texte": "L'argument vient de la relativité restreinte : il n'existe pas de « maintenant » valable pour tout l'univers. Deux événements peuvent être simultanés pour un observateur et ne pas l'être pour un autre, selon leur vitesse. Un même événement peut même se trouver dans le passé de l'un et dans le futur de l'autre."
+        },
+        {
+          "type": "texte",
+          "texte": "Il devient alors difficile de dire que seul le présent est réel, puisque « le présent » dépend de qui regarde."
+        },
+        {
+          "type": "titre",
+          "texte": "Les positions en débat"
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Position",
+            "Ce qui est réel"
+          ],
+          "lignes": [
+            [
+              "Éternalisme (univers bloc)",
+              "Passé, présent et futur, tous au même titre"
+            ],
+            [
+              "Présentisme",
+              "Seulement le présent"
+            ],
+            [
+              "Bloc croissant",
+              "Le passé et le présent. Le bloc « grandit » avec le temps"
+            ]
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Limites et critiques"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Il s'agit d'une interprétation philosophique de la physique, pas d'un résultat expérimental.",
+            "Elle semble difficile à concilier avec la flèche du temps de la thermodynamique, la mécanique quantique et le libre arbitre.",
+            "Si tout est déjà « là », certains y voient un futur déjà écrit. C'est pour ça que l'idée est souvent associée au déterminisme.",
+            "Elle laisserait en théorie une place au voyage dans le temps, puisqu'il n'y aurait pas de sens du temps fixé au niveau fondamental."
+          ]
+        }
+      ]
+    },
+    {
       "slug": "suno-ai-histoire-et-chiffres-cles",
       "titre": "Suno AI : un aperçu de son histoire et de ses chiffres clés",
       "date": "2025-10-12",
@@ -128,6 +211,32 @@
           "type": "compte-a-rebours",
           "date": "2026-11-07",
           "texte": "Les prochaines vacances sont dans"
+        },
+        {
+          "type": "titre",
+          "texte": "Le code"
+        },
+        {
+          "type": "texte",
+          "texte": "Ce compte à rebours tient en quelques lignes de JavaScript. Il faut d'abord deux paragraphes dans la page HTML : l'un pour le texte, l'autre (vide) où le script écrira le temps restant."
+        },
+        {
+          "type": "code",
+          "legende": "HTML",
+          "code": "<p id=\"label\">Les prochaines vacances sont dans :</p>\n<p id=\"compteur\"></p>"
+        },
+        {
+          "type": "texte",
+          "texte": "Ensuite, le script calcule l'écart entre maintenant et la date des vacances, le découpe en jours, heures, minutes et secondes, puis recommence chaque seconde."
+        },
+        {
+          "type": "code",
+          "legende": "JavaScript",
+          "code": "// Date de début des prochaines vacances (à minuit, heure locale)\nconst debutVacances = new Date(\"2026-11-07T00:00:00\").getTime();\n\n// On récupère l'élément de la page où afficher le compte à rebours\nconst compteur = document.getElementById(\"compteur\");\n\n// Ajoute un zéro devant les nombres à un chiffre : 7 devient \"07\"\nfunction deuxChiffres(n) {\n  return String(n).padStart(2, \"0\");\n}\n\nfunction mettreAJour() {\n  // Temps restant en millisecondes entre maintenant et les vacances\n  const reste = debutVacances - Date.now();\n\n  // Si la date est passée, les vacances ont commencé : on s'arrête là\n  if (reste <= 0) {\n    compteur.textContent = \"C'est maintenant ! 🎉\";\n    return;\n  }\n\n  // On découpe le temps restant en jours, heures, minutes et secondes.\n  // Rappel : 1 s = 1 000 ms, 1 min = 60 000 ms,\n  // 1 h = 3 600 000 ms et 1 jour = 86 400 000 ms.\n  const jours    = Math.floor(reste / 86400000);\n  const heures   = Math.floor((reste % 86400000) / 3600000);\n  const minutes  = Math.floor((reste % 3600000) / 60000);\n  const secondes = Math.floor((reste % 60000) / 1000);\n\n  // On affiche le résultat dans la page\n  compteur.textContent =\n    jours + \" j \" +\n    deuxChiffres(heures) + \" h \" +\n    deuxChiffres(minutes) + \" min \" +\n    deuxChiffres(secondes) + \" s\";\n\n  // On relance la fonction dans 1 seconde pour faire défiler le compteur\n  setTimeout(mettreAJour, 1000);\n}\n\n// Premier affichage immédiat, sans attendre une seconde\nmettreAJour();"
+        },
+        {
+          "type": "texte",
+          "texte": "Pour l'adapter à tes propres vacances, il suffit de changer la date sur la première ligne du script."
         }
       ]
     },

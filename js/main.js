@@ -528,7 +528,7 @@
         return node;
 
       case "youtube":
-        node = el("div", "video-frame article-video");
+        node = el("div", "video-frame article-video" + (b.format === "vertical" ? " is-vertical" : ""));
         var iframe = document.createElement("iframe");
         iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(b.id) + "?rel=0";
         iframe.title = b.titre || "Vidéo YouTube";
@@ -536,6 +536,58 @@
         iframe.allow = "accelerometer; encrypted-media; gyroscope; picture-in-picture";
         iframe.allowFullscreen = true;
         node.appendChild(iframe);
+        return node;
+
+      case "code":
+        node = el("figure", "code-block");
+        if (b.legende) {
+          var codeCap = el("figcaption");
+          codeCap.textContent = b.legende;
+          node.appendChild(codeCap);
+        }
+        var pre = el("pre");
+        var code = el("code");
+        code.textContent = b.code;
+        pre.appendChild(code);
+        node.appendChild(pre);
+        return node;
+
+      case "liste":
+        node = el("ul");
+        (b.elements || []).forEach(function (t) {
+          var li = el("li");
+          li.textContent = t;
+          node.appendChild(li);
+        });
+        return node;
+
+      case "tableau":
+        node = el("div", "table-wrap");
+        var table = el("table");
+        if (b.entetes) {
+          var thead = el("thead");
+          var hr = el("tr");
+          b.entetes.forEach(function (t) {
+            var th = el("th");
+            th.scope = "col";
+            th.textContent = t;
+            hr.appendChild(th);
+          });
+          thead.appendChild(hr);
+          table.appendChild(thead);
+        }
+        var tbody = el("tbody");
+        (b.lignes || []).forEach(function (ligne) {
+          var tr = el("tr");
+          ligne.forEach(function (t) {
+            var td = el("td");
+            td.textContent = t;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        node.appendChild(table);
         return node;
 
       case "compte-a-rebours":

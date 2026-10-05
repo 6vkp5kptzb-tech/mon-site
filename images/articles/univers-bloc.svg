@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Un bloc d'espace-temps découpé en tranches, du passé au futur">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#132131"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </radialGradient>
+    <linearGradient id="slice" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="now" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#67e8f9" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.15"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#9aa7b5"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- étoiles -->
+  <g fill="#e6edf3" opacity="0.5">
+    <circle cx="120" cy="140" r="2"/><circle cx="260" cy="90" r="1.5"/><circle cx="410" cy="170" r="1.2"/>
+    <circle cx="1480" cy="120" r="2"/><circle cx="1380" cy="200" r="1.4"/><circle cx="1520" cy="320" r="1.2"/>
+    <circle cx="90" cy="520" r="1.4"/><circle cx="170" cy="860" r="1.8"/><circle cx="1490" cy="760" r="1.6"/>
+    <circle cx="1420" cy="900" r="1.2"/><circle cx="760" cy="80" r="1.3"/><circle cx="1050" cy="120" r="1.6"/>
+  </g>
+
+  <!-- arêtes arrière du bloc -->
+  <g fill="none" stroke="#243041" stroke-width="2">
+    <path d="M480 230H1330V630H480z"/>
+  </g>
+
+  <!-- tranches d'espace : chaque tranche = l'univers à un instant -->
+  <g stroke="#22d3ee" stroke-opacity="0.35" stroke-width="1.5" fill="url(#slice)">
+    <path d="M300 330L480 230V630L300 730z"/>
+    <path d="M400 330L580 230V630L400 730z"/>
+    <path d="M500 330L680 230V630L500 730z"/>
+    <path d="M600 330L780 230V630L600 730z"/>
+    <path d="M800 330L980 230V630L800 730z"/>
+    <path d="M900 330L1080 230V630L900 730z"/>
+    <path d="M1000 330L1180 230V630L1000 730z"/>
+    <path d="M1100 330L1280 230V630L1100 730z"/>
+    <path d="M1150 330L1330 230V630L1150 730z"/>
+  </g>
+
+  <!-- ligne d'univers d'un observateur -->
+  <path d="M300 600C450 560 520 470 700 480S980 400 1150 430" fill="none" stroke="#e6edf3" stroke-opacity="0.7" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+
+  <!-- tranche « maintenant » -->
+  <path d="M700 330L880 230V630L700 730z" fill="url(#now)" stroke="#67e8f9" stroke-width="3"/>
+  <circle cx="700" cy="480" r="9" fill="#67e8f9"/>
+  <circle cx="700" cy="480" r="22" fill="none" stroke="#67e8f9" stroke-opacity="0.4" stroke-width="2"/>
+
+  <!-- événements fixes -->
+  <g fill="#22d3ee">
+    <circle cx="360" cy="520" r="5"/><circle cx="470" cy="430" r="4"/><circle cx="560" cy="600" r="4"/>
+    <circle cx="850" cy="360" r="4"/><circle cx="960" cy="560" r="5"/><circle cx="1070" cy="380" r="4"/>
+    <circle cx="1210" cy="500" r="5"/>
+  </g>
+
+  <!-- arêtes avant du bloc -->
+  <g fill="none" stroke="#9aa7b5" stroke-opacity="0.6" stroke-width="2">
+    <path d="M300 330H1150M300 730H1150M480 230L300 330M1330 230L1150 330M1330 630L1150 730"/>
+  </g>
+
+  <!-- étiquettes -->
+  <g font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif" text-anchor="middle">
+    <text x="420" y="200" fill="#9aa7b5" font-size="34">Passé</text>
+    <text x="790" y="190" fill="#67e8f9" font-size="38" font-weight="700">Présent</text>
+    <text x="1190" y="200" fill="#9aa7b5" font-size="34">Futur</text>
+  </g>
+
+  <!-- axe du temps -->
+  <line x1="300" y1="830" x2="1330" y2="830" stroke="#9aa7b5" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="815" y="885" fill="#9aa7b5" font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif" font-size="28" text-anchor="middle" letter-spacing="6">TEMPS</text>
+</svg>

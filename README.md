@@ -46,11 +46,17 @@ favicon.svg       Icône de l'onglet
   `contenu` est une liste de blocs :
   `{ "type": "texte", "texte": "..." }`, `{ "type": "titre", "texte": "..." }`,
   `{ "type": "image", "src": "...", "alt": "...", "legende": "..." }`,
-  `{ "type": "youtube", "id": "...", "titre": "..." }`,
+  `{ "type": "youtube", "id": "...", "titre": "..." }` (ajoute `"format": "vertical"` pour un Short),
+  `{ "type": "code", "legende": "JavaScript", "code": "..." }` (retours à la ligne en `\n`),
+  `{ "type": "liste", "elements": ["...", "..."] }`,
+  `{ "type": "tableau", "entetes": ["...", "..."], "lignes": [["...", "..."], ["...", "..."]] }`,
   `{ "type": "compte-a-rebours", "date": "AAAA-MM-JJ", "texte": "..." }`.
   Les articles sont triés par date : les 5 plus récents défilent dans le carrousel de l'accueil,
   tous apparaissent sur `articles.html`.
 - **Couleurs** : variables `--accent`, `--bg`, etc. en haut de `css/style.css`.
+- **Cache** : après une modification de `css/style.css` ou `js/main.js`, augmente le numéro
+  `?v=...` dans les balises `<link>` et `<script>` de toutes les pages, sinon les navigateurs
+  gardent l'ancienne version.
 
 ## Voir le site en local
 

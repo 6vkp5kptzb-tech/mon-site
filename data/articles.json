@@ -1,6 +1,73 @@
 {
   "articles": [
     {
+      "slug": "big-bang-simulation",
+      "titre": "Big Bang : 13,8 milliards d'années d'Univers en simulation",
+      "date": "2026-10-05",
+      "categorie": "Sciences",
+      "image": "images/articles/big-bang-simulation.svg",
+      "imageAlt": "La toile cosmique : des filaments de matière relient des amas lumineux où naissent les galaxies",
+      "extrait": "Des premiers instants après le Big Bang jusqu'à aujourd'hui, les simulations cosmologiques montrent comment la matière s'organise et donne naissance aux galaxies.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Les simulations cosmologiques, du type Illustris ou autres simulations N-corps, permettent de reconstituer l'évolution de l'Univers depuis les premiers instants après le Big Bang jusqu'à aujourd'hui. Elles montrent comment la matière s'organise, se structure et donne naissance aux galaxies."
+        },
+        {
+          "type": "youtube",
+          "id": "kbjnVepbkNc",
+          "titre": "Big Bang : 13,8 milliards d'années d'Univers en simulation"
+        },
+        {
+          "type": "titre",
+          "texte": "1. La matière noire dessine le squelette (0 à 3 Md d'années)"
+        },
+        {
+          "type": "texte",
+          "texte": "Au commencement, la matière noire est répartie de façon presque homogène, avec de minuscules fluctuations de densité. Sous l'effet de la gravité, ces écarts s'amplifient : la matière s'effondre le long de nœuds et de filaments et forme la toile cosmique. Cette ossature invisible attire ensuite le gaz ordinaire, la matière baryonique."
+        },
+        {
+          "type": "titre",
+          "texte": "2. Le gaz s'échauffe et les structures naissent (3 à 7,8 Md d'années)"
+        },
+        {
+          "type": "texte",
+          "texte": "À partir de 3 milliards d'années, le comportement du gaz devient déterminant."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Chauffage par effondrement : le gaz tombe dans les puits gravitationnels et entre en collision à très grande vitesse. Les ondes de choc le portent à des millions de degrés.",
+            "Feedback astrophysique : des bulles d'expansion et des éjections massives apparaissent. Elles proviennent des vents stellaires, des supernovas et surtout des trous noirs supermassifs (quasars), qui soufflent et réchauffent le milieu intergalactique."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "3. Les étoiles fabriquent les éléments lourds (8 à 11,5 Md d'années)"
+        },
+        {
+          "type": "texte",
+          "texte": "Vers 8 milliards d'années, la métallicité s'enrichit, c'est-à-dire la quantité d'éléments lourds. Les premières générations d'étoiles fusionnent l'hydrogène et l'hélium en carbone, oxygène, fer et autres éléments. En explosant en supernovas, elles dispersent ces métaux dans leur environnement, ce qui enrichit les futures générations d'étoiles et de planètes."
+        },
+        {
+          "type": "titre",
+          "texte": "4. Des filaments aux galaxies (11,6 à 13,8 Md d'années)"
+        },
+        {
+          "type": "texte",
+          "texte": "Des amas massifs se retrouvent reliés par des filaments denses. Les halos de matière noire abritent alors des milliers de galaxies, spirales et elliptiques, situées exactement là où la matière s'était accumulée."
+        },
+        {
+          "type": "titre",
+          "texte": "À retenir"
+        },
+        {
+          "type": "texte",
+          "texte": "Ces simulations illustrent le principe du modèle cosmologique standard : sans le squelette gravitationnel de la matière noire, le gaz ne se serait pas effondré assez vite pour former galaxies, étoiles et planètes en 13,8 milliards d'années."
+        }
+      ]
+    },
+    {
       "slug": "univers-bloc",
       "titre": "L'univers bloc : et si le temps ne s'écoulait pas ?",
       "date": "2026-10-05",

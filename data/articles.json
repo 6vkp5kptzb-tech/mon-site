@@ -1,9 +1,280 @@
 {
   "articles": [
     {
+      "slug": "nombre-kholi-2997",
+      "titre": "Prenez n'importe quel nombre : il finira toujours sur 2997",
+      "date": "2026-10-06",
+      "categorie": "Mathématiques",
+      "image": "images/articles/nombre-kholi-2997.svg",
+      "imageAlt": "Des nombres de départ variés (3, 123, 2028, 58431, 777777) dont les trajectoires convergent toutes vers 2997",
+      "extrait": "Additionnez les chiffres d'un nombre, multipliez par 111, recommencez : vous tomberez toujours sur 2997. Voici la démonstration, pas à pas.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Choisissez un nombre entier, n'importe lequel. Additionnez ses chiffres, multipliez le résultat par 111, puis recommencez avec le nombre obtenu. Quel que soit votre point de départ, vous finirez toujours sur le même nombre : 2997, le nombre de Kholi."
+        },
+        {
+          "type": "code",
+          "code": "123   → 111 × (1+2+3)   = 666\n666   → 111 × (6+6+6)   = 1998\n1998  → 111 × (1+9+9+8) = 2997\n2997  → 111 × (2+9+9+7) = 2997  ← il ne bouge plus"
+        },
+        {
+          "type": "texte",
+          "texte": "Constater que f(2997) = 2997 ne suffit pas : il faut aussi prouver que tout entier positif finit par l'atteindre. Voici une version élémentaire de la démonstration publiée par Shailesh Shirali. L'idée : montrer que les valeurs possibles se réduisent progressivement, jusqu'à ce qu'il ne reste que 2997."
+        },
+        {
+          "type": "titre",
+          "texte": "1. Définir l'opération"
+        },
+        {
+          "type": "texte",
+          "texte": "On note s(n) la somme des chiffres de n, et on définit :"
+        },
+        {
+          "type": "code",
+          "code": "f(n) = 111 × s(n)"
+        },
+        {
+          "type": "texte",
+          "texte": "Par exemple, f(123) = 111 × (1 + 2 + 3) = 666. On veut démontrer que, pour tout entier n > 0, la suite obtenue en répétant f finit par atteindre 2997. On travaille ici en écriture décimale."
+        },
+        {
+          "type": "titre",
+          "texte": "2. Réduire les grands nombres"
+        },
+        {
+          "type": "texte",
+          "texte": "Si n possède d chiffres, chaque chiffre vaut au maximum 9. Donc :"
+        },
+        {
+          "type": "code",
+          "code": "s(n) ≤ 9d   ⟹   f(n) ≤ 999d"
+        },
+        {
+          "type": "texte",
+          "texte": "Mais un nombre à d chiffres vérifie aussi n ≥ 10^(d−1). Or, pour d ≥ 5 :"
+        },
+        {
+          "type": "code",
+          "code": "999d < 10^(d−1)"
+        },
+        {
+          "type": "texte",
+          "texte": "Pourquoi ? Pour cinq chiffres, 4995 < 10000. Ensuite, quand on ajoute un chiffre, le membre de droite est multiplié par 10, tandis que le membre de gauche augmente seulement de 999 : l'inégalité reste donc vraie. Ainsi, dès que n a au moins cinq chiffres :"
+        },
+        {
+          "type": "code",
+          "code": "f(n) < n"
+        },
+        {
+          "type": "texte",
+          "texte": "Tant que la suite contient des nombres d'au moins cinq chiffres, elle diminue strictement. Une suite d'entiers positifs ne peut pas diminuer indéfiniment : elle finit donc par atteindre un nombre inférieur à 10000. C'est le principe de réduction utilisé dans la preuve publiée, avec ici un seuil simplifié."
+        },
+        {
+          "type": "texte",
+          "texte": "À partir de là, la somme des chiffres vaut au maximum 9 + 9 + 9 + 9 = 36, donc :"
+        },
+        {
+          "type": "code",
+          "code": "f(n) ≤ 111 × 36 = 3996"
+        },
+        {
+          "type": "texte",
+          "texte": "Les valeurs restent désormais inférieures ou égales à 3996."
+        },
+        {
+          "type": "titre",
+          "texte": "3. Limiter les valeurs possibles"
+        },
+        {
+          "type": "texte",
+          "texte": "Chaque résultat est un multiple de 111, puisque f(n) = 111 × s(n). Il est donc aussi divisible par 3 (111 = 3 × 37)."
+        },
+        {
+          "type": "texte",
+          "texte": "Or un entier et la somme de ses chiffres ont le même reste dans la division par 3. Si n est divisible par 3, alors s(n) l'est également. Ainsi, à l'étape suivante, f(n) = 111 × s(n) est un multiple de 111 × 3 = 333."
+        },
+        {
+          "type": "texte",
+          "texte": "Après suffisamment d'étapes, notre nombre est donc à la fois :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "positif ;",
+            "inférieur ou égal à 3996 ;",
+            "multiple de 333."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Il ne reste que 12 possibilités :"
+        },
+        {
+          "type": "code",
+          "code": "333   666   999   1332  1665  1998\n2331  2664  2997  3330  3663  3996"
+        },
+        {
+          "type": "texte",
+          "texte": "Cet ensemble est celui utilisé dans la preuve de Shirali."
+        },
+        {
+          "type": "titre",
+          "texte": "4. Terminer par une vérification"
+        },
+        {
+          "type": "texte",
+          "texte": "Calculons la somme des chiffres de ces douze nombres :"
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Nombres possibles",
+            "Somme des chiffres",
+            "Résultat de f"
+          ],
+          "lignes": [
+            [
+              "333, 1332, 2331, 3330",
+              "9",
+              "999"
+            ],
+            [
+              "666, 1665, 2664, 3663",
+              "18",
+              "1998"
+            ],
+            [
+              "999, 1998, 2997, 3996",
+              "27",
+              "2997"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Nous sommes donc ramenés à trois valeurs seulement : 999, 1998 et 2997. Or leurs sommes de chiffres sont toutes égales à 27 :"
+        },
+        {
+          "type": "code",
+          "code": "9 + 9 + 9     = 27\n1 + 9 + 9 + 8 = 27\n2 + 9 + 9 + 7 = 27"
+        },
+        {
+          "type": "texte",
+          "texte": "L'opération suivante donne donc, dans les trois cas :"
+        },
+        {
+          "type": "code",
+          "code": "111 × 27 = 2997"
+        },
+        {
+          "type": "texte",
+          "texte": "Enfin, f(2997) = 2997 : une fois atteint, ce nombre ne change plus."
+        },
+        {
+          "type": "titre",
+          "texte": "À retenir"
+        },
+        {
+          "type": "texte",
+          "texte": "La convergence est démontrée pour tout entier positif, et pas seulement vérifiée sur quelques exemples. Trois idées suffisent : les grands nombres rétrécissent forcément, la divisibilité par 3 enferme la suite dans douze valeurs, et une simple vérification finit le travail. Au plus tard en quelques étapes, tout nombre tombe dans le piège de 2997."
+        }
+      ]
+    },
+    {
+      "slug": "descartes-site-web",
+      "titre": "Les 4 règles de Descartes appliquées à un fil rouge : créer son site web",
+      "date": "2026-10-06",
+      "categorie": "Philosophie",
+      "image": "images/articles/descartes-site-web.svg",
+      "imageAlt": "Une fenêtre de site web entourée des quatre règles de Descartes : vérifier, découper, avancer par étapes, tout contrôler",
+      "extrait": "Vérifier, découper, avancer par étapes, puis tout contrôler : la méthode de Descartes appliquée à la création d'un site web.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Imaginons que vous voulez lancer votre propre site. Voici comment chaque règle vous guide."
+        },
+        {
+          "type": "titre",
+          "texte": "1. L'évidence : ne rien croire sans preuve"
+        },
+        {
+          "type": "texte",
+          "texte": "« Ne jamais accepter une chose pour vraie sans l'avoir connue évidemment comme telle. »"
+        },
+        {
+          "type": "texte",
+          "texte": "Exemple : une agence vous affirme que « sans abonnement premium, votre site ne sera jamais visible sur Google ». Au lieu de la croire sur parole, vous vérifiez auprès de sources indépendantes et vous découvrez que le référencement naturel dépend surtout de la qualité du contenu."
+        },
+        {
+          "type": "titre",
+          "texte": "2. L'analyse : diviser la difficulté"
+        },
+        {
+          "type": "texte",
+          "texte": "« Diviser chaque difficulté en autant de parcelles qu'il se peut. »"
+        },
+        {
+          "type": "texte",
+          "texte": "Exemple : « Créer un site » semble immense. Vous le découpez en sous-tâches :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "choisir le nom de domaine ;",
+            "trouver un hébergeur ;",
+            "concevoir la structure des pages ;",
+            "rédiger les textes ;",
+            "créer le design."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "3. L'ordre : du simple au complexe"
+        },
+        {
+          "type": "texte",
+          "texte": "« Commencer par les objets les plus simples pour monter peu à peu jusqu'aux plus composés. »"
+        },
+        {
+          "type": "texte",
+          "texte": "Exemple : vous publiez d'abord une page d'accueil et une page de contact. Une fois celles-ci en ligne et fonctionnelles, vous ajoutez le blog, puis plus tard la newsletter ou la boutique."
+        },
+        {
+          "type": "titre",
+          "texte": "4. Le dénombrement : tout revoir"
+        },
+        {
+          "type": "texte",
+          "texte": "« Faire des revues si générales que l'on soit assuré de ne rien omettre. »"
+        },
+        {
+          "type": "texte",
+          "texte": "Exemple : avant la mise en ligne, vous parcourez une checklist complète :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "liens cassés ;",
+            "fautes d'orthographe ;",
+            "affichage sur mobile ;",
+            "mentions légales ;",
+            "formulaire de contact testé."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "En résumé"
+        },
+        {
+          "type": "texte",
+          "texte": "Vérifier, découper, avancer par étapes, puis tout contrôler : quatre réflexes qui transforment un projet intimidant en une suite d'actions maîtrisables."
+        }
+      ]
+    },
+    {
       "slug": "big-bang-simulation",
       "titre": "Big Bang : 13,8 milliards d'années d'Univers en simulation",
-      "date": "2026-10-05",
+      "date": "2026-10-02",
       "categorie": "Sciences",
       "image": "images/articles/big-bang-simulation.svg",
       "imageAlt": "La toile cosmique : des filaments de matière relient des amas lumineux où naissent les galaxies",
@@ -151,93 +422,6 @@
       ]
     },
     {
-      "slug": "suno-ai-histoire-et-chiffres-cles",
-      "titre": "Suno AI : un aperçu de son histoire et de ses chiffres clés",
-      "date": "2025-10-12",
-      "categorie": "Entreprises technologiques",
-      "image": "images/articles/suno-ai.jpg",
-      "imageAlt": "Les lettres AI en néon orange sur un mur sombre",
-      "extrait": "Suno AI est une entreprise technologique émergente spécialisée dans l'intelligence artificielle. Retour sur son histoire, ses chiffres clés et son avenir.",
-      "contenu": [
-        {
-          "type": "titre",
-          "texte": "Introduction à Suno AI"
-        },
-        {
-          "type": "texte",
-          "texte": "Suno AI est une entreprise technologique émergente qui se spécialise dans le domaine de l'intelligence artificielle. Fondée avec l'ambition de transformer la manière dont les données sont analysées et exploitées, Suno AI met au point des solutions innovantes destinées à améliorer l'efficacité des processus d'affaires et à offrir des insights précieux. Au cœur de son développement se trouve une équipe de professionnels spécialisés en science des données, en apprentissage automatique et en ingénierie logicielle, qui s'efforcent de repousser les limites des technologies intelligentes."
-        },
-        {
-          "type": "texte",
-          "texte": "Depuis sa création, Suno AI s'est engagée à démocratiser l'accès aux solutions d'IA, rendant ainsi des outils avancés accessibles même aux petites et moyennes entreprises. Avec une mission claire d'optimisation des performances et d'accélération de la transformation numérique des entreprises, la société suit une approche centrée sur l'utilisateur pour développer des produits qui répondent réellement aux besoins du marché. Ses innovations sont conçues pour s'intégrer facilement dans les systèmes existants, facilitant ainsi l'adoption de l'intelligence artificielle par des organisations de diverses tailles et secteurs."
-        },
-        {
-          "type": "texte",
-          "texte": "L'importance croissante de Suno AI dans le secteur de l'intelligence artificielle peut être attribuée à sa capacité à allier expertise technique et compréhension des enjeux commerciaux. Sa vision stratégique s'articule autour d'un développement durable et d'un engagement envers l'éthique dans l'utilisation de l'IA. En se concentrant sur la création de valeur pour ses clients et en intégrant des pratiques responsables dans ses opérations, Suno AI se positionne comme un leader potentiel dans ce domaine en pleine expansion, où l'innovation est essentielle pour maintenir la compétitivité. Cette démarche favorise non seulement sa croissance, mais aussi l'évolution globale de l'intelligence artificielle dans le monde des affaires."
-        },
-        {
-          "type": "titre",
-          "texte": "Historique de Suno AI"
-        },
-        {
-          "type": "texte",
-          "texte": "Suno AI a été fondée en 2020 avec pour ambition d'intégrer des solutions d'intelligence artificielle dans divers domaines d'activité. Dès ses débuts, l'entreprise s'est concentrée sur le développement de technologies novatrices qui permettraient d'améliorer l'efficacité des processus métier. La première étape marquante dans son évolution a été le lancement de sa plateforme d'IA en 2021, qui a permis aux utilisateurs d'accéder à des outils de traitement de données avancés. Cette innovation a suscité un intérêt croissant et a permis à Suno AI de se faire un nom dans le secteur."
-        },
-        {
-          "type": "texte",
-          "texte": "Au cours de l'année suivante, Suno AI a établi plusieurs partenariats stratégiques avec des entreprises de renommée mondiale, ce qui a renforcé sa position sur le marché. Ces collaborations ont favorisé l'échange d'expertise et l'accélération du développement de nouvelles fonctionnalités. En 2022, l'entreprise a également introduit des solutions à base d'IA adaptées aux secteurs de la santé et de la finance, étendant ainsi son empreinte dans des domaines clés. Ces initiatives ont été accompagnées d'une série de financements qui ont permis d'accroitre ses capacités de recherche et développement."
-        },
-        {
-          "type": "texte",
-          "texte": "Un autre jalon important a été l'organisation annuelle de la conférence Suno AI, qui a naturellement attiré l'attention de professionnels et de chercheurs du secteur technologique. Lors de cet événement, Suno AI a présenté ses dernières innovations et partagé des études de cas ayant démontré l'impact positif de l'intelligence artificielle sur les entreprises. Le succès de cette manifestation a contribué à asseoir la notoriété de la marque en tant que leader dans le secteur de l'intelligence artificielle."
-        },
-        {
-          "type": "texte",
-          "texte": "À l'heure actuelle, Suno AI continue d'évoluer et d'explorer de nouvelles opportunités. L'entreprise adopte constamment des modèles d'affaires ajustés aux exigences du marché, en restant fidèle à son engagement envers l'innovation et la performance. Son parcours témoigne d'une volonté indéfectible de s'adapter et de répondre aux défis changeants de l'environnement technologique."
-        },
-        {
-          "type": "titre",
-          "texte": "Chiffres et Statistiques Clés"
-        },
-        {
-          "type": "texte",
-          "texte": "Suno AI, en tant qu'acteur majeur dans le domaine de l'intelligence artificielle, a connu une croissance remarquable depuis sa création. En 2023, la plateforme comptabilise plus de 2 millions d'utilisateurs actifs, un chiffre qui témoigne de l'intérêt croissant pour ses solutions innovantes. Ce nombre a augmenté de 150 % par rapport à l'année précédente, révélant ainsi une adoption rapide et une forte demande sur le marché des technologies basées sur l'intelligence artificielle."
-        },
-        {
-          "type": "texte",
-          "texte": "En ce qui concerne les investissements, Suno AI a réussi à lever plus de 300 millions de dollars lors de ses différents tours de financement. Cette somme est un indicateur clé de la confiance que les investisseurs accordent à ses capacités et à ses projets d'avenir. Le dernier tour de financement a particulièrement attiré l'attention, avec des contributions notables de sociétés de capital-risque renommées, renforçant ainsi la position de Suno AI sur le marché mondial."
-        },
-        {
-          "type": "texte",
-          "texte": "Les revenus générés par Suno AI se chiffrent à environ 75 millions de dollars pour l'année 2022, marquant une augmentation significative par rapport à l'exercice précédent. Cette croissance est en partie attribuable à l'expansion de son portefeuille de produits et à l'augmentation des collaborations avec d'autres entreprises technologiques. Les prévisions pour 2023 suggèrent une poursuite de cette tendance, avec des estimations de revenus atteignant jusqu'à 120 millions de dollars."
-        },
-        {
-          "type": "texte",
-          "texte": "Enfin, des études récentes montrent que le taux de satisfaction des utilisateurs de Suno AI dépasse les 90 %, ce qui reflète la qualité de ses services et l'efficacité de ses algorithmes. Ces chiffres et statistiques clés non seulement soulignent le succès de Suno AI, mais démontrent également son impact significatif dans le secteur de l'intelligence artificielle."
-        },
-        {
-          "type": "titre",
-          "texte": "L'Avenir de Suno AI"
-        },
-        {
-          "type": "texte",
-          "texte": "Dans le paysage dynamique de l'intelligence artificielle, Suno AI se trouve à un carrefour critique, avec des opportunités et des défis significatifs qui détermineront son avenir. Les technologies émergentes, telles que l'apprentissage profond, l'intelligence artificielle explicable, et le traitement du langage naturel, continueront d'influencer le développement des produits et services de Suno AI. L'intégration de ces technologies avancées permettra à l'entreprise de renforcer ses capacités tout en améliorant l'expérience utilisateur."
-        },
-        {
-          "type": "texte",
-          "texte": "Les experts prévoient également une augmentation de la demande pour des solutions d'IA plus éthiques et responsables. Cette tendance pourrait pousser Suno AI à adopter des pratiques de développement durable et à s'engager davantage dans des initiatives qui promeuvent la transparence et la responsabilité dans l'utilisation des données. Par conséquent, le maintien de l'éthique dans l'intelligence artificielle pourrait devenir un pilier central de la stratégie de l'entreprise."
-        },
-        {
-          "type": "texte",
-          "texte": "Avec l'essor du télétravail et des solutions numériques, l'expérience client devient une priorité majeure pour les entreprises. Suno AI pourrait tirer parti des outils d'IA pour personnaliser les interactions avec les utilisateurs, améliorer la satisfaction client, et développer des solutions adaptées à leurs besoins. Cette approche centrée sur le client pourrait jouer un rôle essentiel dans la fidélisation et l'expansion de la clientèle, en positionnant Suno AI comme un leader dans son domaine."
-        },
-        {
-          "type": "texte",
-          "texte": "Enfin, les défis liés à la réglementation demeurent une préoccupation croissante. La nécessité de se conformer à des lois de plus en plus strictes sur la protection des données et la confidentialité exigera que Suno AI soit proactif dans ses efforts de compliance. En intégrant ces considérations dans ses stratégies opérationnelles, Suno AI pourra non seulement se protéger contre les risques juridiques, mais aussi renforcer sa réputation sur le marché."
-        }
-      ]
-    },
-    {
       "slug": "marathon-de-paris-2024",
       "passions": true,
       "titre": "Marathon de Paris 2024",
@@ -261,18 +445,16 @@
     },
     {
       "slug": "les-vacances-en-javascript",
-      "titre": "Les vacances en JavaScript",
-      "date": "2024-02-08",
+      "titre": "J − combien ? Un compte à rebours des vacances en 30 lignes de JavaScript",
+      "date": "2026-10-01",
       "categorie": "Vacances",
-      "image": "images/articles/vacances.jpg",
-      "imageAlt": "Botte de foin près d'une barrière en bois, montagnes au loin",
-      "extrait": "Un petit compte à rebours codé en JavaScript pour savoir combien de jours il reste avant les prochaines vacances.",
+      "image": "images/articles/vacances-javascript.svg",
+      "imageAlt": "Un éditeur de code JavaScript à côté d'un grand compte à rebours avant les vacances",
+      "extrait": "Combien de jours avant les prochaines vacances ? Un petit compte à rebours en JavaScript, construit pas à pas.",
       "contenu": [
         {
-          "type": "image",
-          "src": "images/articles/vacances.jpg",
-          "alt": "Botte de foin près d'une barrière en bois, montagnes au loin",
-          "legende": "Photo de Tobi sur Pexels.com"
+          "type": "texte",
+          "texte": "Compter les jours avant les vacances, tout le monde le fait. Autant laisser l'ordinateur s'en charger, à la seconde près ! Voici le résultat en direct :"
         },
         {
           "type": "compte-a-rebours",
@@ -280,12 +462,16 @@
           "texte": "Les prochaines vacances sont dans"
         },
         {
+          "type": "texte",
+          "texte": "Ce compte à rebours tient en une trentaine de lignes de JavaScript. Voici comment il se construit, en quatre étapes."
+        },
+        {
           "type": "titre",
-          "texte": "Le code"
+          "texte": "1. Préparer la page HTML"
         },
         {
           "type": "texte",
-          "texte": "Ce compte à rebours tient en quelques lignes de JavaScript. Il faut d'abord deux paragraphes dans la page HTML : l'un pour le texte, l'autre (vide) où le script écrira le temps restant."
+          "texte": "Il faut d'abord deux paragraphes dans la page : l'un pour le texte, l'autre (vide) où le script écrira le temps restant."
         },
         {
           "type": "code",
@@ -293,8 +479,71 @@
           "code": "<p id=\"label\">Les prochaines vacances sont dans :</p>\n<p id=\"compteur\"></p>"
         },
         {
+          "type": "titre",
+          "texte": "2. Fixer la date des vacances"
+        },
+        {
           "type": "texte",
-          "texte": "Ensuite, le script calcule l'écart entre maintenant et la date des vacances, le découpe en jours, heures, minutes et secondes, puis recommence chaque seconde."
+          "texte": "On enregistre la date de début des vacances, à minuit heure locale. getTime() la convertit en millisecondes écoulées depuis le 1er janvier 1970 : c'est l'unité que JavaScript utilise pour comparer deux dates. On récupère aussi le paragraphe où afficher le résultat."
+        },
+        {
+          "type": "code",
+          "legende": "JavaScript",
+          "code": "const debutVacances = new Date(\"2026-11-07T00:00:00\").getTime();\nconst compteur = document.getElementById(\"compteur\");"
+        },
+        {
+          "type": "titre",
+          "texte": "3. Calculer le temps restant"
+        },
+        {
+          "type": "texte",
+          "texte": "Date.now() donne l'instant présent, lui aussi en millisecondes. La différence avec la date des vacances donne le temps restant, qu'il suffit de découper avec quelques divisions :"
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Unité",
+            "En millisecondes"
+          ],
+          "lignes": [
+            [
+              "1 seconde",
+              "1 000"
+            ],
+            [
+              "1 minute",
+              "60 000"
+            ],
+            [
+              "1 heure",
+              "3 600 000"
+            ],
+            [
+              "1 jour",
+              "86 400 000"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Math.floor() garde la partie entière d'une division, et l'opérateur % (modulo) garde ce qui reste une fois les unités plus grandes retirées. Par exemple, reste % 86400000 correspond à ce qui dépasse les jours entiers."
+        },
+        {
+          "type": "code",
+          "legende": "JavaScript",
+          "code": "const reste    = debutVacances - Date.now();\nconst jours    = Math.floor(reste / 86400000);\nconst heures   = Math.floor((reste % 86400000) / 3600000);\nconst minutes  = Math.floor((reste % 3600000) / 60000);\nconst secondes = Math.floor((reste % 60000) / 1000);"
+        },
+        {
+          "type": "titre",
+          "texte": "4. Afficher et recommencer chaque seconde"
+        },
+        {
+          "type": "texte",
+          "texte": "On écrit le résultat dans la page, en ajoutant un zéro devant les nombres à un chiffre (7 devient « 07 ») grâce à padStart. Puis setTimeout relance la fonction une seconde plus tard : le compteur défile. Si la date est passée, on affiche un message de fête et on s'arrête."
+        },
+        {
+          "type": "titre",
+          "texte": "Le script complet"
         },
         {
           "type": "code",
@@ -302,8 +551,12 @@
           "code": "// Date de début des prochaines vacances (à minuit, heure locale)\nconst debutVacances = new Date(\"2026-11-07T00:00:00\").getTime();\n\n// On récupère l'élément de la page où afficher le compte à rebours\nconst compteur = document.getElementById(\"compteur\");\n\n// Ajoute un zéro devant les nombres à un chiffre : 7 devient \"07\"\nfunction deuxChiffres(n) {\n  return String(n).padStart(2, \"0\");\n}\n\nfunction mettreAJour() {\n  // Temps restant en millisecondes entre maintenant et les vacances\n  const reste = debutVacances - Date.now();\n\n  // Si la date est passée, les vacances ont commencé : on s'arrête là\n  if (reste <= 0) {\n    compteur.textContent = \"C'est maintenant ! 🎉\";\n    return;\n  }\n\n  // On découpe le temps restant en jours, heures, minutes et secondes.\n  // Rappel : 1 s = 1 000 ms, 1 min = 60 000 ms,\n  // 1 h = 3 600 000 ms et 1 jour = 86 400 000 ms.\n  const jours    = Math.floor(reste / 86400000);\n  const heures   = Math.floor((reste % 86400000) / 3600000);\n  const minutes  = Math.floor((reste % 3600000) / 60000);\n  const secondes = Math.floor((reste % 60000) / 1000);\n\n  // On affiche le résultat dans la page\n  compteur.textContent =\n    jours + \" j \" +\n    deuxChiffres(heures) + \" h \" +\n    deuxChiffres(minutes) + \" min \" +\n    deuxChiffres(secondes) + \" s\";\n\n  // On relance la fonction dans 1 seconde pour faire défiler le compteur\n  setTimeout(mettreAJour, 1000);\n}\n\n// Premier affichage immédiat, sans attendre une seconde\nmettreAJour();"
         },
         {
+          "type": "titre",
+          "texte": "À retenir"
+        },
+        {
           "type": "texte",
-          "texte": "Pour l'adapter à tes propres vacances, il suffit de changer la date sur la première ligne du script."
+          "texte": "Une date convertie en millisecondes, une soustraction, quelques divisions et une fonction qui se relance chaque seconde : il n'en faut pas plus pour un compte à rebours. Pour l'adapter à tes propres vacances, il suffit de changer la date sur la première ligne du script."
         }
       ]
     },
@@ -321,42 +574,6 @@
           "type": "image",
           "src": "images/articles/annee-2023.jpg",
           "alt": "Bilan Strava 2023 : 256 heures d'activité, 2 701 km, 24 231 m de dénivelé, 220 jours actifs"
-        }
-      ]
-    },
-    {
-      "slug": "rammstein-deutschland",
-      "titre": "Rammstein : Deutschland",
-      "date": "2023-12-31",
-      "categorie": "Musique",
-      "image": "images/articles/rammstein-deutschland.jpg",
-      "imageAlt": "Pochette du single Deutschland de Rammstein",
-      "extrait": "Sortie en 2019, « Deutschland » de Rammstein a suscité un débat intense par son contenu provocateur et son clip controversé.",
-      "contenu": [
-        {
-          "type": "texte",
-          "texte": "Rammstein, le groupe de metal industriel allemand mondialement connu, a une fois de plus provoqué l'attention avec leur chanson « Deutschland ». Sortie en 2019, cette chanson a suscité un débat intense en raison de son contenu provocateur et de son interprétation visuelle controversée dans le clip vidéo qui l'accompagne."
-        },
-        {
-          "type": "texte",
-          "texte": "« Deutschland » traite de l'identité allemande, de l'histoire complexe du pays et de sa relation avec le nationalisme, la guerre et les périodes sombres du passé. Les paroles elles-mêmes sont en partie une rétrospective de l'histoire allemande, évoquant des événements tels que la montée du national-socialisme, la division du pays pendant la guerre froide, et d'autres sujets sensibles."
-        },
-        {
-          "type": "texte",
-          "texte": "Le clip vidéo de « Deutschland » a également été au centre des débats. Réalisé par Specter Berlin, il présente des représentations visuelles fortes et souvent choquantes, mettant en scène des événements historiques controversés. Certains ont salué la vidéo pour sa volonté d'aborder de front des sujets difficiles, tandis que d'autres l'ont critiquée pour son traitement potentiellement insensible de l'histoire allemande."
-        },
-        {
-          "type": "texte",
-          "texte": "Malgré la controverse, « Deutschland » a été un grand succès commercial et a reçu des critiques élogieuses pour sa composition musicale complexe, son interprétation passionnée et son traitement audacieux de thèmes difficiles. La chanson a suscité des discussions animées sur la responsabilité artistique, la mémoire collective et le rôle de la musique dans la réflexion sur l'histoire nationale."
-        },
-        {
-          "type": "texte",
-          "texte": "En fin de compte, « Deutschland » a rappelé au monde entier la capacité de la musique à susciter des débats profonds et à remettre en question les perceptions établies. Rammstein continue de repousser les limites avec leur art, et « Deutschland » demeure un exemple frappant de leur volonté de provoquer et de stimuler la réflexion à travers leur musique."
-        },
-        {
-          "type": "youtube",
-          "id": "NeQM1c-XCDc",
-          "titre": "Rammstein - Deutschland (Official Video)"
         }
       ]
     }

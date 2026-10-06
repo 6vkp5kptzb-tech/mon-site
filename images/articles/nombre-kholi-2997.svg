@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Des nombres de départ variés dont les trajectoires convergent toutes vers 2997">
+  <defs>
+    <radialGradient id="bg" cx="70%" cy="50%" r="80%">
+      <stop offset="0" stop-color="#132131"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.45"/>
+      <stop offset="0.6" stop-color="#22d3ee" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="trail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#67e8f9" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- Titre -->
+  <text x="80" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="52" fill="#e6edf3">Tous les chemins mènent à 2997</text>
+  <text x="80" y="160" font-family="ui-monospace, Consolas, monospace" font-size="28" fill="#9aa7b5">f(n) = 111 × (somme des chiffres de n)</text>
+
+  <!-- Halo de l'attracteur -->
+  <circle cx="1270" cy="560" r="300" fill="url(#halo)"/>
+
+  <!-- Trajectoires -->
+  <g fill="none" stroke="url(#trail)" stroke-width="4" stroke-linecap="round">
+    <path d="M250 270C600 270 800 420 1150 545"/>
+    <path d="M250 410C600 410 820 480 1150 552"/>
+    <path d="M250 560C600 560 850 560 1150 560"/>
+    <path d="M250 710C600 710 820 640 1150 568"/>
+    <path d="M250 850C600 850 800 700 1150 575"/>
+  </g>
+
+  <!-- Étapes intermédiaires -->
+  <g font-family="ui-monospace, Consolas, monospace" font-size="22" fill="#9aa7b5">
+    <g fill="#0b0f14" stroke="#243041" stroke-width="2">
+      <rect x="520" y="262" width="86" height="40" rx="20"/>
+      <rect x="800" y="345" width="86" height="40" rx="20"/>
+      <rect x="520" y="395" width="86" height="40" rx="20"/>
+      <rect x="820" y="448" width="86" height="40" rx="20"/>
+      <rect x="520" y="540" width="86" height="40" rx="20"/>
+      <rect x="820" y="540" width="86" height="40" rx="20"/>
+      <rect x="520" y="688" width="86" height="40" rx="20"/>
+      <rect x="820" y="632" width="86" height="40" rx="20"/>
+      <rect x="510" y="822" width="106" height="40" rx="20"/>
+      <rect x="800" y="738" width="86" height="40" rx="20"/>
+    </g>
+    <g text-anchor="middle">
+      <text x="563" y="290">333</text>
+      <text x="843" y="373">999</text>
+      <text x="563" y="423">666</text>
+      <text x="863" y="476">1998</text>
+      <text x="563" y="568">1332</text>
+      <text x="863" y="568">999</text>
+      <text x="563" y="716">2331</text>
+      <text x="863" y="660">999</text>
+      <text x="563" y="850">4662</text>
+      <text x="843" y="766">1998</text>
+    </g>
+  </g>
+
+  <!-- Nombres de départ -->
+  <g font-family="ui-monospace, Consolas, monospace" font-size="34" font-weight="700" fill="#e6edf3" text-anchor="end">
+    <text x="230" y="282">3</text>
+    <text x="230" y="422">123</text>
+    <text x="230" y="572">2028</text>
+    <text x="230" y="722">58431</text>
+    <text x="230" y="862">777777</text>
+  </g>
+
+  <!-- Attracteur 2997 -->
+  <circle cx="1270" cy="560" r="130" fill="#0b0f14" stroke="#22d3ee" stroke-width="4"/>
+  <circle cx="1270" cy="560" r="150" fill="none" stroke="#22d3ee" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="4 10"/>
+  <text x="1270" y="582" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="68" font-weight="700" fill="#67e8f9">2997</text>
+  <!-- boucle sur lui-même : f(2997) = 2997 -->
+  <path d="M1220 425C1200 330 1340 330 1320 425" fill="none" stroke="#67e8f9" stroke-width="3"/>
+  <path d="M1312 412L1320 428L1330 412" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="1270" y="320" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="24" fill="#9aa7b5">f(2997) = 2997</text>
+</svg>

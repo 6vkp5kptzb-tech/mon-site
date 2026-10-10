@@ -267,8 +267,8 @@
         var articles = (data.articles || []).slice().sort(function (a, b) {
           return (b.date || "").localeCompare(a.date || "");
         });
-        // Les articles marqués "passions": true ne s'affichent que sur la page Passions
-        var publies = articles.filter(function (a) { return !a.passions; });
+        // Les articles marqués "sport": true ne s'affichent que sur la page Sport
+        var publies = articles.filter(function (a) { return !a.sport; });
         if (carouselEl) initCarousel(carouselEl, publies.slice(0, 5));
         if (listEl) renderList(listEl, publies);
         if (articleEl) renderArticle(articleEl, articles);
@@ -470,8 +470,8 @@
     if (desc && a.extrait) desc.content = a.extrait;
 
     var backLink = el("a", "back-link");
-    backLink.href = "articles.html";
-    backLink.textContent = "← Toutes les publications";
+    backLink.href = a.sport ? "sport.html" : "articles.html";
+    backLink.textContent = a.sport ? "← Sport" : "← Toutes les publications";
 
     var head = el("header", "article-head");
     var title = el("h1");
@@ -526,6 +526,9 @@
           node.appendChild(cap);
         }
         return node;
+
+      case "diaporama":
+        return renderSlideshow(b.photos || []);
 
       case "youtube":
         node = el("div", "video-frame article-video" + (b.format === "vertical" ? " is-vertical" : ""));
@@ -614,6 +617,116 @@
         return node;
     }
     return null;
+  }
+
+  // ---------- Diaporama (bloc "diaporama" d'un article) ----------
+  // Une photo à la fois : flèches, points, clavier et glissement au doigt.
+  // Les photos introuvables sont retirées ; sans aucune photo, le diaporama disparaît.
+  function renderSlideshow(photos) {
+    var root = el("figure", "slideshow");
+    root.setAttribute("role", "region");
+    root.setAttribute("aria-roledescription", "diaporama");
+    root.setAttribute("aria-label", "Diaporama photo");
+    root.tabIndex = 0;
+
+    var track = el("ul", "slideshow-track");
+    var caption = el("figcaption", "slideshow-caption");
+    var controls = el("div", "carousel-controls");
+    var prev = slideshowBtn("Photo précédente", "m15 18-6-6 6-6");
+    var next = slideshowBtn("Photo suivante", "m9 18 6-6-6-6");
+    var dotsBox = el("div", "carousel-dots");
+    var counter = el("span", "slideshow-counter");
+    controls.append(prev, dotsBox, next, counter);
+    root.append(track, caption, controls);
+
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var items = [];
+    var current = 0;
+
+    photos.forEach(function (p) {
+      var li = el("li", "slideshow-slide");
+      li.setAttribute("role", "group");
+      li.setAttribute("aria-roledescription", "diapositive");
+      var img = document.createElement("img");
+      img.src = p.src;
+      img.alt = p.alt || "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      li.appendChild(img);
+      track.appendChild(li);
+
+      var dot = el("button", "carousel-dot");
+      dot.type = "button";
+      dotsBox.appendChild(dot);
+
+      var item = { li: li, dot: dot, photo: p };
+      items.push(item);
+      dot.addEventListener("click", function () { goTo(items.indexOf(item)); });
+      img.addEventListener("error", function () {
+        li.remove();
+        dot.remove();
+        items.splice(items.indexOf(item), 1);
+        refresh();
+      });
+    });
+
+    function goTo(i) {
+      if (!items.length) return;
+      current = (i + items.length) % items.length; // on boucle aux extrémités
+      track.scrollTo({ left: current * track.clientWidth, behavior: reduceMotion ? "auto" : "smooth" });
+      update();
+    }
+
+    function update() {
+      var n = items.length;
+      items.forEach(function (it, i) {
+        it.li.setAttribute("aria-label", (i + 1) + " sur " + n);
+        it.dot.setAttribute("aria-label", "Aller à la photo " + (i + 1));
+        it.dot.setAttribute("aria-current", i === current ? "true" : "false");
+      });
+      var p = n ? items[current].photo : null;
+      caption.textContent = p && p.legende ? p.legende : "";
+      caption.hidden = !caption.textContent;
+      counter.textContent = n ? (current + 1) + " / " + n : "";
+    }
+
+    function refresh() {
+      root.hidden = !items.length;
+      controls.hidden = items.length < 2;
+      current = Math.min(current, Math.max(0, items.length - 1));
+      update();
+    }
+
+    // Suit le glissement manuel (doigt, pavé tactile)
+    var scrollTimer;
+    track.addEventListener("scroll", function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function () {
+        var w = track.clientWidth;
+        if (!w || !items.length) return;
+        current = Math.min(items.length - 1, Math.round(track.scrollLeft / w));
+        update();
+      }, 80);
+    });
+
+    prev.addEventListener("click", function () { goTo(current - 1); });
+    next.addEventListener("click", function () { goTo(current + 1); });
+    root.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { e.preventDefault(); goTo(current - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); goTo(current + 1); }
+    });
+
+    refresh();
+    return root;
+  }
+
+  function slideshowBtn(label, path) {
+    var btn = el("button", "carousel-btn");
+    btn.type = "button";
+    btn.setAttribute("aria-label", label);
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + path + '"/></svg>';
+    return btn;
   }
 
   function pad(n) { return String(n).padStart(2, "0"); }

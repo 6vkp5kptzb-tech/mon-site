@@ -8,7 +8,7 @@ Site personnel statique : HTML, CSS et JavaScript vanilla. Pas de framework, pas
 index.html        Accueil
 musique.html      Mes compositions Suno (lecteur embarqué)
 videos.html       Vidéos YouTube coup de cœur
-passions.html     IA, course à pied, trail
+sport.html        Course à pied (route) et trail, articles sport
 articles.html     Liste de tous les articles
 article.html      Page d'un article (article.html?a=slug)
 contact.html      Contact (à compléter)
@@ -40,8 +40,8 @@ favicon.svg       Icône de l'onglet
 - **Articles** : édite `data/articles.json`, tableau `articles`. Un article =
   `{ "slug": "mon-article", "titre": "...", "date": "AAAA-MM-JJ", "categorie": "...",
   "image": "images/articles/mon-image.jpg", "imageAlt": "...", "extrait": "...", "contenu": [ ... ] }`.
-  Ajoute `"passions": true` pour qu'un article n'apparaisse ni dans la liste Articles ni dans le carrousel
-  (il reste lisible via son lien, par exemple depuis la page Passions).
+  Ajoute `"sport": true` pour qu'un article n'apparaisse ni dans la liste Articles ni dans le carrousel :
+  il est réservé à la page Sport (ajoute sa carte dans `sport.html`) et son lien retour pointe vers elle.
   Le `slug` (minuscules, tirets) donne l'adresse : `article.html?a=mon-article`. Les images vont dans `images/articles/`.
   `contenu` est une liste de blocs :
   `{ "type": "texte", "texte": "..." }`, `{ "type": "titre", "texte": "..." }`,
@@ -50,7 +50,9 @@ favicon.svg       Icône de l'onglet
   `{ "type": "code", "legende": "JavaScript", "code": "..." }` (retours à la ligne en `\n`),
   `{ "type": "liste", "elements": ["...", "..."] }`,
   `{ "type": "tableau", "entetes": ["...", "..."], "lignes": [["...", "..."], ["...", "..."]] }`,
-  `{ "type": "compte-a-rebours", "date": "AAAA-MM-JJ", "texte": "..." }`.
+  `{ "type": "compte-a-rebours", "date": "AAAA-MM-JJ", "texte": "..." }`,
+  `{ "type": "diaporama", "photos": [{ "src": "...", "alt": "...", "legende": "..." }, ...] }`
+  (une photo à la fois, flèches/points/clavier/glissement ; une photo introuvable est simplement ignorée).
   Les articles sont triés par date : les 5 plus récents défilent dans le carrousel de l'accueil,
   tous apparaissent sur `articles.html`.
 - **Couleurs** : variables `--accent`, `--bg`, etc. en haut de `css/style.css`.

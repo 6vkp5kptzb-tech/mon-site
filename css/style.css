@@ -302,7 +302,7 @@ p  { margin: 0 0 1em; }
 .card-wide { grid-column: 1 / -1; }
 .card .video-frame { border-radius: var(--radius-sm); overflow: hidden; }
 
-/* Bloc Strava (page Passions) */
+/* Bloc Strava (page Sport) */
 .strava {
   --strava: #fc4c02;
   position: relative;
@@ -423,7 +423,7 @@ p  { margin: 0 0 1em; }
   background: var(--accent);
 }
 
-/* ---------- Passions ---------- */
+/* ---------- Page Sport (sections) ---------- */
 
 .passion {
   display: grid;
@@ -819,6 +819,55 @@ button.track-link { font-family: inherit; background: none; cursor: pointer; }
   line-height: 1.6;
   color: var(--text);
   tab-size: 2;
+}
+
+/* Diaporama photo */
+.slideshow[hidden],
+.slideshow .carousel-controls[hidden] { display: none; }
+.slideshow:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: var(--radius); }
+
+.article-body .slideshow-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.slideshow-track::-webkit-scrollbar { display: none; }
+
+.article-body .slideshow-slide {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  scroll-snap-align: start;
+  aspect-ratio: 4 / 3;
+}
+.article-body .slideshow-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+}
+
+.article-body .slideshow-caption { min-height: 1.4em; }
+.slideshow .carousel-controls { margin-top: 0.75rem; }
+.slideshow-counter {
+  margin-left: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 /* Vidéo verticale (YouTube Shorts) */

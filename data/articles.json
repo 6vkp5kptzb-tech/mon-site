@@ -422,8 +422,155 @@
       ]
     },
     {
+      "slug": "marathon-pour-tous-2024",
+      "sport": true,
+      "titre": "Marathon pour tous 2024 : 42 km de nuit sur le parcours olympique",
+      "date": "2026-10-10",
+      "categorie": "Sport",
+      "image": "images/articles/marathon-pour-tous-2024.svg",
+      "imageAlt": "Profil de nuit du parcours : de l'Hôtel de Ville à Versailles, la côte des Gardes, puis l'arrivée aux Invalides",
+      "extrait": "Le 10 août 2024, j'ai couru de nuit le Marathon pour tous des Jeux de Paris, sur le parcours des athlètes olympiques. Récit, chiffres et photos.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le 10 août 2024, quelques heures après le marathon olympique masculin, j'ai pris le départ du Marathon pour tous. Pour la première fois dans l'histoire des Jeux, des coureurs amateurs couraient le même parcours que les athlètes, le même week-end. Départ à 22 h devant l'Hôtel de Ville, arrivée en pleine nuit aux Invalides."
+        },
+        {
+          "type": "titre",
+          "texte": "Un marathon olympique ouvert à tous"
+        },
+        {
+          "type": "texte",
+          "texte": "Le principe : ouvrir l'épreuve reine des Jeux au grand public. 20 024 places pour le marathon, autant pour le 10 km, le tout de nuit, entre la course des hommes le samedi matin et celle des femmes le dimanche matin. Les rues de Paris étaient fermées pour nous, avec du public jusque tard dans la nuit."
+        },
+        {
+          "type": "titre",
+          "texte": "Le parcours"
+        },
+        {
+          "type": "texte",
+          "texte": "Le tracé rend hommage à la marche des femmes sur Versailles d'octobre 1789. C'est l'un des marathons olympiques les plus exigeants : on quitte Paris pour monter vers Versailles, puis on revient par les collines de l'Ouest parisien."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Départ de l'Hôtel de Ville, puis les quais de Seine, le Louvre et l'Opéra.",
+            "Sortie de Paris vers Sèvres, puis la longue montée de Ville-d'Avray.",
+            "Demi-tour devant le château de Versailles, vers le 22e kilomètre.",
+            "Au 29e kilomètre, la côte des Gardes : un demi-kilomètre très raide, juste avant une descente vertigineuse.",
+            "Retour à plat le long de la Seine, passage près de la tour Eiffel et arrivée sur l'esplanade des Invalides."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ma course"
+        },
+        {
+          "type": "texte",
+          "texte": "Mon sas est parti à 22 h. La première partie, à plat dans Paris illuminé, donne envie d'accélérer : il faut se retenir, car la vraie course commence après Sèvres. La montée vers Versailles est longue et régulière. Passé le château, on souffle un peu dans la descente vers Chaville."
+        },
+        {
+          "type": "texte",
+          "texte": "Puis arrive la côte des Gardes. 536 mètres, près de 53 mètres de dénivelé, environ 10 % de pente moyenne : je l'ai montée en 7 minutes, à une cadence qui en dit long (56 pas par minute contre 86 en moyenne sur la course). Ensuite, c'est 10 km quasi plats jusqu'aux Invalides, avec les jambes déjà bien entamées. J'ai franchi la ligne vers 2 h 40 du matin."
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Indicateur",
+            "Valeur"
+          ],
+          "lignes": [
+            [
+              "Temps sur 42,195 km",
+              "4 h 37 min 34 s"
+            ],
+            [
+              "Premier semi-marathon",
+              "2 h 12 min 29 s"
+            ],
+            [
+              "Second semi-marathon",
+              "2 h 25 min 05 s"
+            ],
+            [
+              "Allure moyenne",
+              "6 min 35 s / km"
+            ],
+            [
+              "Dénivelé positif",
+              "323 m"
+            ],
+            [
+              "Fréquence cardiaque",
+              "157 bpm en moyenne, 171 au maximum"
+            ],
+            [
+              "Montée de la côte des Gardes",
+              "7 min 01 s pour 536 m"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Chiffres issus de ma montre et de Strava. Le second semi-marathon est plus lent de 13 minutes : c'est le prix des côtes de Ville-d'Avray et des Gardes."
+        },
+        {
+          "type": "titre",
+          "texte": "En images"
+        },
+        {
+          "type": "diaporama",
+          "photos": [
+            {
+              "src": "images/articles/marathon-pour-tous-2024/photo-01.jpg",
+              "alt": "Le peloton de nuit place Vendôme, sous les réverbères, avec moi au milieu des coureurs (dossard 17290)",
+              "legende": "Place Vendôme, au cœur du peloton, dans les premiers kilomètres."
+            },
+            {
+              "src": "images/articles/marathon-pour-tous-2024/photo-02.jpg",
+              "alt": "Je m'essuie le front en courant dans un tunnel éclairé de lumières orangées",
+              "legende": "Le tunnel illuminé : la chaleur de la nuit se fait sentir."
+            },
+            {
+              "src": "images/articles/marathon-pour-tous-2024/photo-03.jpg",
+              "alt": "Je cours, concentré, sur un passage piéton en pleine nuit, au milieu d'autres coureurs",
+              "legende": "Concentré, une foulée après l'autre."
+            },
+            {
+              "src": "images/articles/marathon-pour-tous-2024/photo-04.jpg",
+              "alt": "Je passe devant la zone de ravitaillement, éclairée par de grands ballons lumineux",
+              "legende": "Passage au ravitaillement."
+            },
+            {
+              "src": "images/articles/marathon-pour-tous-2024/photo-05.jpg",
+              "alt": "Je cours le long des barrières aux couleurs de Paris 2024, à côté d'un grand logo des Jeux",
+              "legende": "Sous les anneaux olympiques, avec des coureurs venus de partout."
+            },
+            {
+              "src": "images/articles/marathon-pour-tous-2024/photo-06.jpg",
+              "alt": "Je passe sous une arche gonflable « Go Go Go », encouragé par le public massé derrière les barrières",
+              "legende": "Sous l'arche « Go Go Go », le public encourage jusqu'en pleine nuit."
+            },
+            {
+              "src": "images/articles/marathon-pour-tous-2024/photo-07.jpg",
+              "alt": "Les derniers mètres sur le tapis bleu de l'arrivée aux Invalides, devant les tribunes",
+              "legende": "Les derniers mètres sur le tapis bleu des Invalides."
+            }
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que je retiens"
+        },
+        {
+          "type": "texte",
+          "texte": "Courir la nuit, sur le parcours des Jeux, dans des rues fermées pour nous : c'est une expérience qui ne se reproduira sans doute pas. Le parcours est dur, mais la côte des Gardes et l'arrivée aux Invalides restent les meilleurs souvenirs de mes années de course."
+        }
+      ]
+    },
+    {
       "slug": "marathon-de-paris-2024",
-      "passions": true,
+      "sport": true,
       "titre": "Marathon de Paris 2024",
       "date": "2024-04-21",
       "categorie": "Sport",
@@ -562,7 +709,7 @@
     },
     {
       "slug": "mon-annee-2023",
-      "passions": true,
+      "sport": true,
       "titre": "Mon année 2023",
       "date": "2024-01-01",
       "categorie": "Sport",

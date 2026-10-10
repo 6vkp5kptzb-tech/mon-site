@@ -1,10 +1,3 @@
 {
-  "videos": [
-    {
-      "titre": "Ma vidéo trail",
-      "chaine": "Trail",
-      "lien": "https://www.youtube.com/watch?v=dAmjIdGs1l8",
-      "commentaire": "Exemple : remplace ce texte par ce qui t'a plu dans la vidéo."
-    }
-  ]
+  "videos": []
 }

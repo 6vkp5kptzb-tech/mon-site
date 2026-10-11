@@ -425,7 +425,7 @@
       "slug": "marathon-pour-tous-2024",
       "sport": true,
       "titre": "Marathon pour tous 2024 : 42 km de nuit sur le parcours olympique",
-      "date": "2026-10-10",
+      "date": "2024-08-10",
       "categorie": "Sport",
       "image": "images/articles/marathon-pour-tous-2024.svg",
       "imageAlt": "Profil de nuit du parcours : de l'Hôtel de Ville à Versailles, la côte des Gardes, puis l'arrivée aux Invalides",
@@ -572,7 +572,7 @@
       "slug": "marathon-de-paris-2024",
       "sport": true,
       "titre": "Marathon de Paris 2024 : 42 km sous la pluie, des Champs-Élysées à l'avenue Foch",
-      "date": "2026-10-11",
+      "date": "2024-04-07",
       "categorie": "Sport",
       "image": "images/articles/marathon-de-paris-2024.svg",
       "imageAlt": "Profil d'altitude du parcours : départ des Champs-Élysées, bois de Vincennes, tour Eiffel, arrivée avenue Foch",
@@ -707,6 +707,146 @@
         {
           "type": "texte",
           "texte": "Un marathon régulier, couru avec la tête, malgré la pluie. Paris reste une course à part : traverser la ville entière à pied, des Champs-Élysées au bois de Boulogne, avec du public tout le long, c'est un souvenir qui reste."
+        }
+      ]
+    },
+    {
+      "slug": "10-km-mont-blanc-2023",
+      "sport": true,
+      "titre": "10 km du Marathon du Mont-Blanc 2023 : une course de montagne au pied des glaciers",
+      "date": "2023-06-24",
+      "categorie": "Sport",
+      "image": "images/articles/10-km-mont-blanc-2023.svg",
+      "imageAlt": "Profil d'altitude du parcours : départ de Chamonix à 1 040 m, point haut vers 1 260 m au 6e kilomètre, puis descente et retour à plat jusqu'à l'arrivée",
+      "extrait": "Le 24 juin 2023, j'ai couru les 10 km du Marathon du Mont-Blanc à Chamonix : deux montées en forêt, une descente en file indienne et un retour à fond. Récit, chiffres et photos.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le 24 juin 2023, j'ai pris le départ des 10 km du Marathon du Mont-Blanc, à Chamonix. Fin juin, toute la vallée vit au rythme de ce week-end de courses, et le 10 km en est la porte d'entrée : une vraie course de montagne, courte mais pas facile, avec le massif du Mont-Blanc en toile de fond."
+        },
+        {
+          "type": "titre",
+          "texte": "Le parcours"
+        },
+        {
+          "type": "texte",
+          "texte": "Pas de route plate ici : le tracé part du centre de Chamonix, à 1 040 m d'altitude, et grimpe dans les sentiers et les chemins forestiers au-dessus de la vallée avant de redescendre. Plus de 300 m de dénivelé positif sur une dizaine de kilomètres."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Départ dans Chamonix, puis deux kilomètres en légère montée.",
+            "Une première vraie côte vers le 3e kilomètre : 70 m de dénivelé sur un kilomètre.",
+            "Un passage vallonné par la promenade des Crèmeries.",
+            "La grosse montée entre le 5e et le 6e kilomètre : 160 m de dénivelé, près de 10 % de pente moyenne, jusqu'au point haut vers 1 260 m.",
+            "Une descente raide sur un sentier étroit, puis le retour à plat par la piste de ski de fond jusqu'à l'arrivée."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ma course"
+        },
+        {
+          "type": "texte",
+          "texte": "Le début a été rapide : 5 min 23 s puis 5 min 25 s pour les deux premiers kilomètres, le cœur déjà au-dessus de 175 battements par minute. La première côte a calmé les ardeurs (7 min 13 s au kilomètre), puis j'ai retrouvé un rythme autour de 5 min 50 s sur la partie vallonnée."
+        },
+        {
+          "type": "texte",
+          "texte": "Le 6e kilomètre a été le plus long de la course : 12 min 54 s. Dans la grande montée, on marche plus qu'on ne court, avec une cadence qui tombe à 62 pas par minute. Puis vient la descente : sur un sentier aussi étroit, le peloton avance en file indienne. La montre compte près de 12 minutes à l'arrêt ou presque sur l'ensemble de la course, essentiellement autour du sommet et dans cette descente."
+        },
+        {
+          "type": "texte",
+          "texte": "Une fois en bas, tout s'est débloqué. Les derniers kilomètres, à plat ou en léger faux plat descendant, sont partis vite : 4 min 50 s pour le 8e kilomètre, le plus rapide de la course, puis un retour en accélérant jusqu'à l'arrivée, le cœur à 170."
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Indicateur",
+            "Valeur"
+          ],
+          "lignes": [
+            [
+              "Temps à la montre",
+              "1 h 10 min 57 s"
+            ],
+            [
+              "Temps en mouvement",
+              "59 min 07 s"
+            ],
+            [
+              "Distance mesurée au GPS",
+              "9,6 km"
+            ],
+            [
+              "Dénivelé positif",
+              "326 m"
+            ],
+            [
+              "Point haut",
+              "environ 1 260 m"
+            ],
+            [
+              "Kilomètre le plus rapide",
+              "4 min 50 s (8e km)"
+            ],
+            [
+              "Kilomètre le plus lent",
+              "12 min 54 s (6e km, la grande montée)"
+            ],
+            [
+              "Fréquence cardiaque",
+              "160 bpm en moyenne, 179 au maximum"
+            ],
+            [
+              "Cadence moyenne",
+              "83 pas par minute"
+            ],
+            [
+              "Effort ressenti",
+              "9 sur 10"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Chiffres issus de ma montre et de Strava. Sous les arbres et entre les montagnes, le GPS perd un peu de distance : il ne mesure que 9,6 km."
+        },
+        {
+          "type": "titre",
+          "texte": "En images"
+        },
+        {
+          "type": "diaporama",
+          "photos": [
+            {
+              "src": "images/articles/10-km-mont-blanc-2023/photo-01.jpg",
+              "alt": "Mon dossard rouge et blanc « 10km Mont-Blanc 2023 », numéro 7821, sas 4, avec les logos Chamonix-Mont-Blanc, Salomon et Polar",
+              "legende": "Le dossard 7821, sas 4."
+            },
+            {
+              "src": "images/articles/10-km-mont-blanc-2023/photo-02.jpg",
+              "alt": "Je cours sur un large chemin de terre en forêt, casquette bleue et gilet d'hydratation, d'autres coureurs derrière moi à l'ombre des sapins",
+              "legende": "Vers le 2e kilomètre, sur les chemins forestiers."
+            },
+            {
+              "src": "images/articles/10-km-mont-blanc-2023/photo-03.jpg",
+              "alt": "Je cours sur un chemin de gravier au soleil, une file de coureurs derrière moi, la rivière et les sapins en arrière-plan",
+              "legende": "Juste après la descente, le long de la rivière : le peloton s'étire de nouveau."
+            },
+            {
+              "src": "images/articles/10-km-mont-blanc-2023/photo-04.jpg",
+              "alt": "Je cours sur l'herbe sèche devant le public massé derrière moi et de grands drapeaux Salomon",
+              "legende": "Dans les derniers kilomètres, devant le public et les drapeaux des partenaires."
+            }
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que je retiens"
+        },
+        {
+          "type": "texte",
+          "texte": "Une course où le chrono compte moins que le décor. Le 10 km du Mont-Blanc demande d'accepter de marcher dans les montées et de patienter dans la descente, pour mieux lâcher les chevaux sur la fin. Et la semaine qui a suivi, je suis resté à Chamonix pour enchaîner les séances de piste et les montées vers le téléphérique : une course qui donne envie de revenir en montagne."
         }
       ]
     },

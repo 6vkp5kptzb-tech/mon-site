@@ -571,22 +571,142 @@
     {
       "slug": "marathon-de-paris-2024",
       "sport": true,
-      "titre": "Marathon de Paris 2024",
-      "date": "2024-04-21",
+      "titre": "Marathon de Paris 2024 : 42 km sous la pluie, des Champs-Élysées à l'avenue Foch",
+      "date": "2026-10-11",
       "categorie": "Sport",
-      "image": "images/articles/marathon-paris-2024.jpg",
-      "imageAlt": "Affiche du Marathon de Paris, 7 avril 2024",
-      "extrait": "Le 7 avril 2024, j'ai couru le Marathon de Paris. Retour en images.",
+      "image": "images/articles/marathon-de-paris-2024.svg",
+      "imageAlt": "Profil d'altitude du parcours : départ des Champs-Élysées, bois de Vincennes, tour Eiffel, arrivée avenue Foch",
+      "extrait": "Le 7 avril 2024, j'ai couru le Schneider Electric Marathon de Paris, sous un ciel gris et des averses. Récit, chiffres et photos.",
       "contenu": [
         {
-          "type": "image",
-          "src": "images/articles/marathon-paris-2024-1.jpg",
-          "alt": "Photo de course au Marathon de Paris 2024"
+          "type": "texte",
+          "texte": "Le 7 avril 2024, j'ai pris le départ du Schneider Electric Marathon de Paris. Plus de 50 000 coureurs, les Champs-Élysées fermés à la circulation, un ciel gris et des averses : quatre mois avant les Jeux, Paris recevait le plus grand marathon de son histoire."
         },
         {
-          "type": "image",
-          "src": "images/articles/marathon-paris-2024-2.jpg",
-          "alt": "Photo de course au Marathon de Paris 2024"
+          "type": "titre",
+          "texte": "Le parcours"
+        },
+        {
+          "type": "texte",
+          "texte": "Le tracé fait le tour de Paris par l'est, puis revient par l'ouest. Il est réputé roulant, mais quelques montées et les tunnels des quais cassent le rythme dans la seconde moitié."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Départ en haut des Champs-Élysées, descente vers la Concorde puis la rue de Rivoli.",
+            "Bastille, puis le bois de Vincennes et sa boucle autour du château, point haut de la première moitié.",
+            "Retour par Bercy et les quais de Seine, avec la succession de tunnels.",
+            "Passage au pied de la tour Eiffel vers le 30e kilomètre.",
+            "Les derniers kilomètres dans le bois de Boulogne, en faux plat montant, jusqu'à l'arrivée avenue Foch."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ma course"
+        },
+        {
+          "type": "texte",
+          "texte": "Parti dans un sas de fin de matinée, j'ai pris un rythme régulier dès les premiers kilomètres, autour de 5 min 50 s au kilomètre. Les 10 premiers kilomètres sont passés en 58 min 49 s. La montée vers Vincennes se sent un peu, mais la descente vers Bercy permet de récupérer."
+        },
+        {
+          "type": "texte",
+          "texte": "Mon cœur est resté remarquablement stable : 159 battements par minute en moyenne, jamais au-dessus de 166. La seconde moitié a été plus lente, entre les ravitaillements, les tunnels des quais et le bois de Boulogne où chaque petite bosse paraît plus longue. Les kilomètres les plus lents tombent tous sur ces passages, avec une cadence qui baisse nettement."
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Indicateur",
+            "Valeur"
+          ],
+          "lignes": [
+            [
+              "Temps à la montre",
+              "4 h 25 min 04 s"
+            ],
+            [
+              "Distance mesurée au GPS",
+              "43,0 km"
+            ],
+            [
+              "Meilleur 42,195 km enregistré",
+              "4 h 20 min 17 s"
+            ],
+            [
+              "Premier semi-marathon",
+              "2 h 04 min 21 s"
+            ],
+            [
+              "Second semi-marathon",
+              "2 h 16 min 04 s"
+            ],
+            [
+              "Allure moyenne",
+              "6 min 10 s / km"
+            ],
+            [
+              "Dénivelé positif",
+              "208 m"
+            ],
+            [
+              "Fréquence cardiaque",
+              "159 bpm en moyenne, 166 au maximum"
+            ],
+            [
+              "Cadence moyenne",
+              "88 pas par minute"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Chiffres issus de ma montre et de Strava. Le GPS mesure 43 km : comme souvent en ville, les tunnels et les virages ajoutent quelques centaines de mètres."
+        },
+        {
+          "type": "titre",
+          "texte": "En images"
+        },
+        {
+          "type": "diaporama",
+          "photos": [
+            {
+              "src": "images/articles/marathon-de-paris-2024/photo-01.jpg?v=2",
+              "alt": "Je cours sur les pavés devant une façade du Louvre, au milieu d'autres coureurs et d'une spectatrice qui traverse en filmant (dossard 65165)",
+              "legende": "Devant le Louvre, dans les premiers kilomètres."
+            },
+            {
+              "src": "images/articles/marathon-de-paris-2024/photo-02.jpg?v=2",
+              "alt": "Je cours place de la Bastille, la colonne de Juillet et son génie doré derrière moi, sous un ciel gris",
+              "legende": "Place de la Bastille, sous la colonne de Juillet."
+            },
+            {
+              "src": "images/articles/marathon-de-paris-2024/photo-03.jpg?v=2",
+              "alt": "Je cours sur les quais de Seine, le musée d'Orsay en arrière-plan, au milieu de coureurs souriants qui font des signes",
+              "legende": "Sur les quais, face au musée d'Orsay : l'ambiance est à la fête autour de moi."
+            },
+            {
+              "src": "images/articles/marathon-de-paris-2024/photo-04.jpg?v=2",
+              "alt": "Je cours au premier plan d'un peloton dense, avec le panneau du kilomètre 31 en haut à gauche",
+              "legende": "Kilomètre 31 : le peloton est encore compact, les visages se ferment."
+            },
+            {
+              "src": "images/articles/marathon-de-paris-2024/photo-05.jpg?v=2",
+              "alt": "Je cours le long des barrières, entre les immeubles haussmanniens, devant un public abrité sous des parapluies",
+              "legende": "Les derniers kilomètres, sous les parapluies du public."
+            },
+            {
+              "src": "images/articles/marathon-de-paris-2024/photo-06.jpg?v=2",
+              "alt": "Je cours sur le tapis vert de l'arrivée, devant les panneaux Schneider Electric et le public massé derrière les barrières",
+              "legende": "Les derniers mètres sur le tapis vert de l'avenue Foch."
+            }
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que je retiens"
+        },
+        {
+          "type": "texte",
+          "texte": "Un marathon régulier, couru avec la tête, malgré la pluie. Paris reste une course à part : traverser la ville entière à pied, des Champs-Élysées au bois de Boulogne, avec du public tout le long, c'est un souvenir qui reste."
         }
       ]
     },

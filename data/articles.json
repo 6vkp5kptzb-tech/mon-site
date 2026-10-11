@@ -851,6 +851,150 @@
       ]
     },
     {
+      "slug": "semi-marathon-de-paris-2022",
+      "sport": true,
+      "titre": "Semi-marathon de Paris 2022 : 21 km entre la Seine et le bois de Vincennes",
+      "date": "2022-03-06",
+      "categorie": "Sport",
+      "image": "images/articles/semi-marathon-de-paris-2022.svg",
+      "imageAlt": "Profil d'altitude du parcours : départ au pont de Sully, point haut vers 73 m dans le bois de Vincennes au 8e kilomètre, château de Vincennes, puis retour vers la Seine et arrivée près de la Bastille",
+      "extrait": "Le 6 mars 2022, j'ai couru l'Harmonie Mutuelle Semi de Paris : les quais de Seine, une grande boucle dans le bois de Vincennes et un retour plus rapide que l'aller. Récit, chiffres et photos.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le 6 mars 2022, j'ai pris le départ de l'Harmonie Mutuelle Semi de Paris. Un semi-marathon, c'est 21,1 km : assez long pour devoir gérer son effort, assez court pour se permettre d'accélérer sur la fin. Et à Paris, c'est aussi une belle façon de traverser l'est de la ville, des quais de Seine jusqu'au bois de Vincennes."
+        },
+        {
+          "type": "titre",
+          "texte": "Le parcours"
+        },
+        {
+          "type": "texte",
+          "texte": "Un parcours presque plat, entre 22 et 73 m d'altitude, avec une longue montée douce à l'aller vers le bois de Vincennes et une descente tout aussi douce au retour."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Départ près du pont de Sully, puis les quais de la rive gauche jusqu'à la Bibliothèque François-Mitterrand.",
+            "Traversée de la Seine par le pont de Tolbiac vers le 3e kilomètre, puis Bercy et la porte de Charenton.",
+            "Montée vers le bois de Vincennes : le point haut du parcours, vers 73 m, arrive au 8e kilomètre, au-dessus de Charenton.",
+            "Une grande boucle dans le bois, du côté de l'hippodrome puis vers le parc floral et le château de Vincennes, vers le 12e kilomètre.",
+            "Retour par le lac Daumesnil et l'avenue Daumesnil, la descente vers Bercy, puis les quais de la rive droite jusqu'à l'Hôtel de Ville et l'arrivée près de la Bastille."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ma course"
+        },
+        {
+          "type": "texte",
+          "texte": "Le premier kilomètre a été le plus lent de la course : 6 min 07 s, le temps de sortir de la foule du départ. Ensuite j'ai trouvé mon rythme, autour de 5 min 20 s au kilomètre dans la longue montée vers le bois de Vincennes, avec un cœur qui grimpait doucement de 140 à 170 battements par minute."
+        },
+        {
+          "type": "texte",
+          "texte": "Dans le bois, l'allure s'est stabilisée vers 5 min 17 s. Puis, passé le 10e kilomètre, j'ai accéléré : tous les kilomètres suivants sous 5 min 15 s, et le plus rapide au 15e, 4 min 56 s, dans la descente de l'avenue Daumesnil."
+        },
+        {
+          "type": "texte",
+          "texte": "Les derniers kilomètres le long des quais ont été les plus durs : le cœur est passé au-dessus de 178, jusqu'à 182 dans la dernière ligne droite. Mais l'allure a tenu autour de 5 min 10 s jusqu'à l'arrivée. Au final, 53 min 59 s pour les 10 premiers kilomètres et 50 min 59 s pour les 10 suivants : trois minutes de mieux sur la deuxième moitié."
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Indicateur",
+            "Valeur"
+          ],
+          "lignes": [
+            [
+              "Temps à la montre",
+              "1 h 52 min 21 s"
+            ],
+            [
+              "Distance mesurée au GPS",
+              "21,4 km"
+            ],
+            [
+              "Allure moyenne",
+              "5 min 20 s au kilomètre (sur 21,1 km)"
+            ],
+            [
+              "10 premiers kilomètres",
+              "53 min 59 s"
+            ],
+            [
+              "10 kilomètres suivants",
+              "50 min 59 s"
+            ],
+            [
+              "Kilomètre le plus rapide",
+              "4 min 56 s (15e km)"
+            ],
+            [
+              "Kilomètre le plus lent",
+              "6 min 07 s (1er km, dans la foule du départ)"
+            ],
+            [
+              "Point haut",
+              "environ 73 m (bois de Vincennes, 8e km)"
+            ],
+            [
+              "Fréquence cardiaque",
+              "170 bpm en moyenne, 182 au maximum"
+            ],
+            [
+              "Cadence moyenne",
+              "89 pas par minute"
+            ],
+            [
+              "Calories",
+              "1 084 kcal"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Chiffres issus de ma montre et de Strava. Le GPS mesure 21,4 km au lieu de 21,1 : les trajectoires dans les virages et le passage dans le tunnel des quais, où la montre perd le signal, ajoutent quelques centaines de mètres."
+        },
+        {
+          "type": "titre",
+          "texte": "En images"
+        },
+        {
+          "type": "diaporama",
+          "photos": [
+            {
+              "src": "images/articles/semi-marathon-de-paris-2022/photo-01.jpg",
+              "alt": "Vue d'en haut d'un groupe de coureurs au soleil sur une large avenue, moi au centre droit en t-shirt orange « 21.097 KM », dossard 51018",
+              "legende": "Vers le 3e kilomètre, sous le soleil, au milieu du peloton."
+            },
+            {
+              "src": "images/articles/semi-marathon-de-paris-2022/photo-02.jpg",
+              "alt": "Vue plongeante : je cours en t-shirt orange, dossard 51018, sur le bitume strié par l'ombre des arbres",
+              "legende": "Même endroit, photographié d'en haut : le rythme est trouvé."
+            },
+            {
+              "src": "images/articles/semi-marathon-de-paris-2022/photo-03.jpg",
+              "alt": "Je cours en t-shirt orange, dossard 51018, entre d'autres coureurs, devant des immeubles haussmanniens",
+              "legende": "Vers le 20e kilomètre, de retour dans le centre de Paris."
+            },
+            {
+              "src": "images/articles/semi-marathon-de-paris-2022/photo-04.jpg",
+              "alt": "Je cours dans une rue bordée d'immeubles parisiens, un panneau « 500 M » en arrière-plan, un long cortège de coureurs derrière",
+              "legende": "Le panneau des 500 derniers mètres : plus que quelques foulées."
+            }
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que je retiens"
+        },
+        {
+          "type": "texte",
+          "texte": "Un semi bien géré : partir prudemment, s'installer dans le bois de Vincennes, puis accélérer sur le retour vers la Seine. Une semaine plus tôt, j'avais fait une dernière séance à allure semi ; le jour J, c'est la deuxième moitié qui a été la plus rapide. Et deux jours après, je reprenais déjà les footings du matin."
+        }
+      ]
+    },
+    {
       "slug": "les-vacances-en-javascript",
       "titre": "J − combien ? Un compte à rebours des vacances en 30 lignes de JavaScript",
       "date": "2026-10-01",

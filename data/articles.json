@@ -569,6 +569,113 @@
       ]
     },
     {
+      "slug": "sortie-gopro-tilly-2024",
+      "sport": true,
+      "titre": "Sortie du 20 juillet 2024 : 10 km à Tilly, filmés à la GoPro",
+      "date": "2024-07-20",
+      "categorie": "Sport",
+      "image": "images/articles/sortie-gopro-tilly-2024.svg",
+      "imageAlt": "Profil d'altitude de la sortie : point haut dès le premier kilomètre, longue descente, point bas vers le 10e kilomètre et remontée finale",
+      "extrait": "Le 20 juillet 2024, au lendemain d'un gros apéro, j'ai couru 10,8 km autour de Tilly avec une GoPro. La vidéo, le parcours et les chiffres.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le 20 juillet 2024, à 7 h 42, je suis parti courir autour de Tilly, dans l'Indre. Pas une course, pas de dossard : une sortie d'entraînement, au lendemain d'un gros, gros apéro et d'une petite, petite nuit. Cette fois, j'avais emporté une GoPro pour filmer le parcours."
+        },
+        {
+          "type": "titre",
+          "texte": "La vidéo"
+        },
+        {
+          "type": "youtube",
+          "id": "yL2rtbsrERM",
+          "titre": "Sortie GoPro du 20 juillet 2024 à Tilly"
+        },
+        {
+          "type": "titre",
+          "texte": "Le parcours"
+        },
+        {
+          "type": "texte",
+          "texte": "Une boucle de 10,8 km au départ du village, dans la campagne de l'Indre. Le profil est vallonné sans être difficile : 80 mètres de dénivelé positif, entre 163 et 211 mètres d'altitude."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Départ de Tilly et montée d'entrée : le point haut, à 211 m, arrive dès le premier kilomètre.",
+            "Une bosse vers le 3e kilomètre, puis une longue descente jusqu'au 4e.",
+            "Un faux plat en fond de vallée, avant une remontée régulière vers le 8e kilomètre.",
+            "Le point bas, à 163 m, juste avant le 10e kilomètre, puis une dernière côte pour rentrer au village."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ma sortie"
+        },
+        {
+          "type": "texte",
+          "texte": "Avec une nuit aussi courte, j'ai pris le temps de me mettre en route : un premier kilomètre en 6 minutes, en montée, le cœur encore à 127 bpm de moyenne. Ensuite, les jambes ont répondu. Le 4e kilomètre, en descente, a été le plus rapide (5 min 12 s), et j'ai tenu entre 5 min 17 s et 5 min 31 s jusqu'au bout."
+        },
+        {
+          "type": "texte",
+          "texte": "La seconde moitié a même été plus rapide que la première : 27 min 09 s pour les kilomètres 6 à 10, contre 27 min 39 s pour les cinq premiers. Le prix à payer se lit sur le cardio : il est monté progressivement de 127 à 161 bpm de moyenne au fil des kilomètres, jusqu'à 167 dans la côte finale."
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Indicateur",
+            "Valeur"
+          ],
+          "lignes": [
+            [
+              "Distance",
+              "10,78 km"
+            ],
+            [
+              "Temps",
+              "59 min 49 s"
+            ],
+            [
+              "Allure moyenne",
+              "5 min 32 s / km"
+            ],
+            [
+              "Kilomètre le plus rapide",
+              "5 min 12 s (le 4e)"
+            ],
+            [
+              "Meilleur 5 km",
+              "26 min 55 s"
+            ],
+            [
+              "Meilleur 10 km",
+              "54 min 51 s"
+            ],
+            [
+              "Dénivelé positif",
+              "80 m"
+            ],
+            [
+              "Fréquence cardiaque",
+              "150 bpm en moyenne, 167 au maximum"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Chiffres issus de ma montre et de Strava."
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que je retiens"
+        },
+        {
+          "type": "texte",
+          "texte": "Une sortie qui aurait pu être pénible et qui s'est finalement bien passée, avec une seconde moitié plus rapide que la première. Et maintenant qu'elle est filmée, je peux la revivre et la partager."
+        }
+      ]
+    },
+    {
       "slug": "marathon-de-paris-2024",
       "sport": true,
       "titre": "Marathon de Paris 2024 : 42 km sous la pluie, des Champs-Élysées à l'avenue Foch",

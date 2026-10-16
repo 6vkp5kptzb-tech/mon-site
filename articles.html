@@ -8,8 +8,8 @@
   <meta name="description" content="Tous mes articles : musique, sport, IA et petits projets.">
   <meta name="theme-color" content="#0b0f14">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css?v=5">
-  <script src="js/main.js?v=5" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=6">
+  <script src="js/main.js?v=6" defer></script>
 </head>
 
 <body>
@@ -18,6 +18,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html"><span class="brand-dot" aria-hidden="true"></span>Yannick</a>
+      <a class="btn btn-ghost header-contact" href="contact.html">Contact</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
         aria-label="Ouvrir le menu">
         <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -46,6 +47,7 @@
 
     <section class="section">
       <div class="container">
+        <div class="filters" id="articles-filters" role="group" aria-label="Filtrer par catégorie" hidden></div>
         <div class="posts" id="articles-list" aria-live="polite"></div>
       </div>
     </section>

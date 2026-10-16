@@ -54,7 +54,8 @@ favicon.svg       Icône de l'onglet
   `{ "type": "diaporama", "photos": [{ "src": "...", "alt": "...", "legende": "..." }, ...] }`
   (une photo à la fois, flèches/points/clavier/glissement ; une photo introuvable est simplement ignorée).
   Les articles sont triés par date : les 5 plus récents défilent dans le carrousel de l'accueil,
-  tous apparaissent sur `articles.html`.
+  tous apparaissent sur `articles.html`, avec un filtre par catégorie (créé tout seul à partir des `categorie`,
+  lien direct possible : `articles.html?cat=Sciences`). Les 3 morceaux les plus récents s'affichent aussi sur l'accueil.
 - **Couleurs** : variables `--accent`, `--bg`, etc. en haut de `css/style.css`.
 - **Cache** : après une modification de `css/style.css` ou `js/main.js`, augmente le numéro
   `?v=...` dans les balises `<link>` et `<script>` de toutes les pages, sinon les navigateurs

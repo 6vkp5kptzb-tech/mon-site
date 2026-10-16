@@ -9,8 +9,8 @@
     content="Site perso : éducateur, passionné d'IA, de data et de trail. Mes morceaux créés avec Suno, mes projets et mes sorties.">
   <meta name="theme-color" content="#0b0f14">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css?v=5">
-  <script src="js/main.js?v=5" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=6">
+  <script src="js/main.js?v=6" defer></script>
 </head>
 
 <body>
@@ -19,6 +19,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html"><span class="brand-dot" aria-hidden="true"></span>Yannick</a>
+      <a class="btn btn-ghost header-contact" href="contact.html">Contact</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
         aria-label="Ouvrir le menu">
         <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -54,61 +55,20 @@
           <li class="tag">Musique Suno</li>
         </ul>
         <div class="actions">
-          <a class="btn btn-primary" href="musique.html">Écouter mes morceaux</a>
+          <a class="btn btn-primary" href="articles.html">Lire mes articles</a>
+          <a class="btn btn-ghost" href="musique.html">Écouter mes morceaux</a>
           <a class="btn btn-ghost" href="sport.html">Voir mes courses</a>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="posts-title">
-      <div class="container">
-        <div class="section-head section-head-row">
-          <div>
-            <h2 id="posts-title">Dernières publications</h2>
-            <p>Mes 5 derniers articles.</p>
-          </div>
-          <a class="btn btn-ghost" href="articles.html">Toutes les publications</a>
-        </div>
-
-        <div class="carousel" id="carousel" role="region" aria-roledescription="carrousel"
-          aria-label="Dernières publications" hidden>
-          <ul class="carousel-track" id="carousel-track"></ul>
-          <div class="carousel-controls">
-            <button class="carousel-btn" type="button" data-dir="-1" aria-label="Article précédent">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="m15 18-6-6 6-6" />
-              </svg>
-            </button>
-            <div class="carousel-dots" id="carousel-dots"></div>
-            <button class="carousel-btn" type="button" data-dir="1" aria-label="Article suivant">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </button>
-            <button class="carousel-btn carousel-pause" type="button" id="carousel-pause"
-              aria-label="Mettre le défilement en pause">
-              <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <rect x="6" y="5" width="4" height="14" rx="1" />
-                <rect x="14" y="5" width="4" height="14" rx="1" />
-              </svg>
-              <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
+    <section class="section" aria-labelledby="start-title">
       <div class="container">
         <div class="section-head">
-          <h2>Par où tu commences ?</h2>
-          <p>Trois portes d'entrée, choisis la tienne.</p>
+          <h2 id="start-title">Par où tu commences ?</h2>
+          <p>Quatre portes d'entrée, choisis la tienne.</p>
         </div>
-        <div class="grid">
+        <div class="grid grid-4">
           <article class="card card-link">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -159,6 +119,62 @@
         </div>
       </div>
     </section>
+
+    <section class="section" aria-labelledby="posts-title">
+      <div class="container">
+        <div class="section-head section-head-row">
+          <div>
+            <h2 id="posts-title">Dernières publications</h2>
+            <p>Mes 5 derniers articles.</p>
+          </div>
+          <a class="btn btn-ghost" href="articles.html">Toutes les publications</a>
+        </div>
+
+        <div class="carousel" id="carousel" role="region" aria-roledescription="carrousel"
+          aria-label="Dernières publications" hidden>
+          <ul class="carousel-track" id="carousel-track"></ul>
+          <div class="carousel-controls">
+            <button class="carousel-btn" type="button" data-dir="-1" aria-label="Article précédent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            <div class="carousel-dots" id="carousel-dots"></div>
+            <button class="carousel-btn" type="button" data-dir="1" aria-label="Article suivant">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
+            <button class="carousel-btn carousel-pause" type="button" id="carousel-pause"
+              aria-label="Mettre le défilement en pause">
+              <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <rect x="6" y="5" width="4" height="14" rx="1" />
+                <rect x="14" y="5" width="4" height="14" rx="1" />
+              </svg>
+              <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="music-title">
+      <div class="container">
+        <div class="section-head section-head-row">
+          <div>
+            <h2 id="music-title">Dernières compositions</h2>
+            <p>Un aperçu de mes morceaux créés avec Suno, à écouter sans quitter la page.</p>
+          </div>
+          <a class="btn btn-ghost" href="musique.html">Tous les morceaux</a>
+        </div>
+        <ul class="tracks" id="tracks-preview" data-limit="3"></ul>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">

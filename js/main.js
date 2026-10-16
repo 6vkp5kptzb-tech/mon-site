@@ -46,8 +46,8 @@
   // ---------- Page Vidéos ----------
   initVideos();
 
-  // ---------- Page Musique ----------
-  var tracksEl = document.getElementById("tracks");
+  // ---------- Page Musique et aperçu de l'accueil ----------
+  var tracksEl = document.getElementById("tracks") || document.getElementById("tracks-preview");
   if (!tracksEl) return;
 
   fetch("data/musique.json", { cache: "no-cache" })
@@ -56,7 +56,15 @@
       return res.json();
     })
     .then(function (data) {
-      initCompositions(tracksEl, data.morceaux || []);
+      var morceaux = data.morceaux || [];
+      if (tracksEl.dataset.limit) {
+        // Accueil : les N morceaux les plus récents
+        morceaux.slice().sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); })
+          .slice(0, Number(tracksEl.dataset.limit))
+          .forEach(function (m) { tracksEl.appendChild(renderTrack(m)); });
+      } else {
+        initCompositions(tracksEl, morceaux);
+      }
     })
     .catch(function () {
       tracksEl.outerHTML =
@@ -270,7 +278,7 @@
         // Les articles marqués "sport": true ne s'affichent que sur la page Sport
         var publies = articles.filter(function (a) { return !a.sport; });
         if (carouselEl) initCarousel(carouselEl, publies.slice(0, 5));
-        if (listEl) renderList(listEl, publies);
+        if (listEl) initArticleFilters(listEl, publies);
         if (articleEl) renderArticle(articleEl, articles);
       })
       .catch(function () {
@@ -440,6 +448,42 @@
   }
 
   // ---------- Page Articles ----------
+  // Liste des articles avec filtre par catégorie (articles.html?cat=...)
+  function initArticleFilters(listEl, articles) {
+    var bar = document.getElementById("articles-filters");
+    var cats = Array.from(new Set(articles.map(function (a) { return a.categorie; })))
+      .filter(Boolean)
+      .sort(function (a, b) { return a.localeCompare(b, "fr"); });
+    var current = new URLSearchParams(location.search).get("cat") || "";
+    if (cats.indexOf(current) === -1) current = "";
+
+    if (!bar || cats.length < 2) { renderList(listEl, articles); return; }
+
+    var buttons = [""].concat(cats).map(function (c) {
+      var n = c ? articles.filter(function (a) { return a.categorie === c; }).length : articles.length;
+      var btn = el("button", "filter-chip");
+      btn.type = "button";
+      btn.textContent = (c || "Tout") + " (" + n + ")";
+      btn.addEventListener("click", function () { select(c, true); });
+      bar.appendChild(btn);
+      return { cat: c, btn: btn };
+    });
+
+    function select(c, push) {
+      current = c;
+      buttons.forEach(function (b) { b.btn.setAttribute("aria-pressed", String(b.cat === c)); });
+      renderList(listEl, c ? articles.filter(function (a) { return a.categorie === c; }) : articles);
+      if (push) {
+        var url = new URL(location.href);
+        if (c) url.searchParams.set("cat", c); else url.searchParams.delete("cat");
+        history.replaceState(null, "", url);
+      }
+    }
+
+    bar.hidden = false;
+    select(current, false);
+  }
+
   function renderList(container, articles) {
     container.replaceChildren.apply(container, articles.map(function (a) { return renderCard(a); }));
   }

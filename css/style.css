@@ -130,6 +130,14 @@ p  { margin: 0 0 1em; }
 
 .header-inner { position: relative; }
 
+/* Lien Contact toujours visible, à côté du menu */
+.header-contact {
+  margin-left: auto;
+  margin-right: 0.6rem;
+  padding: 0.45rem 1rem;
+}
+.header-contact[aria-current="page"] { border-color: var(--accent); color: var(--accent); }
+
 /* Bouton hamburger : trois barres qui deviennent une croix */
 .nav-toggle {
   display: inline-grid;
@@ -242,7 +250,7 @@ p  { margin: 0 0 1em; }
   margin: 1.5rem 0 0;
 }
 .tag {
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   padding: 0.3rem 0.8rem;
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -288,6 +296,9 @@ p  { margin: 0 0 1em; }
   gap: 1.25rem;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
 }
+
+/* Quatre cartes sur une ligne en grand écran */
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
 
 .card {
   position: relative;
@@ -514,6 +525,32 @@ p  { margin: 0 0 1em; }
 .field input:focus,
 .field select:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-glow); }
 
+/* Filtres par catégorie (page Articles) */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.filter-chip {
+  font: inherit;
+  font-size: 0.95rem;
+  min-height: 40px;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--surface);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.filter-chip:hover { color: var(--text); border-color: var(--accent); }
+.filter-chip[aria-pressed="true"] {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
 .result-count { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
 
 .tracks {
@@ -639,7 +676,7 @@ button.track-link { font-family: inherit; background: none; cursor: pointer; }
 .post-cat {
   color: var(--accent);
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration rétro : un grand soleil couchant coupé en deux, orange à gauche pour Danny Wilde et turquoise à droite pour Lord Brett Sinclair, au-dessus d'une route en perspective">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0f14"/>
+      <stop offset="1" stop-color="#1c1424"/>
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde68a"/>
+      <stop offset="0.5" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="cool" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cffafe"/>
+      <stop offset="0.5" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#0e7490"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#140f1a"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </linearGradient>
+    <clipPath id="sun"><circle cx="800" cy="760" r="300"/></clipPath>
+    <clipPath id="sky-only"><rect x="0" y="0" width="1600" height="760"/></clipPath>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="30"/></filter>
+    <style>
+      .big { font: 800 92px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+      .name { font: 700 30px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: 4px; }
+      .place { font: 22px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; letter-spacing: 3px; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <text x="120" y="150" class="eyebrow">SÉRIE TV · 1971 · UN GÉNÉRIQUE D'ANTHOLOGIE</text>
+  <text x="120" y="250" class="big">Amicalement vôtre</text>
+
+  <!-- Soleil rétro coupé en deux -->
+  <g clip-path="url(#sky-only)">
+    <circle cx="700" cy="760" r="300" fill="#fb923c" opacity="0.25" filter="url(#glow)"/>
+    <circle cx="900" cy="760" r="300" fill="#22d3ee" opacity="0.2" filter="url(#glow)"/>
+    <g clip-path="url(#sun)">
+      <rect x="500" y="460" width="300" height="300" fill="url(#warm)"/>
+      <rect x="800" y="460" width="300" height="300" fill="url(#cool)"/>
+      <!-- Bandes horizontales -->
+      <g fill="#1a1320">
+        <rect x="500" y="620" width="600" height="6"/>
+        <rect x="500" y="652" width="600" height="9"/>
+        <rect x="500" y="684" width="600" height="12"/>
+        <rect x="500" y="714" width="600" height="15"/>
+        <rect x="500" y="742" width="600" height="18"/>
+      </g>
+      <!-- La coupure de l'écran partagé -->
+      <rect x="795" y="460" width="10" height="300" fill="#140f1a"/>
+    </g>
+  </g>
+
+  <!-- Sol et route en perspective -->
+  <rect x="0" y="760" width="1600" height="240" fill="url(#ground)"/>
+  <line x1="0" y1="760" x2="1600" y2="760" stroke="#e6edf3" stroke-width="2" opacity="0.5"/>
+  <g stroke-width="2" opacity="0.5">
+    <g stroke="#fb923c">
+      <line x1="800" y1="760" x2="-400" y2="1000"/>
+      <line x1="800" y1="760" x2="0" y2="1000"/>
+      <line x1="800" y1="760" x2="300" y2="1000"/>
+      <line x1="800" y1="760" x2="560" y2="1000"/>
+      <line x1="0" y1="790" x2="800" y2="790"/>
+      <line x1="0" y1="830" x2="800" y2="830"/>
+      <line x1="0" y1="885" x2="800" y2="885"/>
+      <line x1="0" y1="960" x2="800" y2="960"/>
+    </g>
+    <g stroke="#22d3ee">
+      <line x1="800" y1="760" x2="2000" y2="1000"/>
+      <line x1="800" y1="760" x2="1600" y2="1000"/>
+      <line x1="800" y1="760" x2="1300" y2="1000"/>
+      <line x1="800" y1="760" x2="1040" y2="1000"/>
+      <line x1="800" y1="790" x2="1600" y2="790"/>
+      <line x1="800" y1="830" x2="1600" y2="830"/>
+      <line x1="800" y1="885" x2="1600" y2="885"/>
+      <line x1="800" y1="960" x2="1600" y2="960"/>
+    </g>
+  </g>
+  <!-- Marquage central de la route -->
+  <g fill="#e6edf3" opacity="0.7">
+    <path d="M797,770 L803,770 L804,785 L796,785 Z"/>
+    <path d="M795,805 L805,805 L807,830 L793,830 Z"/>
+    <path d="M791,860 L809,860 L812,900 L788,900 Z"/>
+    <path d="M785,940 L815,940 L819,1000 L781,1000 Z"/>
+  </g>
+
+  <!-- Les deux héros -->
+  <rect x="120" y="440" width="60" height="6" fill="#fb923c"/>
+  <text x="120" y="490" class="name">DANNY WILDE</text>
+  <text x="120" y="524" class="place">LE BRONX · NEW YORK</text>
+  <rect x="1420" y="440" width="60" height="6" fill="#22d3ee"/>
+  <text x="1480" y="490" text-anchor="end" class="name">LORD BRETT SINCLAIR</text>
+  <text x="1480" y="524" text-anchor="end" class="place">ANGLETERRE</text>
+
+  <text x="1480" y="360" text-anchor="end" class="sub">Tony Curtis, Roger Moore · musique de John Barry</text>
+</svg>

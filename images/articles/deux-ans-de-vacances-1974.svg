@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration : une goélette ballottée par les vagues approche d'une île déserte sous un ciel d'orage">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1117"/>
+      <stop offset="1" stop-color="#16263a"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.02"/>
+    </linearGradient>
+    <style>
+      .big { font: 800 92px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <!-- Nuages d'orage et éclair -->
+  <g transform="translate(140 -40)">
+  <g fill="#1f3247" opacity="0.9">
+    <ellipse cx="1180" cy="120" rx="260" ry="60"/>
+    <ellipse cx="1380" cy="160" rx="200" ry="55"/>
+    <ellipse cx="1000" cy="170" rx="170" ry="45"/>
+  </g>
+  <path d="M1290,200 L1250,290 L1285,290 L1240,390" fill="none" stroke="#67e8f9" stroke-width="5" stroke-linejoin="round" opacity="0.8"/>
+  </g>
+  <text x="120" y="150" class="eyebrow">SÉRIE TV · ORTF 1974 · SOUVENIR D'ENFANCE</text>
+  <text x="120" y="250" class="big">Deux ans de vacances</text>
+  <!-- Île déserte au loin -->
+  <path d="M1080,760 C1130,720 1190,700 1250,705 C1320,710 1380,730 1440,760 Z" fill="#155e63"/>
+  <g stroke="#67e8f9" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7">
+    <path d="M1250,705 C1245,660 1250,630 1262,600"/>
+    <path d="M1262,600 C1235,590 1215,600 1200,615 M1262,600 C1285,585 1310,590 1325,605 M1262,600 C1255,575 1240,565 1222,562 M1262,600 C1280,572 1300,566 1318,568"/>
+  </g>
+  <!-- Goélette -->
+  <g transform="translate(560 520) rotate(-6)">
+    <path d="M-230,190 L230,190 L180,250 L-170,250 Z" fill="#0f2a33" stroke="#67e8f9" stroke-width="5" stroke-linejoin="round"/>
+    <line x1="-60" y1="190" x2="-60" y2="-120" stroke="#9aa7b5" stroke-width="6"/>
+    <line x1="90" y1="190" x2="90" y2="-60" stroke="#9aa7b5" stroke-width="6"/>
+    <path d="M-60,-110 C-10,-40 -5,80 -60,170 Z" fill="#e6edf3" opacity="0.85"/>
+    <path d="M-66,-100 C-140,-20 -150,90 -70,170 Z" fill="#e6edf3" opacity="0.6"/>
+    <path d="M90,-50 C140,10 145,110 90,170 Z" fill="#e6edf3" opacity="0.85"/>
+    <path d="M-60,-120 L-25,-108 L-60,-96 Z" fill="#22d3ee"/>
+  </g>
+  <!-- Océan agité -->
+  <rect x="0" y="760" width="1600" height="240" fill="url(#sea)"/>
+  <path d="M0,770 C80,735 160,735 240,770 S400,805 480,770 S640,735 720,770 S880,805 960,770 S1120,735 1200,770 S1360,805 1440,770 S1560,745 1600,760" fill="none" stroke="#22d3ee" stroke-width="4" stroke-opacity="0.6"/>
+  <g fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" opacity="0.35">
+    <path d="M140,840 q30,-14 60,0 t60,0"/><path d="M560,880 q30,-14 60,0 t60,0"/>
+    <path d="M980,830 q30,-14 60,0 t60,0"/><path d="M1300,890 q30,-14 60,0 t60,0"/>
+  </g>
+  <text x="1480" y="940" text-anchor="end" class="sub">d'après Jules Verne · musique d'Alain Le Meur</text>
+</svg>

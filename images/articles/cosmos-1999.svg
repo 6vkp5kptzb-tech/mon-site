@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration : la Lune dérive dans l'espace, loin de la Terre, avec la base Alpha à sa surface et un vaisseau Aigle en vol">
+  <defs>
+    <radialGradient id="space" cx="0.7" cy="0.6" r="0.9">
+      <stop offset="0" stop-color="#121a2a"/>
+      <stop offset="1" stop-color="#070a0f"/>
+    </radialGradient>
+    <radialGradient id="moon" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#cbd5e1"/>
+      <stop offset="1" stop-color="#475569"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+    <style>
+      .big { font: 800 92px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#space)"/>
+  <g fill="#e6edf3">
+    <circle cx="160" cy="340" r="2"/><circle cx="380" cy="420" r="1.5"/><circle cx="620" cy="360" r="2"/>
+    <circle cx="840" cy="90" r="1.5"/><circle cx="1050" cy="160" r="2"/><circle cx="1480" cy="110" r="1.5"/>
+    <circle cx="260" cy="620" r="1.5"/><circle cx="520" cy="880" r="2"/><circle cx="140" cy="820" r="1.5"/>
+    <circle cx="1530" cy="900" r="2"/><circle cx="760" cy="520" r="1.5"/><circle cx="1240" cy="80" r="2"/>
+  </g>
+  <text x="120" y="150" class="eyebrow">SÉRIE TV · 1975 · MES DÉBUTS EN SCIENCE-FICTION</text>
+  <text x="120" y="250" class="big">Cosmos 1999</text>
+  <!-- La Terre, minuscule et lointaine -->
+  <circle cx="230" cy="500" r="16" fill="#22d3ee" opacity="0.8"/>
+  <circle cx="230" cy="500" r="30" fill="#22d3ee" opacity="0.15"/>
+  <path d="M260,510 C420,560 560,600 700,640" fill="none" stroke="#67e8f9" stroke-width="2" stroke-dasharray="4 10" opacity="0.5"/>
+  <!-- La Lune -->
+  <circle cx="1100" cy="640" r="290" fill="#94a3b8" opacity="0.18" filter="url(#glow)"/>
+  <circle cx="1100" cy="640" r="270" fill="url(#moon)"/>
+  <g fill="#334155" opacity="0.55">
+    <circle cx="1010" cy="540" r="42"/><circle cx="1210" cy="590" r="28"/><circle cx="1150" cy="770" r="55"/>
+    <circle cx="960" cy="720" r="22"/><circle cx="1280" cy="700" r="18"/>
+  </g>
+  <!-- Base Alpha -->
+  <g stroke="#67e8f9" stroke-width="4" fill="#0f2a33">
+    <rect x="1040" y="420" width="120" height="24" rx="4"/>
+    <rect x="1085" y="390" width="30" height="30" rx="3"/>
+    <line x1="1100" y1="390" x2="1100" y2="360"/>
+  </g>
+  <!-- Un Aigle -->
+  <g transform="translate(600 440) rotate(-10)" stroke="#67e8f9" stroke-width="4" fill="#0f2a33" stroke-linejoin="round">
+    <path d="M-150,0 L-110,-22 L-80,-22 L-80,22 L-110,22 Z"/>
+    <rect x="-80" y="-10" width="210" height="20"/>
+    <rect x="-40" y="-30" width="90" height="60" rx="4"/>
+    <path d="M130,-22 L170,-22 L170,22 L130,22 Z"/>
+    <path d="M-30,30 L-45,55 M40,30 L55,55 M-30,-30 L-45,-55 M40,-30 L55,-55"/>
+    <path d="M170,-8 L200,-12 L200,12 L170,8 Z" fill="#fdba74" stroke="none" opacity="0.8"/>
+  </g>
+  <text x="1480" y="960" text-anchor="end" class="sub">Gerry et Sylvia Anderson · musique de Barry Gray</text>
+</svg>

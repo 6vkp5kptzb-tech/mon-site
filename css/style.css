@@ -343,6 +343,7 @@ p  { margin: 0 0 1em; }
 }
 .strava-icon svg { width: 26px; height: 26px; }
 .strava-titles { flex: 1 1 180px; }
+.strava-titles h2,
 .strava-titles h3 { margin: 0; font-size: 1.25rem; color: #fff; }
 .strava-live {
   display: inline-flex;
@@ -397,6 +398,34 @@ p  { margin: 0 0 1em; }
 }
 .strava-frame iframe { border: 0; max-width: 100%; }
 .strava-note { color: var(--muted); font-size: 0.85rem; margin: 0.25rem 0 0; }
+
+/* Dernière sortie (page Sport, data/derniere-sortie.json) */
+.sortie { display: grid; gap: 1.5rem; padding: 1.5rem; }
+.sortie-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 0.75rem;
+  margin: 0;
+}
+.sortie-stat {
+  padding: 0.9rem 1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.sortie-stat dt { color: var(--muted); font-size: 0.82rem; }
+.sortie-stat dd { margin: 0.2rem 0 0; font-size: 1.35rem; font-weight: 700; color: var(--text); }
+.sortie-stat dd small { font-size: 0.85rem; font-weight: 400; color: var(--muted); }
+.sortie-comment { margin: 0; color: var(--text); max-width: 70ch; }
+.sortie-splits { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.sortie-splits caption { text-align: left; font-family: var(--mono); font-size: 0.8rem; color: var(--strava); margin-bottom: 0.5rem; }
+.sortie-splits th, .sortie-splits td { padding: 0.45rem 0.5rem; text-align: left; border-bottom: 1px solid var(--border); }
+.sortie-splits th { color: var(--muted); font-weight: 600; }
+.sortie-splits td:nth-child(2), .sortie-splits td:nth-child(3) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sortie-splits tbody tr:hover { background: var(--surface-2); }
+.sortie-bar-cell { width: 45%; }
+.sortie-bar { display: block; height: 10px; border-radius: 0 4px 4px 0; background: var(--strava); }
+.sortie-note { color: var(--muted); font-size: 0.85rem; margin: 0; }
 
 .card-link:hover { border-color: var(--accent); transform: translateY(-2px); }
 .card-link a { color: var(--text); text-decoration: none; }

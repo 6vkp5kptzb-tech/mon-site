@@ -1,6 +1,526 @@
 {
   "articles": [
     {
+      "slug": "hotel-california-eagles",
+      "titre": "Hotel California : l'histoire d'une chanson légendaire des Eagles",
+      "date": "2026-10-17",
+      "categorie": "Musique",
+      "image": "images/articles/hotel-california-eagles.svg",
+      "imageAlt": "Un hôtel de style californien au crépuscule, entouré de palmiers, avec une enseigne au néon",
+      "extrait": "Une démo enregistrée sur une plage de Malibu, des paroles sur le revers du rêve américain, un solo mythique et des rumeurs à n'en plus finir : l'histoire de Hotel California, des Eagles.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "« Hotel California » fait partie de ces chansons que tout le monde reconnaît dès les premiers accords de guitare. Sortie en 1976, elle a fait des Eagles une légende du rock, bien au-delà de leur image de groupe californien taillé pour la radio. Comme « Stairway to Heaven » de Led Zeppelin ou « Free Bird » de Lynyrd Skynyrd, elle monte en puissance jusqu'à un final de guitare devenu mythique. Et comme elles, ses paroles ouvertes ont fait naître les interprétations les plus folles."
+        },
+        {
+          "type": "titre",
+          "texte": "La vidéo"
+        },
+        {
+          "type": "youtube",
+          "id": "09839DpTctU",
+          "titre": "Eagles - Hotel California (Live 1977)"
+        },
+        {
+          "type": "texte",
+          "texte": "Cette version a été filmée en concert en 1977, l'année où la chanson était au sommet des classements. On y voit Don Henley chanter tout en jouant de la batterie, et Don Felder et Joe Walsh se partager le célèbre solo final."
+        },
+        {
+          "type": "titre",
+          "texte": "Une démo enregistrée à Malibu"
+        },
+        {
+          "type": "texte",
+          "texte": "Tout commence avec Don Felder, guitariste du groupe. En 1974-1975, dans une maison louée en bord de plage à Malibu, il compose une suite d'accords à la guitare douze cordes, sur une boîte à rythmes. Il enregistre le tout sur une cassette et la fait écouter au groupe. Sa rythmique évoque un mélange de reggae et de boléro mexicain : le morceau est d'abord surnommé « Mexican Reggae »."
+        },
+        {
+          "type": "texte",
+          "texte": "Le groupe va ensuite le polir pendant des semaines, dans une ambiance où la cocaïne circulait beaucoup. La formation de l'époque :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Don Henley : batterie et chant principal",
+            "Glenn Frey : claviers et guitare",
+            "Don Felder et Joe Walsh : guitares",
+            "Randy Meisner : basse"
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Des paroles sur le revers du rêve américain"
+        },
+        {
+          "type": "texte",
+          "texte": "Les paroles sont écrites par Don Henley, avec l'aide de Glenn Frey. Un voyageur fatigué, sur une route du désert, s'arrête pour la nuit dans un hôtel luxueux. L'endroit est séduisant, mais il découvre peu à peu qu'il ne pourra jamais vraiment en partir : on peut rendre sa chambre quand on veut, mais on ne repart jamais."
+        },
+        {
+          "type": "texte",
+          "texte": "Pour le groupe, la chanson dénonce la face sombre de la Californie des années 1970 : le luxe de pacotille, la décadence, la drogue, et le cynisme d'une industrie du disque dont les Eagles, devenus des stars, se sentaient eux-mêmes prisonniers. Don Henley l'a résumé simplement : ils étaient tous des enfants de la classe moyenne venus du Midwest, et la chanson était leur vision de la grande vie à Los Angeles. Il dit aussi s'être inspiré de l'atmosphère de labyrinthe du film « The Magus » (1968), avec Michael Caine et Anthony Quinn."
+        },
+        {
+          "type": "texte",
+          "texte": "Glenn Frey parlait, lui, du « ventre mou du succès », du côté sombre du paradis qu'ils vivaient alors à Los Angeles, et dont l'hôtel devient une métaphore. Il voulait une écriture très cinématographique, à la manière de La Quatrième Dimension : un homme sur l'autoroute, un hôtel au loin, une femme sur le seuil... une suite de plans, et à chacun d'en tirer ses conclusions."
+        },
+        {
+          "type": "titre",
+          "texte": "Deux guitares pour un solo de légende"
+        },
+        {
+          "type": "texte",
+          "texte": "L'enregistrement a demandé plusieurs séances. Il a fallu trouver la bonne tonalité pour la voix de Don Henley, puis caler le long final. Henley tenait à ce que le solo reprenne exactement celui de la démo. Problème : Felder ne s'en souvenait plus dans le détail. Il a dû faire rejouer sa cassette au téléphone, depuis chez lui, pour retrouver ses notes."
+        },
+        {
+          "type": "texte",
+          "texte": "Le résultat est devenu l'un des solos les plus célèbres du rock : Don Felder et Joe Walsh s'y répondent, puis jouent ensemble en harmonie pendant plus de deux minutes."
+        },
+        {
+          "type": "titre",
+          "texte": "Les clins d'œil cachés dans le texte"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Steely Dan : c'est la seule allusion reconnue par le groupe. En 1975, dans « Everything You Did », Steely Dan avait glissé une pique ironique aux Eagles. Ceux-ci répondent avec les « steely knives », les couteaux d'acier. Les deux groupes se taquinaient amicalement, et Glenn Frey admirait la façon dont Steely Dan assemblait des paroles qui n'avaient pas forcément de sens, ce qu'ils appelaient de la « sculpture de bric-à-brac ».",
+            "1969 : le capitaine répond au voyageur que l'hôtel n'a plus « cet esprit-là » depuis 1969. Le mot « spirit » désigne d'abord le vin que le voyageur vient de commander, mais il évoque aussi l'esprit des années 1960, déjà loin.",
+            "La « Mercedes Bends » : un jeu de mots entre la marque Mercedes-Benz et les virages (« bends »). Certains fans y voient un clin d'œil à la chanson « Mercedes Benz » de Janis Joplin, comme ils voient Captain Beefheart derrière le « Captain » du texte. Le groupe ne l'a jamais confirmé.",
+            "Les « colitas » : en espagnol, de petites fleurs. Beaucoup y ont lu une allusion au cannabis, d'autres des sous-entendus plus coquins."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Mais où se trouve cet hôtel ?"
+        },
+        {
+          "type": "texte",
+          "texte": "Nulle part : l'Hotel California n'existe pas. Cela n'a pas empêché les fans de lui chercher une adresse :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "le Camarillo State Hospital, un ancien hôpital psychiatrique près de Los Angeles, à cause du vers final sur ceux qui ne peuvent plus partir ;",
+            "des prisons, comme celle du comté de Cook à Chicago, surnommée « Hotel California »... mais seulement après le succès de la chanson ;",
+            "une maison de Timothy Leary, le pape du LSD, ou la Playboy Mansion de Hugh Hefner ;",
+            "un vrai « Hotel California » à Todos Santos, au Mexique, dont aucun des Eagles ne connaissait l'existence. Don Henley a dû le préciser lui-même, et en 2017 le groupe a même attaqué l'hôtel, qui laissait croire qu'il avait inspiré la chanson."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Le seul hôtel bien réel de l'histoire, c'est celui de la pochette : le Beverly Hills Hotel, surnommé le « Pink Palace », repaire des stars d'Hollywood. Pour le photographier au coucher du soleil, David Alexander et le graphiste John Kosh ont loué une nacelle de cueilleur de cerises, qui les a hissés à plus de 18 mètres au-dessus des arbres de Sunset Boulevard."
+        },
+        {
+          "type": "titre",
+          "texte": "Le Diable s'en mêle"
+        },
+        {
+          "type": "texte",
+          "texte": "Mais la lecture la plus populaire, surtout chez les adolescents des années 1970 et 1980, c'est la lecture satanique. Le vers qui hésite entre le paradis et l'enfer a suffi à lancer la machine :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "l'hôtel serait une église abandonnée en 1969, puis reprise par une secte, ou la maison d'Anton LaVey, fondateur de l'Église de Satan, qui y aurait écrit sa « Bible satanique » ;",
+            "la « Bête » que personne n'arrive à tuer serait Aleister Crowley, l'occultiste anglais qui se faisait appeler ainsi ;",
+            "on a cru voir une silhouette diabolique à une fenêtre de la pochette, et une femme aux bras ouverts sur un balcon de la pochette intérieure. C'était en fait une figurante, depuis identifiée ;",
+            "d'autres jurent que les silhouettes des photos sont des fantômes, apparus au développement alors que l'hôtel était vide ;",
+            "et certains ont passé le disque à l'envers pour y entendre un message satanique... sans convaincre grand monde."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Don Henley a toujours balayé ces théories : selon lui, la chanson n'a rien de surnaturel, elle parle simplement de la condition humaine."
+        },
+        {
+          "type": "titre",
+          "texte": "Et toutes les autres lectures"
+        },
+        {
+          "type": "texte",
+          "texte": "On a aussi rapproché la chanson de la caverne de Platon, de l'Odyssée d'Homère, de « Huis clos » de Sartre ou de la guerre du Vietnam. La lecture la plus sérieuse en fait une allégorie de la dépendance à la drogue, cette « bête » qu'on ne parvient pas à tuer. Côté musique, on l'a décrite comme un croisement entre « Wish You Were Here » de Pink Floyd et le reggae de Bob Marley. Ian Anderson, de Jethro Tull, aime rappeler en plaisantant qu'elle ressemble beaucoup à son morceau « We Used to Know », sorti en 1969, et qu'il n'en réclame pas les droits."
+        },
+        {
+          "type": "titre",
+          "texte": "Un succès hors normes"
+        },
+        {
+          "type": "texte",
+          "texte": "Avec plus de six minutes et un très long solo, la chanson ne correspondait pas du tout au format des radios de l'époque. Le groupe la sort pourtant en single : même Don Felder pensait que c'était une erreur. Il a reconnu ensuite s'être trompé."
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Date",
+            "Étape"
+          ],
+          "lignes": [
+            [
+              "Décembre 1976",
+              "Sortie de l'album « Hotel California », dont c'est le premier titre"
+            ],
+            [
+              "Début 1977",
+              "Sortie du single"
+            ],
+            [
+              "Mai 1977",
+              "Numéro un des ventes aux États-Unis (Billboard Hot 100)"
+            ],
+            [
+              "1978",
+              "Grammy Award de l'enregistrement de l'année"
+            ],
+            [
+              "1994",
+              "Nouvelle version acoustique sur l'album de la reformation, « Hell Freezes Over »"
+            ],
+            [
+              "Mars 2024",
+              "Fin du procès des manuscrits des paroles, à New York"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Ce procès est la dernière péripétie de la chanson. Trois hommes, un libraire spécialisé et deux experts en objets de collection, étaient accusés de recel de pages manuscrites des paroles de l'album. Don Henley affirmait qu'elles lui avaient été volées ; la défense soutenait qu'il les avait confiées, des décennies plus tôt, à l'auteur d'une biographie des Eagles. Le 6 mars 2024, le parquet a abandonné les poursuites en plein procès, après la révélation tardive de milliers de pages d'échanges du côté de Henley."
+        },
+        {
+          "type": "titre",
+          "texte": "Pour finir, deux curiosités"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "L'« effet Hotel California » existe vraiment : en mathématiques comme en économie, l'expression désigne une situation où il est facile d'entrer, mais impossible de sortir.",
+            "Un fan, fâché avec les dates, a un jour affirmé que la chanson était à l'origine une chanson espagnole des Gipsy Kings, simplement traduite par les Eagles. Les Gipsy Kings l'ont bien reprise... mais bien après."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que je retiens"
+        },
+        {
+          "type": "texte",
+          "texte": "Une simple suite d'accords trouvée sur une plage est devenue, près de cinquante ans plus tard, l'une des chansons les plus célèbres du monde, et l'une des plus commentées. Le jour de la mort de Glenn Frey, le 18 janvier 2016, c'est elle que beaucoup ont réécoutée en premier. Et ce solo final, je ne m'en lasse pas."
+        },
+        {
+          "type": "titre",
+          "texte": "Sources"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Alice Develey et Alicia Paulet, « The Eagles : l'histoire secrète de Hotel California », Le Figaro, 19 janvier 2016 (mis à jour le 20 janvier).",
+            "Wikipédia : « Hotel California (chanson) ».",
+            "Songfacts : « Hotel California by Eagles ».",
+            "NBC New York : « Charges dropped midtrial in 'Hotel California' lyrics case », mars 2024."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "petite-maison-dans-la-prairie",
+      "video": true,
+      "titre": "La Petite Maison dans la prairie : une série pleine de bonnes intentions",
+      "date": "2026-10-17",
+      "categorie": "Vidéos",
+      "image": "images/articles/petite-maison-dans-la-prairie.svg",
+      "imageAlt": "Une petite maison en bois avec une fenêtre allumée, sur des collines dorées de la prairie au soleil couchant",
+      "extrait": "Le générique de La Petite Maison dans la prairie et la famille Ingalls à Walnut Grove. Une série pleine de bonnes intentions, et un souvenir d'enfant inoubliable.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Après l'action et l'aventure, place à la douceur. La Petite Maison dans la prairie, c'est une série pleine de bonnes intentions : l'entraide, la famille, le courage face aux coups durs. Son générique, c'est un souvenir d'enfant inoubliable."
+        },
+        {
+          "type": "titre",
+          "texte": "La vidéo"
+        },
+        {
+          "type": "youtube",
+          "id": "qcs-PRy9NSY",
+          "titre": "La Petite Maison dans la prairie : générique (1974)"
+        },
+        {
+          "type": "titre",
+          "texte": "La série en quelques lignes"
+        },
+        {
+          "type": "texte",
+          "texte": "À la fin du XIXe siècle, la famille Ingalls, des pionniers venus du Wisconsin, s'installe près de Walnut Grove, un petit village du Minnesota. Charles, le père, devient fermier et travaille à la scierie ; Caroline, la mère, tient la maison ; et leurs filles grandissent au rythme des saisons. On suit la vie quotidienne de la famille et de ses voisins, entre drames et moments plus légers, racontée à travers le regard de Laura, la cadette."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Une série américaine produite par Michael Landon, d'après les romans de Laura Ingalls Wilder.",
+            "Diffusée sur NBC de 1974 à 1983 : 10 saisons, 205 épisodes et 3 téléfilms.",
+            "Arrivée en France sur TF1 en 1976.",
+            "Michael Landon joue Charles Ingalls, Karen Grassle Caroline, Melissa Gilbert Laura et Melissa Sue Anderson Mary.",
+            "La musique du générique est signée David Rose."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Pourquoi ce générique me touche"
+        },
+        {
+          "type": "texte",
+          "texte": "Ce que j'aime dans cette série, ce sont ses bonnes intentions. Chaque épisode parlait de solidarité, de pardon, de famille, et on en sortait toujours un peu meilleur. Les premières notes du générique suffisent encore à me ramener à cette époque, devant la télévision. Un souvenir d'enfant inoubliable."
+        }
+      ]
+    },
+    {
+      "slug": "amicalement-votre",
+      "video": true,
+      "titre": "Amicalement vôtre : un générique d'anthologie dont je ne me lasse jamais",
+      "date": "2026-10-17",
+      "categorie": "Vidéos",
+      "image": "images/articles/amicalement-votre.svg",
+      "imageAlt": "Écran partagé : à gauche les gratte-ciel de New York et une voiture de sport rouge, à droite un château anglais et une voiture de sport jaune",
+      "extrait": "Le générique d'Amicalement vôtre, signé John Barry, avec Tony Curtis et Roger Moore. Un début d'anthologie, de l'action et de l'aventure : je ne m'en lasse jamais.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Il y a des génériques qu'on ne zappe jamais. Celui d'Amicalement vôtre en fait partie : un début d'anthologie, plein d'action et d'aventure, dont je ne me lasse jamais. Dès les premières notes, je suis de retour devant l'écran, enfant, prêt pour l'épisode."
+        },
+        {
+          "type": "titre",
+          "texte": "La vidéo"
+        },
+        {
+          "type": "youtube",
+          "id": "69ccJitpHGw",
+          "titre": "Amicalement vôtre (The Persuaders!) : le générique de John Barry"
+        },
+        {
+          "type": "titre",
+          "texte": "La série en quelques lignes"
+        },
+        {
+          "type": "texte",
+          "texte": "Tout oppose Danny Wilde et Lord Brett Sinclair. Le premier est un Américain parti de rien, devenu millionnaire grâce au pétrole. Le second est un aristocrate anglais, élégant et raffiné. Ces deux hommes qui vivent de leurs rentes sont réunis malgré eux par le juge Fulton, un magistrat à la retraite qui a des comptes à régler avec la pègre. Ensemble, entre la Côte d'Azur, Londres et les quatre coins de l'Europe, ils enchaînent les missions périlleuses, les poursuites en voiture de sport et les répliques qui font mouche."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Une série britannique créée par Robert S. Baker, diffusée sur ITV en 1971 et 1972 : une seule saison de 24 épisodes.",
+            "Arrivée en France en octobre 1972 sur la deuxième chaîne de l'ORTF.",
+            "Tony Curtis joue Danny Wilde, Roger Moore joue Lord Brett Sinclair, et Laurence Naismith le juge Fulton.",
+            "En version française, Michel Roux double Tony Curtis et Claude Bertrand double Roger Moore.",
+            "Le générique est composé par John Barry, le compositeur de nombreux James Bond."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Pourquoi ce générique me touche"
+        },
+        {
+          "type": "texte",
+          "texte": "Ce générique, c'est un petit film à lui seul : en quelques images, on suit en parallèle la vie des deux héros, de l'enfance jusqu'à leur rencontre, sur une musique qui donne immédiatement envie d'aventure. L'action, les voitures, l'humour, l'élégance : tout y est. Je l'ai vu des dizaines de fois et je ne m'en lasse toujours pas. Un souvenir d'enfant inoubliable."
+        }
+      ]
+    },
+    {
+      "slug": "cosmos-1999",
+      "video": true,
+      "titre": "Cosmos 1999 : mes débuts en science-fiction, quand 1999 c'était loin !",
+      "date": "2026-10-17",
+      "categorie": "Vidéos",
+      "image": "images/articles/cosmos-1999.svg",
+      "imageAlt": "La Lune dérive dans l'espace, loin de la Terre, avec la base Alpha à sa surface et un vaisseau Aigle en vol",
+      "extrait": "Le générique de Cosmos 1999, la Lune arrachée à son orbite et la base Alpha perdue dans l'espace. Mes débuts en science-fiction, à une époque où 1999, c'était loin !",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Ma première vraie rencontre avec la science-fiction, c'est Cosmos 1999. À l'époque, 1999, c'était loin ! Un futur lointain, avec une base sur la Lune et des vaisseaux qui partaient en mission comme on prend le bus. Ce générique, c'est un souvenir d'enfant inoubliable."
+        },
+        {
+          "type": "titre",
+          "texte": "La vidéo"
+        },
+        {
+          "type": "youtube",
+          "id": "p94WYuLsxnA",
+          "titre": "Cosmos 1999 : générique de la saison 1"
+        },
+        {
+          "type": "titre",
+          "texte": "La série en quelques lignes"
+        },
+        {
+          "type": "texte",
+          "texte": "En 1999, l'humanité a installé sur la Lune la base Alpha, où sont aussi stockés des déchets nucléaires venus de la Terre. Un jour, ces déchets explosent. La Lune est arrachée à son orbite et part à la dérive, loin de la Terre, puis hors du système solaire. Les 311 habitants de la base, menés par le commandant John Koenig, se retrouvent à errer dans le cosmos, à la rencontre de planètes inconnues et de civilisations étranges, avec leurs vaisseaux Aigles comme seul lien avec l'extérieur."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Une série britannique créée par Gerry et Sylvia Anderson, diffusée sur ITV de 1975 à 1977 : 2 saisons, 48 épisodes de 52 minutes.",
+            "Arrivée en France sur TF1 dès décembre 1975, dans l'émission « Samedi est à vous ».",
+            "Martin Landau joue le commandant John Koenig, Barbara Bain le docteur Helena Russell et Nick Tate le pilote Alan Carter.",
+            "La musique du générique de la première saison est signée Barry Gray."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Pourquoi ce générique me touche"
+        },
+        {
+          "type": "texte",
+          "texte": "Enfant, 1999 me semblait à des années-lumière. Je regardais ces hommes et ces femmes perdus dans l'espace en me demandant à quoi ressemblerait vraiment l'an 2000. L'an 1999 est arrivé, puis il est passé, sans base lunaire ni Lune à la dérive. Mais ce générique est resté : c'est par lui que j'ai découvert la science-fiction, et ce souvenir d'enfant reste inoubliable."
+        }
+      ]
+    },
+    {
+      "slug": "mysteres-de-l-ouest",
+      "video": true,
+      "titre": "Les Mystères de l'Ouest : le samedi avec mon père",
+      "date": "2026-10-17",
+      "categorie": "Vidéos",
+      "image": "images/articles/mysteres-de-l-ouest.svg",
+      "imageAlt": "Un train à vapeur traverse le désert de l'Ouest américain devant des mesas, sous la lune",
+      "extrait": "Le générique des Mystères de l'Ouest, avec James West et Artemus Gordon. Pour moi, c'est le samedi avec mon père : un souvenir d'enfant inoubliable.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Certains génériques ne rappellent pas seulement une série, mais un moment. Celui des Mystères de l'Ouest, pour moi, c'est le samedi avec mon père. On le regardait ensemble, et c'est pour ça que ce souvenir d'enfant reste inoubliable."
+        },
+        {
+          "type": "titre",
+          "texte": "La vidéo"
+        },
+        {
+          "type": "youtube",
+          "id": "EqyO_9Co_NQ",
+          "titre": "Les Mystères de l'Ouest : générique de la série TV"
+        },
+        {
+          "type": "titre",
+          "texte": "La série en quelques lignes"
+        },
+        {
+          "type": "texte",
+          "texte": "Dans l'Ouest américain des années 1870, deux agents secrets travaillent pour le président Ulysses S. Grant. James West est l'homme d'action, toujours prêt à se battre. Artemus Gordon est le maître du déguisement et l'inventeur de gadgets très en avance sur leur temps. Ils parcourent l'Ouest à bord de leur train privé à vapeur pour déjouer des complots plus fous les uns que les autres. Leur pire ennemi : le docteur Miguelito Loveless, un génie du mal aux inventions diaboliques. À l'époque, on la présentait comme « James Bond à cheval »."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Une série américaine créée par Michael Garrison, diffusée sur CBS de 1965 à 1969 : 4 saisons, 104 épisodes de 50 minutes.",
+            "Arrivée en France en avril 1967 sur la deuxième chaîne de l'ORTF.",
+            "Robert Conrad joue James West, Ross Martin joue Artemus Gordon et Michael Dunn joue le docteur Loveless.",
+            "Le générique, avec ses vignettes de dessin animé, est composé par Richard Markowitz."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Pourquoi ce générique me touche"
+        },
+        {
+          "type": "texte",
+          "texte": "Ce que je revois en l'écoutant, ce n'est pas seulement le train, les bagarres et les gadgets d'Artemus Gordon. C'est surtout le samedi, assis à côté de mon père, devant la télévision. Ce rendez-vous partagé, c'est ce qui rend ce souvenir d'enfant inoubliable, et c'est pour ça que ce générique a sa place ici."
+        }
+      ]
+    },
+    {
+      "slug": "deux-ans-de-vacances-1974",
+      "video": true,
+      "titre": "Deux ans de vacances (1974) : un autre générique de mon enfance",
+      "date": "2026-10-17",
+      "categorie": "Vidéos",
+      "image": "images/articles/deux-ans-de-vacances-1974.svg",
+      "imageAlt": "Une goélette ballottée par les vagues approche d'une île déserte sous un ciel d'orage",
+      "extrait": "Le générique du feuilleton Deux ans de vacances, diffusé sur l'ORTF à l'été 1974 : des enfants naufragés sur une île déserte. Pour moi, un souvenir d'enfant inoubliable.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Après L'Île mystérieuse, voici un autre générique qui me ramène tout droit en enfance : celui de Deux ans de vacances, un autre feuilleton tiré de Jules Verne. Je le partage ici parce que c'est, pour moi aussi, un souvenir inoubliable d'enfant."
+        },
+        {
+          "type": "titre",
+          "texte": "La vidéo"
+        },
+        {
+          "type": "youtube",
+          "id": "o9CZo-PA0eU",
+          "titre": "Deux ans de vacances : générique de la série TV (1974)"
+        },
+        {
+          "type": "titre",
+          "texte": "La série en quelques lignes"
+        },
+        {
+          "type": "texte",
+          "texte": "En 1882, en Nouvelle-Zélande, des garçons d'un pensionnat obtiennent une croisière de six semaines à bord d'une goélette, avec le capitaine Hull et le jeune mousse Dick Sand. Mais le voyage tourne mal : le navire part à la dérive, une tempête le jette sur une île déserte, et les enfants se retrouvent seuls, sans aucun adulte. Il leur faut alors s'organiser, se nourrir, s'abriter, se choisir un chef, et apprendre à vivre ensemble malgré les rivalités. Leur robinsonnade va durer deux ans."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Un feuilleton de 6 épisodes de 50 minutes, coproduit par la France, l'Allemagne de l'Ouest et la Roumanie.",
+            "Réalisé par Gilles Grangier, diffusé sur la première chaîne de l'ORTF à l'été 1974.",
+            "Avec Franz Seidenschwan (Dick Sand), Marc di Napoli (Doniphan), Didier Gaudron (Briant) et Dominique Planchot (Gordon).",
+            "La musique de la version française est signée Alain Le Meur."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Pourquoi ce générique me touche"
+        },
+        {
+          "type": "texte",
+          "texte": "Des enfants de mon âge, seuls sur une île, qui se débrouillent sans les adultes : il n'en fallait pas plus pour me faire rêver devant la télévision. Ce générique, c'est l'été, l'aventure et l'insouciance. Quelques notes suffisent encore aujourd'hui à me ramener en arrière : un souvenir d'enfant inoubliable, qui a toute sa place ici, à côté de L'Île mystérieuse."
+        }
+      ]
+    },
+    {
+      "slug": "ile-mysterieuse-1973",
+      "video": true,
+      "titre": "L'Île mystérieuse (1973) : le générique de mon enfance",
+      "date": "2026-10-17",
+      "categorie": "Vidéos",
+      "image": "images/articles/ile-mysterieuse-1973.svg",
+      "imageAlt": "Un ballon dérive dans la nuit au-dessus d'une île volcanique perdue dans l'océan",
+      "extrait": "Le générique du feuilleton L'Île mystérieuse, diffusé sur l'ORTF en 1973 avec Omar Sharif en capitaine Nemo. Pour moi, un souvenir d'enfant inoubliable.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Il y a des musiques qui vous ramènent instantanément en arrière. Pour moi, c'est le générique de L'Île mystérieuse, le feuilleton adapté de Jules Verne. Je le partage ici parce que c'est, pour moi, un souvenir inoubliable d'enfant."
+        },
+        {
+          "type": "titre",
+          "texte": "La vidéo"
+        },
+        {
+          "type": "youtube",
+          "id": "f_PtZDMffvY",
+          "titre": "L'Île mystérieuse : générique de la série TV (1973)"
+        },
+        {
+          "type": "titre",
+          "texte": "La série en quelques lignes"
+        },
+        {
+          "type": "texte",
+          "texte": "En pleine guerre de Sécession, cinq hommes, prisonniers des sudistes, s'évadent en ballon. Une tempête les emporte au-dessus du Pacifique et les jette sur une île inconnue, loin de tout. Menés par l'ingénieur Cyrus Smith, ils vont devoir tout reconstruire à partir de rien : faire du feu, se nourrir, s'abriter, fabriquer des outils. Et peu à peu, ils comprennent qu'ils ne sont pas seuls : quelqu'un, dans l'ombre, veille sur eux. Ce protecteur mystérieux, c'est le capitaine Nemo."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Un feuilleton de 6 épisodes de 52 minutes, coproduit par la France, l'Italie et l'Espagne.",
+            "Réalisé par Juan Antonio Bardem et Henri Colpi, diffusé à partir du 17 décembre 1973 sur la première chaîne de l'ORTF.",
+            "Omar Sharif dans le rôle du capitaine Nemo, avec Gérard Tichy (Cyrus Smith), Philippe Nicaud (Gédéon Spilett) et Jess Hahn (Pencroff).",
+            "La musique est de Gianni Ferrio ; le générique, « L'Île bleue », est chanté par Monique Pianéa."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Pourquoi ce générique me touche"
+        },
+        {
+          "type": "texte",
+          "texte": "Enfant, j'attendais ce rendez-vous avec impatience. Le ballon dans la tempête, l'île sortie de nulle part, le mystère de Nemo : tout ce qu'il faut pour faire rêver. Aujourd'hui encore, quelques notes suffisent à me ramener devant la télévision de l'époque. C'est un souvenir d'enfant inoubliable, et c'est pour ça qu'il a sa place ici."
+        }
+      ]
+    },
+    {
       "slug": "nombre-kholi-2997",
       "titre": "Prenez n'importe quel nombre : il finira toujours sur 2997",
       "date": "2026-10-06",

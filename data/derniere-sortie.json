@@ -1,0 +1,66 @@
+{
+  "source": "Strava",
+  "activite": "20616705644",
+  "titre": "5 KMS",
+  "type": "Course à pied",
+  "date": "2026-10-17T08:09",
+  "lieu": "Gennevilliers",
+  "distanceKm": 5.68,
+  "duree": "35 min 56 s",
+  "allure": "6:19",
+  "denivele": 49,
+  "fcMoyenne": 154,
+  "fcMax": 178,
+  "cadence": 187,
+  "calories": 459,
+  "effortRelatif": 51,
+  "meilleursEfforts": [
+    {
+      "distance": "1 km",
+      "temps": "5 min 34 s"
+    },
+    {
+      "distance": "5 km",
+      "temps": "31 min 06 s"
+    }
+  ],
+  "splits": [
+    {
+      "km": "1",
+      "secondes": 412,
+      "allure": "6:52",
+      "fc": 138
+    },
+    {
+      "km": "2",
+      "secondes": 386,
+      "allure": "6:26",
+      "fc": 149
+    },
+    {
+      "km": "3",
+      "secondes": 384,
+      "allure": "6:24",
+      "fc": 154
+    },
+    {
+      "km": "4",
+      "secondes": 378,
+      "allure": "6:18",
+      "fc": 155
+    },
+    {
+      "km": "5",
+      "secondes": 368,
+      "allure": "6:08",
+      "fc": 163
+    },
+    {
+      "km": "0,68",
+      "secondes": 329,
+      "allure": "5:29",
+      "fc": 173
+    }
+  ],
+  "commentaire": "Une sortie en progression : chaque kilomètre plus rapide que le précédent, jusqu'à un final à 5:29 / km. Une semaine plus tôt, la même boucle m'avait pris 43 minutes."
+}

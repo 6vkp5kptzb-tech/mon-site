@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration : un coureur et des barres d'allure, pour ma dernière sortie relevée sur Strava">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1117"/>
+      <stop offset="1" stop-color="#2a1608"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fc4c02"/>
+      <stop offset="0.55" stop-color="#ff7a33"/>
+      <stop offset="1" stop-color="#ff9a4d"/>
+    </linearGradient>
+    <style>
+      .big { font: 800 92px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #ff7a33; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1600" height="14" fill="url(#band)"/>
+  <text x="120" y="150" class="eyebrow">STRAVA · COURSE À PIED</text>
+  <text x="120" y="250" class="big">Ma dernière sortie</text>
+  <g fill="#fc4c02">
+    <rect x="120" y="440" width="820" height="38" rx="6"/>
+    <rect x="120" y="510" width="880" height="38" rx="6"/>
+    <rect x="120" y="580" width="890" height="38" rx="6"/>
+    <rect x="120" y="650" width="900" height="38" rx="6"/>
+    <rect x="120" y="720" width="925" height="38" rx="6"/>
+    <rect x="120" y="790" width="1030" height="38" rx="6"/>
+  </g>
+  <g transform="translate(1180 360) scale(15)" fill="none" stroke="#ff9a4d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="13.5" cy="4" r="2"/><path d="m8 21 3-5 3 2v4"/><path d="M6 12.5 9 9l4 1 3 3 3 .5"/><path d="m11 16-2-4"/>
+  </g>
+  <text x="1480" y="920" text-anchor="end" class="sub">kilomètre par kilomètre, de plus en plus vite</text>
+</svg>

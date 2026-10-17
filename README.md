@@ -20,6 +20,8 @@ mettre-a-jour-musique.bat  Convertit l'Excel en JSON (double-clic)
 outils/           Script de conversion Excel → JSON (Python)
 data/videos.json  Vidéos YouTube de la page Vidéos
 data/articles.json Articles (titre, date, image, contenu)
+data/site.json    Date de dernière mise à jour du site (pied de page)
+data/derniere-sortie.json  Ma dernière sortie Strava (page Sport)
 images/articles/  Images des articles
 favicon.svg       Icône de l'onglet
 ```
@@ -42,6 +44,7 @@ favicon.svg       Icône de l'onglet
   "image": "images/articles/mon-image.jpg", "imageAlt": "...", "extrait": "...", "contenu": [ ... ] }`.
   Ajoute `"sport": true` pour qu'un article n'apparaisse ni dans la liste Articles ni dans le carrousel :
   il est réservé à la page Sport (ajoute sa carte dans `sport.html`) et son lien retour pointe vers elle.
+  De même, `"video": true` réserve un article à la page Vidéos (sa carte s'y affiche toute seule, section « Mes articles vidéo »).
   Le `slug` (minuscules, tirets) donne l'adresse : `article.html?a=mon-article`. Les images vont dans `images/articles/`.
   `contenu` est une liste de blocs :
   `{ "type": "texte", "texte": "..." }`, `{ "type": "titre", "texte": "..." }`,
@@ -53,9 +56,16 @@ favicon.svg       Icône de l'onglet
   `{ "type": "compte-a-rebours", "date": "AAAA-MM-JJ", "texte": "..." }`,
   `{ "type": "diaporama", "photos": [{ "src": "...", "alt": "...", "legende": "..." }, ...] }`
   (une photo à la fois, flèches/points/clavier/glissement ; une photo introuvable est simplement ignorée).
-  Les articles sont triés par date : les 5 plus récents défilent dans le carrousel de l'accueil,
+  Les articles sont triés par date : les 5 plus récents, toutes rubriques confondues (sport et vidéo compris),
+  défilent dans le carrousel de l'accueil,
   tous apparaissent sur `articles.html`, avec un filtre par catégorie (créé tout seul à partir des `categorie`,
   lien direct possible : `articles.html?cat=Sciences`). Les 3 morceaux les plus récents s'affichent aussi sur l'accueil.
+- **Dernière sortie (page Sport)** : `data/derniere-sortie.json`, relevé depuis Strava (distance, durée,
+  allure, FC, splits…). Le site ne lit pas Strava en direct : demande à Claude de remettre ce fichier à jour
+  après une nouvelle sortie. Sans ce fichier, la section est simplement masquée.
+  Elle compte aussi comme une publication : sa carte entre dans le carrousel de l'accueil, à sa date.
+- **Date de mise à jour** : change `miseAJour` (format AAAA-MM-JJ) dans `data/site.json` ; elle s'affiche
+  dans le pied de page de toutes les pages (« Mis à jour le … »).
 - **Couleurs** : variables `--accent`, `--bg`, etc. en haut de `css/style.css`.
 - **Cache** : après une modification de `css/style.css` ou `js/main.js`, augmente le numéro
   `?v=...` dans les balises `<link>` et `<script>` de toutes les pages, sinon les navigateurs

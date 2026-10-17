@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration : une petite maison en bois avec une fenêtre allumée, sur des collines dorées de la prairie au soleil couchant">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0f14"/>
+      <stop offset="0.6" stop-color="#2a1d14"/>
+      <stop offset="1" stop-color="#5b2e12"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fde68a"/>
+      <stop offset="1" stop-color="#fb923c"/>
+    </radialGradient>
+    <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b45309"/>
+      <stop offset="1" stop-color="#5b2e12"/>
+    </linearGradient>
+    <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7c3a1a"/>
+      <stop offset="1" stop-color="#2a1608"/>
+    </linearGradient>
+    <linearGradient id="hill3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2212"/>
+      <stop offset="1" stop-color="#0f0a06"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="40"/></filter>
+    <style>
+      .big { font: 800 84px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #fdba74; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <text x="120" y="150" class="eyebrow">SÉRIE TV · 1974 · PLEINE DE BONNES INTENTIONS</text>
+  <text x="120" y="245" class="big">La Petite Maison</text>
+  <text x="120" y="335" class="big">dans la prairie</text>
+
+  <!-- Soleil couchant -->
+  <circle cx="1180" cy="560" r="170" fill="#fb923c" opacity="0.35" filter="url(#glow)"/>
+  <circle cx="1180" cy="560" r="110" fill="url(#sun)"/>
+
+  <!-- Collines en plans successifs -->
+  <path d="M0,640 C220,580 420,600 640,630 C860,660 1060,590 1300,600 C1440,606 1530,630 1600,640 L1600,1000 L0,1000 Z" fill="url(#hill1)"/>
+  <path d="M0,740 C260,690 520,700 760,730 C1000,760 1240,700 1600,720 L1600,1000 L0,1000 Z" fill="url(#hill2)"/>
+
+  <!-- Arbre -->
+  <g>
+    <line x1="420" y1="700" x2="420" y2="610" stroke="#1a1109" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="420" cy="590" r="46" fill="#1f2a1a"/>
+    <circle cx="390" cy="610" r="34" fill="#1f2a1a"/>
+    <circle cx="452" cy="612" r="32" fill="#1f2a1a"/>
+  </g>
+
+  <!-- La petite maison -->
+  <g transform="translate(860 590)">
+    <path d="M0,130 L0,50 L90,-10 L180,50 L180,130 Z" fill="#2a1608" stroke="#fdba74" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M-14,58 L90,-20 L194,58" fill="none" stroke="#fdba74" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="130" y="-5" width="22" height="40" fill="#2a1608" stroke="#fdba74" stroke-width="4"/>
+    <rect x="30" y="70" width="40" height="34" rx="3" fill="#fde68a"/>
+    <line x1="50" y1="70" x2="50" y2="104" stroke="#2a1608" stroke-width="3"/>
+    <rect x="105" y="70" width="40" height="60" rx="3" fill="#1a1109" stroke="#fdba74" stroke-width="3"/>
+  </g>
+  <!-- Fumée de la cheminée -->
+  <g fill="none" stroke="#9aa7b5" stroke-width="4" stroke-linecap="round" opacity="0.5">
+    <path d="M1001,575 C990,555 1015,540 1003,520 C992,500 1018,485 1006,465"/>
+  </g>
+  <!-- Fenêtre : halo -->
+  <circle cx="910" cy="677" r="50" fill="#fde68a" opacity="0.15" filter="url(#glow)"/>
+
+  <!-- Premier plan : herbes hautes et blé -->
+  <path d="M0,850 C300,810 600,820 900,840 C1200,860 1400,820 1600,830 L1600,1000 L0,1000 Z" fill="url(#hill3)"/>
+  <g stroke="#b45309" stroke-width="3" stroke-linecap="round" opacity="0.7">
+    <path d="M80,1000 L95,880 M120,1000 L118,870 M160,1000 L178,885 M210,1000 L205,875 M260,1000 L280,890"/>
+    <path d="M1320,1000 L1335,870 M1370,1000 L1365,860 M1420,1000 L1440,875 M1470,1000 L1462,865 M1520,1000 L1540,880"/>
+  </g>
+  <g fill="#d97706" opacity="0.8">
+    <ellipse cx="95" cy="874" rx="5" ry="14"/><ellipse cx="118" cy="864" rx="5" ry="14"/><ellipse cx="178" cy="879" rx="5" ry="14"/>
+    <ellipse cx="205" cy="869" rx="5" ry="14"/><ellipse cx="280" cy="884" rx="5" ry="14"/>
+    <ellipse cx="1335" cy="864" rx="5" ry="14"/><ellipse cx="1365" cy="854" rx="5" ry="14"/><ellipse cx="1440" cy="869" rx="5" ry="14"/>
+    <ellipse cx="1462" cy="859" rx="5" ry="14"/><ellipse cx="1540" cy="874" rx="5" ry="14"/>
+  </g>
+  <text x="1480" y="420" text-anchor="end" class="sub">Walnut Grove, Minnesota · musique de David Rose</text>
+</svg>

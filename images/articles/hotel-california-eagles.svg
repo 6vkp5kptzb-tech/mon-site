@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration : un hôtel de style californien au crépuscule, entouré de palmiers, avec une enseigne au néon">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0f14"/>
+      <stop offset="0.55" stop-color="#2b1a2e"/>
+      <stop offset="1" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2a2e"/>
+      <stop offset="1" stop-color="#1a1216"/>
+    </linearGradient>
+    <filter id="neon" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="24"/></filter>
+    <style>
+      .big { font: 800 92px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #fdba74; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+      .neon { font: 700 46px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; letter-spacing: 10px; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <text x="120" y="150" class="eyebrow">EAGLES · 1976 · L'HISTOIRE D'UNE CHANSON</text>
+  <text x="120" y="250" class="big">Hotel California</text>
+  <text x="1480" y="330" text-anchor="end" class="sub">Felder · Henley · Frey</text>
+
+  <!-- Soleil couché derrière l'horizon -->
+  <circle cx="800" cy="860" r="320" fill="#fb923c" opacity="0.35" filter="url(#glow)"/>
+
+  <!-- L'hôtel -->
+  <g>
+    <rect x="480" y="560" width="640" height="300" fill="url(#wall)" stroke="#fdba74" stroke-width="3" stroke-opacity="0.5"/>
+    <!-- Tour centrale à dôme -->
+    <rect x="700" y="470" width="200" height="390" fill="url(#wall)" stroke="#fdba74" stroke-width="3" stroke-opacity="0.5"/>
+    <path d="M700,470 C700,400 900,400 900,470 Z" fill="#2b1a2e" stroke="#fdba74" stroke-width="3" stroke-opacity="0.5"/>
+    <line x1="800" y1="415" x2="800" y2="380" stroke="#fdba74" stroke-width="3" stroke-opacity="0.6"/>
+    <!-- Fenêtres allumées -->
+    <g fill="#fde68a">
+      <rect x="520" y="600" width="34" height="46" rx="17" opacity="0.85"/><rect x="580" y="600" width="34" height="46" rx="17" opacity="0.35"/><rect x="640" y="600" width="34" height="46" rx="17" opacity="0.85"/>
+      <rect x="926" y="600" width="34" height="46" rx="17" opacity="0.35"/><rect x="986" y="600" width="34" height="46" rx="17" opacity="0.85"/><rect x="1046" y="600" width="34" height="46" rx="17" opacity="0.85"/>
+      <rect x="520" y="690" width="34" height="46" rx="17" opacity="0.35"/><rect x="580" y="690" width="34" height="46" rx="17" opacity="0.85"/><rect x="640" y="690" width="34" height="46" rx="17" opacity="0.85"/>
+      <rect x="926" y="690" width="34" height="46" rx="17" opacity="0.85"/><rect x="986" y="690" width="34" height="46" rx="17" opacity="0.35"/><rect x="1046" y="690" width="34" height="46" rx="17" opacity="0.85"/>
+      <rect x="735" y="500" width="40" height="54" rx="20" opacity="0.85"/><rect x="825" y="500" width="40" height="54" rx="20" opacity="0.85"/>
+    </g>
+    <!-- Porte d'entrée -->
+    <path d="M760,860 L760,770 C760,735 840,735 840,770 L840,860 Z" fill="#fde68a" opacity="0.9"/>
+  </g>
+  <!-- Enseigne au néon -->
+  <text x="800" y="625" text-anchor="middle" class="neon" fill="#22d3ee" filter="url(#neon)">HOTEL</text>
+  <text x="800" y="625" text-anchor="middle" class="neon" fill="#cffafe">HOTEL</text>
+
+  <!-- Palmiers -->
+  <g fill="none" stroke="#0b0f14" stroke-linecap="round">
+    <path d="M300,880 C310,760 300,620 330,470" stroke-width="16"/>
+    <path d="M330,470 C270,440 220,450 180,490 M330,470 C380,430 440,435 480,470 M330,470 C300,420 260,400 220,400 M330,470 C360,410 410,395 450,400 M330,470 C330,430 340,400 360,380" stroke-width="12"/>
+    <path d="M1300,880 C1290,760 1310,640 1280,520" stroke-width="16"/>
+    <path d="M1280,520 C1220,490 1170,500 1130,540 M1280,520 C1330,480 1390,485 1430,520 M1280,520 C1250,470 1210,450 1170,450 M1280,520 C1310,460 1360,445 1400,450 M1280,520 C1280,480 1290,450 1310,430" stroke-width="12"/>
+    <path d="M1450,880 C1445,800 1455,720 1440,650" stroke-width="12"/>
+    <path d="M1440,650 C1400,630 1365,640 1340,665 M1440,650 C1475,625 1515,628 1545,650 M1440,650 C1425,615 1400,600 1375,600 M1440,650 C1460,612 1490,602 1515,605" stroke-width="9"/>
+  </g>
+
+  <!-- Route / sol -->
+  <rect x="0" y="860" width="1600" height="140" fill="#0b0f14"/>
+  <line x1="0" y1="860" x2="1600" y2="860" stroke="#fdba74" stroke-width="2" opacity="0.5"/>
+  <g fill="#fde68a" opacity="0.5">
+    <rect x="100" y="925" width="120" height="6" rx="3"/><rect x="380" y="925" width="120" height="6" rx="3"/>
+    <rect x="660" y="925" width="120" height="6" rx="3"/><rect x="940" y="925" width="120" height="6" rx="3"/>
+    <rect x="1220" y="925" width="120" height="6" rx="3"/>
+  </g>
+</svg>

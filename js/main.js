@@ -40,11 +40,17 @@
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
+  // ---------- Date de mise à jour du site (data/site.json) ----------
+  initMiseAJour();
+
   // ---------- Articles : carrousel (accueil), liste et page article ----------
   initArticles();
 
   // ---------- Page Vidéos ----------
   initVideos();
+
+  // ---------- Page Sport : dernière sortie Strava ----------
+  initDerniereSortie();
 
   // ---------- Page Musique et aperçu de l'accueil ----------
   var tracksEl = document.getElementById("tracks") || document.getElementById("tracks-preview");
@@ -179,6 +185,122 @@
     return li;
   }
 
+  // ---------- Pied de page : « Mis à jour le … » ----------
+  function initMiseAJour() {
+    var footer = document.querySelector(".footer-inner");
+    if (!footer) return;
+    fetch("data/site.json", { cache: "no-cache" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        if (!data.miseAJour) return;
+        var span = el("span", "footer-maj");
+        var date = document.createElement("time");
+        date.dateTime = data.miseAJour;
+        date.textContent = formatDate(data.miseAJour, "long");
+        span.append("Mis à jour le ", date);
+        footer.insertBefore(span, footer.children[1] || null);
+      })
+      .catch(function () { /* pas de date : rien à afficher */ });
+  }
+
+  // ---------- Dernière sortie (data/derniere-sortie.json, relevé depuis Strava) ----------
+  function initDerniereSortie() {
+    var box = document.getElementById("derniere-sortie");
+    if (!box) return;
+    fetch("data/derniere-sortie.json", { cache: "no-cache" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (s) {
+        var jour = (s.date || "").slice(0, 10);
+        var heure = (s.date || "").slice(11, 16).replace(":", " h ");
+        var quand = document.getElementById("derniere-quand");
+        quand.textContent = [s.type, formatDate(jour, "long"), heure, s.lieu].filter(Boolean).join(" · ");
+        if (s.activite) document.getElementById("derniere-lien").href = "https://www.strava.com/activities/" + s.activite;
+
+        // Chiffres clés
+        var stats = el("dl", "sortie-stats");
+        [
+          ["Distance", String(s.distanceKm).replace(".", ","), "km"],
+          ["Durée", s.duree],
+          ["Allure moyenne", s.allure, "/ km"],
+          ["Dénivelé positif", s.denivele, "m"],
+          ["FC moyenne", s.fcMoyenne, "bpm"],
+          ["FC max", s.fcMax, "bpm"],
+          ["Cadence", s.cadence, "pas / min"],
+          ["Calories", s.calories, "kcal"]
+        ].forEach(function (st) {
+          if (st[1] === undefined || st[1] === null) return;
+          var item = el("div", "sortie-stat");
+          var dt = el("dt");
+          dt.textContent = st[0];
+          var dd = el("dd");
+          dd.textContent = st[1];
+          if (st[2]) {
+            var unit = el("small");
+            unit.textContent = " " + st[2];
+            dd.appendChild(unit);
+          }
+          item.append(dt, dd);
+          stats.appendChild(item);
+        });
+        box.appendChild(stats);
+
+        if (s.commentaire) {
+          var com = el("p", "sortie-comment");
+          com.textContent = s.commentaire;
+          box.appendChild(com);
+        }
+
+        // Tableau kilomètre par kilomètre, barre = vitesse (plus longue = plus rapide)
+        var splits = s.splits || [];
+        if (splits.length) {
+          var vMax = Math.max.apply(null, splits.map(function (k) { return 1 / k.secondes; }));
+          var table = el("table", "sortie-splits");
+          var cap = el("caption");
+          cap.textContent = "// kilomètre par kilomètre";
+          var thead = el("thead");
+          var hr = el("tr");
+          ["Km", "Allure", "FC moy.", "Vitesse"].forEach(function (h) {
+            var th = el("th");
+            th.scope = "col";
+            th.textContent = h;
+            hr.appendChild(th);
+          });
+          thead.appendChild(hr);
+          var tbody = el("tbody");
+          splits.forEach(function (k) {
+            var tr = el("tr");
+            tr.title = "Km " + k.km + " : " + k.allure + " / km, " + k.fc + " bpm";
+            var bar = el("span", "sortie-bar");
+            bar.style.width = Math.round((1 / k.secondes) / vMax * 100) + "%";
+            [k.km, k.allure + " / km", k.fc + " bpm", bar].forEach(function (v, i) {
+              var td = el("td", i === 3 ? "sortie-bar-cell" : "");
+              if (i === 3) td.setAttribute("aria-hidden", "true");
+              td.append(v);
+              tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+          });
+          table.append(cap, thead, tbody);
+          box.appendChild(table);
+        }
+
+        var note = el("p", "sortie-note");
+        var best = (s.meilleursEfforts || []).map(function (b) { return b.distance + " en " + b.temps; }).join(", ");
+        note.textContent = (best ? "Meilleurs efforts de la sortie : " + best + ". " : "") +
+          (s.effortRelatif ? "Effort relatif : " + s.effortRelatif + ". " : "") + "Données : " + (s.source || "Strava") + ".";
+        box.appendChild(note);
+
+        box.closest("section").hidden = false;
+      })
+      .catch(function () { /* pas de données : la section reste masquée */ });
+  }
+
   // ---------- Vidéos YouTube (data/videos.json), chargées au clic ----------
   function initVideos() {
     var container = document.getElementById("videos");
@@ -193,7 +315,9 @@
         var videos = (data.videos || []).filter(function (v) { return youtubeId(v.lien); });
         container.innerHTML = "";
         if (!videos.length) {
-          container.innerHTML = '<p class="notice">Aucune vidéo pour le moment.</p>';
+          // Pas de vidéo seule : la section disparaît s'il y a des articles vidéo au-dessus
+          if (document.getElementById("videos-articles")) container.closest("section").hidden = true;
+          else container.innerHTML = '<p class="notice">Aucune vidéo pour le moment.</p>';
           return;
         }
         videos.forEach(function (v) { container.appendChild(renderVideo(v)); });
@@ -264,7 +388,8 @@
     var carouselEl = document.getElementById("carousel");
     var listEl = document.getElementById("articles-list");
     var articleEl = document.getElementById("article");
-    if (!carouselEl && !listEl && !articleEl) return;
+    var videoPostsEl = document.getElementById("videos-articles");
+    if (!carouselEl && !listEl && !articleEl && !videoPostsEl) return;
 
     fetch("data/articles.json", { cache: "no-cache" })
       .then(function (res) {
@@ -275,10 +400,24 @@
         var articles = (data.articles || []).slice().sort(function (a, b) {
           return (b.date || "").localeCompare(a.date || "");
         });
-        // Les articles marqués "sport": true ne s'affichent que sur la page Sport
-        var publies = articles.filter(function (a) { return !a.sport; });
-        if (carouselEl) initCarousel(carouselEl, publies.slice(0, 5));
+        // Le carrousel montre les 5 dernières publications, toutes rubriques confondues.
+        // Les articles "sport": true ou "video": true sont réservés à la page Sport ou Vidéos.
+        var publies = articles.filter(function (a) { return !a.sport && !a.video; });
+        if (carouselEl) {
+          // La dernière sortie Strava (page Sport) compte aussi comme une publication
+          sortieCommePublication()
+            .then(function (sortie) {
+              var tout = sortie ? articles.concat(sortie) : articles;
+              tout.sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); });
+              initCarousel(carouselEl, tout.slice(0, 5));
+            });
+        }
         if (listEl) initArticleFilters(listEl, publies);
+        if (videoPostsEl) {
+          var videoPosts = articles.filter(function (a) { return a.video; });
+          renderList(videoPostsEl, videoPosts);
+          videoPostsEl.closest("section").hidden = !videoPosts.length;
+        }
         if (articleEl) renderArticle(articleEl, articles);
       })
       .catch(function () {
@@ -288,12 +427,35 @@
           "depuis ton disque, lance plutôt un petit serveur local (voir le README).";
         if (carouselEl) { carouselEl.hidden = false; carouselEl.replaceChildren(msg); }
         if (listEl) listEl.replaceWith(msg);
+        if (videoPostsEl) videoPostsEl.closest("section").hidden = true;
         if (articleEl) articleEl.querySelector(".container").replaceChildren(msg);
       });
   }
 
   function articleUrl(a) {
-    return "article.html?a=" + encodeURIComponent(a.slug);
+    return a.lien || "article.html?a=" + encodeURIComponent(a.slug);
+  }
+
+  // data/derniere-sortie.json présenté comme une carte du carrousel (null si absent)
+  function sortieCommePublication() {
+    return fetch("data/derniere-sortie.json", { cache: "no-cache" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (s) {
+        var km = String(s.distanceKm).replace(".", ",");
+        return {
+          titre: "Ma dernière sortie : " + km + " km" + (s.lieu ? " à " + s.lieu : ""),
+          date: (s.date || "").slice(0, 10),
+          categorie: "Sport",
+          image: "images/articles/derniere-sortie.svg",
+          extrait: km + " km en " + s.duree + ", à " + s.allure + " / km de moyenne et " +
+            s.fcMoyenne + " bpm. Le détail kilomètre par kilomètre, d'après Strava.",
+          lien: "sport.html#derniere"
+        };
+      })
+      .catch(function () { return null; });
   }
 
   // Carte d'article (carrousel et liste)
@@ -514,8 +676,8 @@
     if (desc && a.extrait) desc.content = a.extrait;
 
     var backLink = el("a", "back-link");
-    backLink.href = a.sport ? "sport.html" : "articles.html";
-    backLink.textContent = a.sport ? "← Sport" : "← Toutes les publications";
+    backLink.href = a.sport ? "sport.html" : a.video ? "videos.html" : "articles.html";
+    backLink.textContent = a.sport ? "← Sport" : a.video ? "← Vidéos" : "← Toutes les publications";
 
     var head = el("header", "article-head");
     var title = el("h1");

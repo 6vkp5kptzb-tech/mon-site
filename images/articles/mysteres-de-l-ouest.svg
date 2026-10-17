@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration : un train à vapeur traverse le désert de l'Ouest américain devant des mesas, sous la lune">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1117"/>
+      <stop offset="1" stop-color="#2a1d14"/>
+    </linearGradient>
+    <linearGradient id="mesa" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7c3a1a"/>
+      <stop offset="1" stop-color="#2a1608"/>
+    </linearGradient>
+    <style>
+      .big { font: 800 92px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <g fill="#e6edf3">
+    <circle cx="300" cy="360" r="2"/><circle cx="560" cy="330" r="1.5"/><circle cx="900" cy="380" r="2"/>
+    <circle cx="1100" cy="300" r="1.5"/><circle cx="760" cy="420" r="1.5"/><circle cx="1500" cy="420" r="2"/>
+  </g>
+  <circle cx="1330" cy="320" r="70" fill="#fdba74" opacity="0.14"/>
+  <circle cx="1330" cy="320" r="44" fill="#fdba74" opacity="0.5"/>
+  <text x="120" y="150" class="eyebrow">SÉRIE TV · 1965-1969 · LE SAMEDI AVEC MON PÈRE</text>
+  <text x="120" y="250" class="big">Les Mystères de l'Ouest</text>
+  <!-- Mesas -->
+  <path d="M0,700 L0,560 L90,560 L120,520 L330,520 L360,560 L420,560 L450,700 Z" fill="url(#mesa)"/>
+  <path d="M1020,700 L1060,600 L1110,600 L1130,560 L1380,560 L1410,610 L1480,610 L1520,700 Z" fill="url(#mesa)"/>
+  <!-- Sol et rails -->
+  <rect x="0" y="700" width="1600" height="300" fill="#1a1109"/>
+  <!-- Cactus -->
+  <g fill="none" stroke="#155e63" stroke-width="14" stroke-linecap="round">
+    <path d="M1460,780 L1460,650 M1460,710 L1430,710 L1430,675 M1460,695 L1490,695 L1490,660"/>
+  </g>
+  <line x1="0" y1="790" x2="1600" y2="790" stroke="#9aa7b5" stroke-width="4"/>
+  <g stroke="#3a2a1c" stroke-width="8">
+    <path d="M40,790 v14 M120,790 v14 M200,790 v14 M280,790 v14 M360,790 v14 M440,790 v14 M520,790 v14 M600,790 v14 M680,790 v14 M760,790 v14 M840,790 v14 M920,790 v14 M1000,790 v14 M1080,790 v14 M1160,790 v14 M1240,790 v14 M1320,790 v14 M1400,790 v14 M1480,790 v14 M1560,790 v14"/>
+  </g>
+  <!-- Fumée -->
+  <g fill="#9aa7b5" opacity="0.35">
+    <circle cx="900" cy="560" r="30"/><circle cx="850" cy="520" r="40"/><circle cx="780" cy="490" r="50"/><circle cx="690" cy="470" r="58"/>
+  </g>
+  <!-- Train : locomotive et wagon -->
+  <g stroke="#67e8f9" stroke-width="5" stroke-linejoin="round">
+    <rect x="300" y="660" width="300" height="100" rx="8" fill="#0f2a33"/>
+    <g fill="#fdba74" stroke="none" opacity="0.8">
+      <rect x="330" y="685" width="50" height="35" rx="4"/><rect x="420" y="685" width="50" height="35" rx="4"/><rect x="510" y="685" width="50" height="35" rx="4"/>
+    </g>
+    <line x1="600" y1="740" x2="630" y2="740"/>
+    <rect x="630" y="690" width="200" height="70" rx="8" fill="#0f2a33"/>
+    <rect x="830" y="630" width="100" height="130" rx="8" fill="#0f2a33"/>
+    <rect x="870" y="590" width="40" height="40" fill="#0f2a33"/>
+    <path d="M930,700 L990,770 L930,770 Z" fill="#0f2a33"/>
+    <rect x="850" y="650" width="55" height="40" rx="4" fill="#fdba74" stroke="none" opacity="0.8"/>
+  </g>
+  <g fill="#0b1117" stroke="#67e8f9" stroke-width="5">
+    <circle cx="360" cy="770" r="20"/><circle cx="540" cy="770" r="20"/>
+    <circle cx="690" cy="760" r="28"/><circle cx="770" cy="760" r="28"/><circle cx="880" cy="770" r="20"/>
+  </g>
+  <text x="1480" y="940" text-anchor="end" class="sub">James West, Artemus Gordon · musique de Richard Markowitz</text>
+</svg>

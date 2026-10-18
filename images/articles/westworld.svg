@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration : une main blanche robotisée, aux tendons apparents, tendue vers une main humaine, dans un cercle à la manière de l'homme de Vitruve, au-dessus d'un rouleau de piano mécanique perforé">
+  <defs>
+    <radialGradient id="fond" cx="0.65" cy="0.55" r="0.9">
+      <stop offset="0" stop-color="#121a2a"/>
+      <stop offset="1" stop-color="#070a0f"/>
+    </radialGradient>
+    <linearGradient id="peau" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#94a3b8"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+    <style>
+      .big { font: 800 92px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#fond)"/>
+  <text x="120" y="150" class="eyebrow">SÉRIE TV · HBO · 2016-2022</text>
+  <text x="120" y="250" class="big">Westworld</text>
+  <!-- Le cercle de Vitruve -->
+  <circle cx="1060" cy="520" r="300" fill="none" stroke="#334155" stroke-width="3"/>
+  <rect x="790" y="250" width="540" height="540" fill="none" stroke="#334155" stroke-width="2" opacity="0.6"/>
+  <circle cx="1060" cy="520" r="260" fill="#e6edf3" opacity="0.05" filter="url(#glow)"/>
+  <!-- La main robotisée (à droite) : doigts tendus vers la gauche -->
+  <g fill="url(#peau)" stroke="#cbd5e1" stroke-width="2">
+    <path d="M1300,470 C1240,455 1180,450 1130,458 L1060,462 C1040,463 1040,486 1060,487 L1120,488 L1050,500 C1030,503 1032,526 1052,525 L1125,516 L1060,532 C1040,537 1045,560 1065,556 L1135,542 L1080,560 C1062,567 1070,588 1088,582 L1160,560 C1200,575 1260,580 1300,575 Z"/>
+  </g>
+  <!-- Tendons et articulations visibles -->
+  <g stroke="#22d3ee" stroke-width="2" fill="none" opacity="0.8">
+    <path d="M1290,490 L1080,474 M1290,510 L1070,512 M1290,530 L1080,544 M1290,550 L1100,571"/>
+  </g>
+  <g fill="#22d3ee">
+    <circle cx="1130" cy="474" r="5"/><circle cx="1125" cy="508" r="5"/><circle cx="1135" cy="540" r="5"/><circle cx="1160" cy="565" r="5"/>
+  </g>
+  <!-- La main humaine (à gauche), doigt tendu -->
+  <g fill="#e6edf3" opacity="0.85">
+    <path d="M760,520 C800,505 840,500 880,505 L960,500 C978,500 978,520 960,522 L900,526 C915,535 915,555 895,556 C870,570 820,575 760,570 Z"/>
+  </g>
+  <!-- L'étincelle entre les deux mains -->
+  <circle cx="1005" cy="490" r="6" fill="#fdba74"/>
+  <circle cx="1005" cy="490" r="22" fill="#fdba74" opacity="0.25"/>
+  <!-- Rouleau de piano mécanique -->
+  <rect x="120" y="840" width="1360" height="70" rx="6" fill="#e6edf3" opacity="0.9"/>
+  <g fill="#070a0f">
+    <rect x="160" y="852" width="40" height="8"/><rect x="230" y="872" width="70" height="8"/><rect x="330" y="862" width="30" height="8"/>
+    <rect x="390" y="888" width="90" height="8"/><rect x="510" y="852" width="50" height="8"/><rect x="590" y="878" width="40" height="8"/>
+    <rect x="660" y="862" width="80" height="8"/><rect x="770" y="890" width="30" height="8"/><rect x="830" y="854" width="60" height="8"/>
+    <rect x="920" y="874" width="40" height="8"/><rect x="990" y="862" width="90" height="8"/><rect x="1110" y="886" width="50" height="8"/>
+    <rect x="1190" y="856" width="40" height="8"/><rect x="1260" y="876" width="70" height="8"/><rect x="1360" y="864" width="80" height="8"/>
+  </g>
+  <text x="1480" y="960" text-anchor="end" class="sub">Jonathan Nolan et Lisa Joy · musique de Ramin Djawadi</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration : une porte d'hôtel grande ouverte à l'entrée, une flèche y entre facilement, tandis que la flèche de sortie bute contre un mur ; à côté, une courbe des coûts de sortie qui grimpe">
+  <defs>
+    <radialGradient id="fond" cx="0.7" cy="0.6" r="0.9">
+      <stop offset="0" stop-color="#121a2a"/>
+      <stop offset="1" stop-color="#070a0f"/>
+    </radialGradient>
+    <linearGradient id="porte" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdba74"/>
+      <stop offset="1" stop-color="#ea580c"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+    <style>
+      .big { font: 800 80px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+      .label { font: 600 26px ui-monospace, "Cascadia Code", Consolas, monospace; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#fond)"/>
+  <text x="120" y="150" class="eyebrow">ÉCONOMIE · VERROUILLAGE · COÛTS DE SORTIE</text>
+  <text x="120" y="250" class="big">L'effet Hotel California</text>
+  <!-- La façade de l'hôtel -->
+  <rect x="120" y="360" width="620" height="520" rx="6" fill="#0f2a33" stroke="#334155" stroke-width="4"/>
+  <g fill="#fdba74" opacity="0.6">
+    <rect x="170" y="400" width="70" height="60"/><rect x="290" y="400" width="70" height="60"/>
+    <rect x="500" y="400" width="70" height="60"/><rect x="620" y="400" width="70" height="60"/>
+    <rect x="170" y="500" width="70" height="60"/><rect x="620" y="500" width="70" height="60"/>
+  </g>
+  <!-- La porte d'entrée, grande ouverte -->
+  <rect x="340" y="600" width="180" height="280" fill="url(#porte)" opacity="0.4" filter="url(#glow)"/>
+  <rect x="350" y="610" width="160" height="270" fill="url(#porte)"/>
+  <!-- Flèche d'entrée : facile -->
+  <path d="M60,760 L320,760" stroke="#22d3ee" stroke-width="10" stroke-linecap="round"/>
+  <path d="M300,735 L340,760 L300,785" fill="none" stroke="#22d3ee" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="730" class="label" fill="#22d3ee">ENTRER</text>
+  <!-- Flèche de sortie : bloquée -->
+  <path d="M740,560 L860,560" stroke="#f87171" stroke-width="10" stroke-linecap="round" stroke-dasharray="4 18"/>
+  <rect x="880" y="490" width="22" height="140" fill="#f87171"/>
+  <text x="760" y="520" class="label" fill="#f87171">SORTIR ?</text>
+  <!-- Courbe des coûts de sortie -->
+  <g transform="translate(1000 880)">
+    <line x1="0" y1="0" x2="480" y2="0" stroke="#334155" stroke-width="4"/>
+    <line x1="0" y1="0" x2="0" y2="-500" stroke="#334155" stroke-width="4"/>
+    <path d="M10,-30 C150,-40 260,-90 340,-200 C390,-270 430,-380 460,-470" fill="none" stroke="#f87171" stroke-width="8" stroke-linecap="round"/>
+    <text x="20" y="-460" class="label" fill="#9aa7b5">coût pour partir</text>
+    <text x="300" y="40" class="label" fill="#9aa7b5">temps passé</text>
+  </g>
+  <text x="1480" y="960" text-anchor="end" class="sub">« You can check out any time you like, but you can never leave »</text>
+</svg>

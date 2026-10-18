@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration : un drakkar viking à la voile rayée glisse sur une mer sombre sous un ciel d'orage, survolé par un corbeau">
+  <defs>
+    <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070a0f"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="mer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f2a33"/>
+      <stop offset="1" stop-color="#070a0f"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+    <style>
+      .big { font: 800 92px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#ciel)"/>
+  <text x="120" y="150" class="eyebrow">SÉRIE TV · 2013-2020 · UN ÉPISODE PAR SEMAINE</text>
+  <text x="120" y="250" class="big">Vikings</text>
+  <!-- Lune voilée et éclair -->
+  <circle cx="1350" cy="220" r="70" fill="#e6edf3" opacity="0.15" filter="url(#glow)"/>
+  <circle cx="1350" cy="220" r="46" fill="#cbd5e1" opacity="0.6"/>
+  <path d="M1180,120 L1150,220 L1185,220 L1150,330" fill="none" stroke="#67e8f9" stroke-width="5" stroke-linejoin="round" opacity="0.7"/>
+  <!-- La mer -->
+  <rect x="0" y="720" width="1600" height="280" fill="url(#mer)"/>
+  <g fill="none" stroke="#67e8f9" stroke-width="3" opacity="0.35">
+    <path d="M0,760 C80,740 160,780 240,760 S400,740 480,760"/>
+    <path d="M1080,780 C1160,760 1240,800 1320,780 S1480,760 1600,780"/>
+    <path d="M200,880 C280,860 360,900 440,880 S600,860 680,880"/>
+    <path d="M900,900 C980,880 1060,920 1140,900"/>
+  </g>
+  <!-- Le drakkar -->
+  <g transform="translate(800 700)">
+    <!-- Mât et voile rayée -->
+    <line x1="0" y1="0" x2="0" y2="-380" stroke="#475569" stroke-width="10"/>
+    <line x1="-230" y1="-360" x2="230" y2="-360" stroke="#475569" stroke-width="8"/>
+    <path d="M-220,-355 L220,-355 C235,-260 225,-160 210,-70 L-210,-70 C-225,-160 -235,-260 -220,-355 Z" fill="#e6edf3"/>
+    <g fill="#b91c1c">
+      <path d="M-160,-355 L-100,-355 L-105,-70 L-160,-70 C-163,-160 -163,-260 -160,-355 Z"/>
+      <rect x="-30" y="-355" width="60" height="285"/>
+      <path d="M100,-355 L160,-355 C163,-260 163,-160 160,-70 L105,-70 Z"/>
+    </g>
+    <!-- Coque -->
+    <path d="M-420,-40 C-380,40 -250,60 0,60 C250,60 380,40 420,-40 L380,-30 C300,0 -300,0 -380,-30 Z" fill="#1c0a03" stroke="#78350f" stroke-width="4"/>
+    <!-- Proue et poupe en volute -->
+    <path d="M380,-30 C430,-60 450,-120 420,-170 C405,-195 375,-190 380,-165 C385,-140 405,-145 400,-125" fill="none" stroke="#78350f" stroke-width="14" stroke-linecap="round"/>
+    <path d="M-380,-30 C-430,-60 -450,-120 -420,-170 C-405,-195 -375,-190 -380,-165" fill="none" stroke="#78350f" stroke-width="14" stroke-linecap="round"/>
+    <!-- Boucliers -->
+    <g stroke="#1c0a03" stroke-width="3">
+      <circle cx="-270" cy="-12" r="24" fill="#fdba74"/><circle cx="-190" cy="-8" r="24" fill="#22d3ee"/>
+      <circle cx="-110" cy="-6" r="24" fill="#fdba74"/><circle cx="-30" cy="-5" r="24" fill="#22d3ee"/>
+      <circle cx="50" cy="-5" r="24" fill="#fdba74"/><circle cx="130" cy="-6" r="24" fill="#22d3ee"/>
+      <circle cx="210" cy="-8" r="24" fill="#fdba74"/><circle cx="290" cy="-12" r="24" fill="#22d3ee"/>
+    </g>
+  </g>
+  <!-- Un corbeau -->
+  <path d="M440,420 C470,395 500,392 520,410 C540,392 575,390 610,415 C580,412 555,420 540,438 L525,445 L512,438 C495,420 470,414 440,420 Z" fill="#000" stroke="#334155" stroke-width="2"/>
+  <text x="1480" y="960" text-anchor="end" class="sub">Créée par Michael Hirst · générique de Fever Ray</text>
+</svg>

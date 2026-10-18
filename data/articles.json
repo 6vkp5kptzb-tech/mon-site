@@ -1,6 +1,381 @@
 {
   "articles": [
     {
+      "slug": "game-of-thrones",
+      "video": true,
+      "titre": "Game of Thrones : le top des tops, impossible d'attendre !",
+      "date": "2026-10-18",
+      "categorie": "Vidéos",
+      "image": "images/articles/game-of-thrones.svg",
+      "imageAlt": "Le Trône de fer hérissé d'épées sous la neige, un dragon qui crache du feu dans le ciel et un mur de glace à l'horizon",
+      "extrait": "Le top des tops ! Pour Game of Thrones, j'ai pris un abonnement pour pouvoir tout voir : impossible d'attendre. Le générique de la saison 8, la carte de Westeros et la musique de Ramin Djawadi.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Le top des tops ! Avec Game of Thrones, attendre n'était tout simplement pas possible. J'ai pris un abonnement pour pouvoir tout voir, dès la sortie des épisodes. Pas question de laisser quelqu'un me raconter la fin, ni de rater un seul rebondissement."
+        },
+        {
+          "type": "titre",
+          "texte": "Le générique"
+        },
+        {
+          "type": "youtube",
+          "id": "TZE9gVF1QbA",
+          "titre": "Game of Thrones : générique de la saison 8 (HBO)"
+        },
+        {
+          "type": "texte",
+          "texte": "Une carte du monde qui se déplie comme une gigantesque maquette, des villes et des châteaux qui sortent de terre avec leurs rouages, et ce thème inoubliable de Ramin Djawadi, le même compositeur que pour Westworld. Le générique change selon les lieux visités dans l'épisode. Pour la saison 8, la dernière, il a été entièrement repensé pour suivre de plus près le fil de l'histoire. Dès la première saison, ce générique avait remporté l'Emmy Award du meilleur générique."
+        },
+        {
+          "type": "titre",
+          "texte": "La série en quelques lignes"
+        },
+        {
+          "type": "texte",
+          "texte": "Sur le continent de Westeros, les étés et les hivers peuvent durer des années. Plusieurs grandes familles, les Stark, les Lannister, les Targaryen, les Baratheon, se disputent le Trône de fer et le pouvoir sur les Sept Couronnes. Complots, alliances, trahisons, batailles : personne n'est à l'abri, pas même les héros. Pendant ce temps, au-delà du Mur de glace qui protège le royaume, une menace bien plus grande se réveille. Et quelque part à l'est, une jeune femme fait éclore trois dragons. « Winter is coming », l'hiver vient."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Créée par David Benioff et D. B. Weiss, d'après les romans du Trône de fer (A Song of Ice and Fire) de George R. R. Martin, dont le premier tome est paru en 1996.",
+            "Diffusée sur HBO de 2011 à 2019 : huit saisons et 73 épisodes.",
+            "Avec Emilia Clarke (Daenerys Targaryen), Kit Harington (Jon Snow), Peter Dinklage (Tyrion Lannister), Lena Headey (Cersei Lannister), Maisie Williams (Arya Stark), Sophie Turner (Sansa Stark) et Sean Bean (Ned Stark).",
+            "La série a remporté 59 Emmy Awards, un record pour une série dramatique.",
+            "Une série dérivée, House of the Dragon, raconte l'histoire des Targaryen deux siècles plus tôt, depuis 2022."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Un abonnement pour tout voir"
+        },
+        {
+          "type": "texte",
+          "texte": "Game of Thrones a été un véritable phénomène mondial. En France, la chaîne OCS diffusait les épisodes en même temps que les États-Unis, dans la nuit du dimanche au lundi à 3 heures du matin, puis les reprenait le lundi soir. Pour ne rien rater et éviter qu'on vous gâche la surprise le lundi matin, il fallait s'abonner. Je ne l'ai jamais regretté."
+        },
+        {
+          "type": "titre",
+          "texte": "Pourquoi c'est le top des tops"
+        },
+        {
+          "type": "texte",
+          "texte": "Parce qu'aucune série ne m'a autant tenu en haleine. Des personnages qu'on adore détester, d'autres qu'on voit disparaître au moment où l'on s'y attend le moins, des décors immenses, des batailles dignes du cinéma, des dragons, et ce générique qu'on ne zappe jamais. Chaque fin d'épisode donnait envie de voir le suivant tout de suite. Impossible d'attendre !"
+        }
+      ]
+    },
+    {
+      "slug": "vikings",
+      "video": true,
+      "titre": "Vikings : chaque semaine, j'attendais l'épisode avec impatience",
+      "date": "2026-10-18",
+      "categorie": "Vidéos",
+      "image": "images/articles/vikings.svg",
+      "imageAlt": "Un drakkar viking à la voile rayée rouge et blanche sur une mer sombre, sous un ciel d'orage, survolé par un corbeau",
+      "extrait": "Ragnar Lothbrok, Lagertha, Floki et les drakkars qui remontent la Seine : le générique de Vikings, une série dont j'attendais chaque épisode avec impatience, semaine après semaine.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Avant les plateformes où l'on enchaîne toute une saison en un week-end, il fallait attendre. Une semaine entière entre deux épisodes. Avec Vikings, cette attente faisait partie du plaisir : chaque semaine, j'attendais l'épisode suivant avec impatience."
+        },
+        {
+          "type": "titre",
+          "texte": "Le générique"
+        },
+        {
+          "type": "youtube",
+          "id": "l0PV3BQHDo8",
+          "titre": "Vikings : générique de la série"
+        },
+        {
+          "type": "texte",
+          "texte": "Une chanson lancinante, des corps et des armes qui sombrent lentement dans une eau sombre : le générique donne le ton dès les premières secondes. La chanson s'appelle « If I Had a Heart », de l'artiste suédoise Fever Ray. Impossible de la passer : elle annonçait que l'épisode tant attendu allait enfin commencer."
+        },
+        {
+          "type": "titre",
+          "texte": "La série en quelques lignes"
+        },
+        {
+          "type": "texte",
+          "texte": "À la fin du VIIIe siècle, en Scandinavie, Ragnar Lothbrok est un simple fermier et guerrier, persuadé qu'il existe des terres riches à l'ouest, de l'autre côté de la mer. Contre l'avis de son chef, il part avec son frère Rollo et son ami Floki, constructeur de bateaux de génie. Ils découvrent l'Angleterre et pillent le monastère de Lindisfarne. Ce n'est que le début : Ragnar deviendra roi, et ses expéditions mèneront les Vikings jusqu'à Paris. Après lui, ses fils prendront la relève."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Créée et écrite par Michael Hirst (déjà auteur de la série Les Tudors), diffusée sur la chaîne History de 2013 à 2020.",
+            "Six saisons et 89 épisodes, tournés en grande partie en Irlande.",
+            "Avec Travis Fimmel (Ragnar), Katheryn Winnick (Lagertha), Clive Standen (Rollo), Gustaf Skarsgård (Floki) et Alexander Ludwig (Björn Côtes-de-Fer).",
+            "La musique originale est de Trevor Morris.",
+            "Une suite, Vikings: Valhalla, est sortie sur Netflix en 2022."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Entre histoire et légende"
+        },
+        {
+          "type": "texte",
+          "texte": "La série s'inspire de faits réels et des sagas nordiques, en prenant beaucoup de libertés. Le pillage du monastère de Lindisfarne, en 793, est souvent considéré comme le début de l'âge des Vikings. Ragnar Lothbrok lui-même est un personnage à moitié légendaire, et les sièges de Paris montrés dans la série mélangent plusieurs attaques, notamment celles de 845 et de 885-886."
+        },
+        {
+          "type": "texte",
+          "texte": "Un détail parle particulièrement aux Français : Rollo, le frère de Ragnar dans la série, est inspiré d'un vrai chef viking. En 911, par le traité de Saint-Clair-sur-Epte, le roi Charles le Simple lui cède des terres autour de Rouen pour qu'il protège la Seine contre les autres Vikings. C'est la naissance de la Normandie, la terre des « hommes du Nord »."
+        },
+        {
+          "type": "titre",
+          "texte": "Pourquoi je l'attendais chaque semaine"
+        },
+        {
+          "type": "texte",
+          "texte": "Les batailles, les trahisons, les rivalités entre frères, la soif de découvrir ce qu'il y a au-delà de l'horizon : chaque épisode se terminait sur une question, et il fallait sept jours pour avoir la réponse. Cette attente, aujourd'hui un peu oubliée, donnait à chaque rendez-vous un vrai goût d'événement."
+        }
+      ]
+    },
+    {
+      "slug": "westworld",
+      "video": true,
+      "titre": "Westworld : la série qui m'a fasciné et inquiété",
+      "date": "2026-10-18",
+      "categorie": "Vidéos",
+      "image": "images/articles/westworld.svg",
+      "imageAlt": "Une main blanche robotisée, aux tendons apparents, tendue vers une main humaine, au-dessus d'un rouleau de piano mécanique",
+      "extrait": "Un parc d'attractions peuplé d'androïdes plus vrais que nature, qui commencent à se souvenir. Le générique de Westworld, une série de HBO qui m'a autant fasciné qu'inquiété.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Il y a des séries qu'on regarde pour se détendre, et d'autres qui continuent de vous travailler longtemps après le dernier épisode. Westworld fait partie de la deuxième catégorie : une série qui m'a fasciné, et qui m'a aussi inquiété."
+        },
+        {
+          "type": "titre",
+          "texte": "Le générique"
+        },
+        {
+          "type": "youtube",
+          "id": "QRi3ULhyQq0",
+          "titre": "Westworld : générique de la série (HBO)"
+        },
+        {
+          "type": "texte",
+          "texte": "Tout est déjà dans ces deux minutes : des corps blancs qui sortent d'une imprimante 3D, des muscles et des tendons tissés par des bras robotisés, un cheval qui galope sans peau, un piano mécanique qui joue tout seul. La musique est de Ramin Djawadi, le compositeur de Game of Thrones. Ce générique, conçu par Patrick Clair et le studio Elastic, a été nommé trois fois aux Emmy Awards dans la catégorie du meilleur générique."
+        },
+        {
+          "type": "titre",
+          "texte": "La série en quelques lignes"
+        },
+        {
+          "type": "texte",
+          "texte": "Dans un futur proche, Westworld est un immense parc d'attractions qui reconstitue le Far West. Les visiteurs, très riches, viennent y vivre toutes leurs envies, même les pires, au milieu d'« hôtes » : des androïdes si réalistes qu'on ne peut pas les distinguer des humains. Chaque soir, on les répare et on efface leur mémoire, et chaque matin, ils rejouent le même scénario. Jusqu'au jour où certains d'entre eux commencent à se souvenir."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Créée par Jonathan Nolan et Lisa Joy, d'après le film Mondwest (Westworld), écrit et réalisé par Michael Crichton en 1973.",
+            "Diffusée sur HBO de 2016 à 2022 : quatre saisons et 36 épisodes.",
+            "Avec Evan Rachel Wood (Dolores), Thandiwe Newton (Maeve), Jeffrey Wright (Bernard), Ed Harris (l'Homme en noir) et Anthony Hopkins (le docteur Robert Ford, créateur du parc).",
+            "Les pianos mécaniques du saloon jouent des reprises de chansons modernes, comme « Paint It Black » des Rolling Stones ou « Black Hole Sun » de Soundgarden."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ce qui m'a fasciné"
+        },
+        {
+          "type": "texte",
+          "texte": "La série pose des questions vertigineuses. Qu'est-ce qu'une conscience ? Si une machine souffre, se souvient et veut être libre, est-ce encore une machine ? Et nous, sommes-nous si différents de ces hôtes qui suivent leur boucle chaque jour ? Le récit joue aussi avec le temps : plusieurs époques s'entremêlent, et l'on ne comprend qu'après coup ce que l'on a vraiment vu. Il faut s'accrocher, mais c'est ce qui la rend aussi captivante."
+        },
+        {
+          "type": "titre",
+          "texte": "Ce qui m'a inquiété"
+        },
+        {
+          "type": "texte",
+          "texte": "Westworld montre des humains qui se croient tout permis face à des êtres qu'ils pensent sans conscience. Et elle montre ce qui arrive quand ces êtres se réveillent. « Ces plaisirs violents ont des fins violentes », la phrase de Shakespeare tirée de Roméo et Juliette qui revient tout au long de la série, sonne comme un avertissement. Avec les progrès de l'intelligence artificielle, ces questions ne semblent plus tout à fait de la science-fiction, et c'est sans doute ce qui rend la série si troublante."
+        },
+        {
+          "type": "texte",
+          "texte": "Une série à voir, à condition d'accepter d'en ressortir avec plus de questions que de réponses."
+        }
+      ]
+    },
+    {
+      "slug": "effet-hotel-california-economie",
+      "titre": "L'effet Hotel California : quand on peut entrer, mais jamais vraiment partir",
+      "date": "2026-10-18",
+      "categorie": "Économie",
+      "image": "images/articles/effet-hotel-california-economie.svg",
+      "imageAlt": "Une porte d'hôtel grande ouverte où l'on entre facilement, une sortie bloquée par un mur, et une courbe des coûts de sortie qui grimpe",
+      "extrait": "Abonnements impossibles à résilier, logiciels dont on ne peut plus se passer, zone euro sans porte de sortie : en économie, on parle d'effet Hotel California quand entrer est facile et partir hors de prix.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "« You can check out any time you like, but you can never leave. » Le dernier vers de « Hotel California », des Eagles, décrit un hôtel dont on peut régler la note quand on veut, sans jamais pouvoir en sortir. L'image est si parlante qu'elle a quitté la musique : journalistes, juristes et économistes parlent d'effet Hotel California pour toute situation où l'on entre facilement, mais d'où il est très difficile, ou très coûteux, de partir."
+        },
+        {
+          "type": "texte",
+          "texte": "Ce n'est pas un concept savant avec une définition officielle : c'est une métaphore. Mais derrière elle se cachent des idées bien réelles, que les économistes étudient sous d'autres noms : les coûts de changement, l'effet de verrouillage, la dépendance au chemin emprunté."
+        },
+        {
+          "type": "titre",
+          "texte": "Le principe : une porte qui ne s'ouvre que dans un sens"
+        },
+        {
+          "type": "texte",
+          "texte": "Un effet Hotel California réunit en général deux ingrédients. D'abord, une entrée attirante et sans effort : un essai gratuit, une inscription en un clic, une adhésion qui promet des avantages. Ensuite, une sortie qui coûte cher : en argent, en temps, en démarches ou en pertes de toutes sortes. Plus on reste, plus la sortie coûte, et plus on reste. Le piège se referme tout seul."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Les coûts de changement (switching costs) : tout ce qu'il faut payer ou perdre pour passer d'un fournisseur à un autre, des frais de résiliation au temps passé à tout réapprendre.",
+            "L'effet de verrouillage (lock-in) : quand ces coûts deviennent si élevés que le client reste, même si une offre meilleure existe ailleurs.",
+            "La dépendance au sentier (path dependence) : un choix fait au départ, parfois par hasard, finit par s'imposer à tous. L'exemple classique, étudié par l'économiste Paul David en 1985, est le clavier QWERTY, resté la norme parce que tout le monde avait appris à taper dessus."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Les abonnements qu'on ne peut pas résilier"
+        },
+        {
+          "type": "texte",
+          "texte": "C'est l'exemple le plus courant. S'abonner se fait en quelques secondes en ligne ; résilier demande parfois un courrier recommandé, un appel à un service client injoignable ou un parcours caché au fond d'un menu. Les spécialistes de l'ergonomie ont un nom pour cette astuce : le « roach motel », le piège à cafards, où l'on entre facilement et d'où l'on ne ressort pas. C'est l'un des « dark patterns », ces interfaces conçues pour faire faire à l'utilisateur ce qu'il n'aurait pas choisi."
+        },
+        {
+          "type": "texte",
+          "texte": "Les législateurs s'en sont mêlés. En France, depuis le 1er juin 2023, un contrat souscrit en ligne doit pouvoir être résilié en ligne, en « trois clics ». Aux États-Unis, la Commission fédérale du commerce (FTC) avait adopté en 2024 une règle « click to cancel » qui allait dans le même sens, mais une cour d'appel fédérale l'a annulée en juillet 2025, quelques jours avant son entrée en vigueur, pour un problème de procédure."
+        },
+        {
+          "type": "titre",
+          "texte": "Les logiciels et le cloud"
+        },
+        {
+          "type": "texte",
+          "texte": "Une entreprise qui confie toutes ses données et ses outils à un seul fournisseur informatique s'installe dans un hôtel confortable. Partir, c'est payer pour récupérer ses données (les fameux frais de sortie, ou egress fees), réécrire des programmes conçus pour une seule plateforme, former à nouveau les équipes. On parle de verrouillage fournisseur (vendor lock-in). L'Union européenne a réagi avec le règlement sur les données (Data Act), qui oblige les fournisseurs de cloud à faciliter le changement et prévoit la suppression progressive des frais de changement d'ici 2027."
+        },
+        {
+          "type": "texte",
+          "texte": "Le même mécanisme existe pour le grand public : quand toutes ses photos, ses applications achetées et ses appareils dépendent d'un même écosystème, changer de marque de téléphone devient vite un casse-tête. On parle alors de jardin clos (walled garden)."
+        },
+        {
+          "type": "titre",
+          "texte": "Les programmes de fidélité"
+        },
+        {
+          "type": "texte",
+          "texte": "Les miles des compagnies aériennes, les cartes de points des supermarchés ou les avantages qui augmentent avec l'ancienneté fonctionnent comme une porte qui se referme doucement. Chaque achat rend la sortie un peu plus coûteuse, puisque partir, c'est perdre ce qu'on a accumulé. L'économiste Paul Klemperer, spécialiste des coûts de changement, a montré que ces mécanismes poussent les entreprises à se battre très fort pour attirer de nouveaux clients, puis à profiter de ceux qui ne peuvent plus partir."
+        },
+        {
+          "type": "titre",
+          "texte": "La zone euro : entrer, oui ; sortir, comment ?"
+        },
+        {
+          "type": "texte",
+          "texte": "L'exemple le plus célèbre à l'échelle des pays est sans doute la zone euro. Les traités européens prévoient comment adopter l'euro, mais aucun article n'organise la sortie de la monnaie unique : en théorie, il faudrait quitter l'Union européenne elle-même, grâce à l'article 50 introduit par le traité de Lisbonne en 2009, celui que le Royaume-Uni a utilisé pour le Brexit."
+        },
+        {
+          "type": "texte",
+          "texte": "Pendant la crise grecque, en 2015, le mot « Grexit » faisait la une. Des commentateurs, comme le chroniqueur Joseph Mariathasan dans la revue financière IPE, ont alors comparé la zone euro à l'Hotel California. En pratique, une sortie aurait signifié une nouvelle monnaie dévaluée, des dettes restées en euros devenues bien plus lourdes, des retraits bancaires massifs et un contrôle des capitaux. Le coût de la sortie était si élevé que la Grèce est restée."
+        },
+        {
+          "type": "titre",
+          "texte": "Le revers de la médaille"
+        },
+        {
+          "type": "texte",
+          "texte": "L'effet Hotel California n'est pas toujours un piège. Une sortie difficile peut aussi être un engagement voulu : si quitter l'euro était facile, les marchés spéculeraient sans cesse sur le départ de tel ou tel pays, et la monnaie serait bien plus fragile. Une porte qui résiste donne parfois de la stabilité. Tout dépend de qui a fermé la porte, et pourquoi."
+        },
+        {
+          "type": "titre",
+          "texte": "Comment repérer un effet Hotel California"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "L'entrée est gratuite ou presque, et très mise en avant.",
+            "Les conditions de sortie sont difficiles à trouver, floues ou renvoyées à plus tard.",
+            "Plus le temps passe, plus on a à perdre en partant (données, points, habitudes, investissements).",
+            "Le prix augmente une fois qu'on est bien installé.",
+            "Partir demande un effort sans commune mesure avec celui qu'il a fallu pour entrer."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Le meilleur réflexe reste simple : avant d'entrer quelque part, se demander comment on en sortira. Les Eagles l'avaient chanté dès 1976."
+        },
+        {
+          "type": "titre",
+          "texte": "Sources"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Joseph Mariathasan, « Greece and the Hotel Euro-zone », IPE (Investment & Pensions Europe).",
+            "Paul A. David, « Clio and the Economics of QWERTY », American Economic Review, 1985.",
+            "Paul Klemperer, « Competition when Consumers have Switching Costs », Review of Economic Studies, 1995.",
+            "Service-Public.fr : résiliation d'un contrat en ligne en trois clics, depuis le 1er juin 2023.",
+            "Custom Communications, Inc. v. FTC, cour d'appel du 8e circuit, 8 juillet 2025 (annulation de la règle « click to cancel »).",
+            "Règlement (UE) 2023/2854 sur les données (Data Act).",
+            "Traité sur l'Union européenne, article 50."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cinema-plein-air-locquemeau",
+      "video": true,
+      "titre": "Le cinéma de plein air à Locquemeau : le dernier été avec grand-père",
+      "date": "2026-10-18",
+      "categorie": "Vidéos",
+      "image": "images/articles/cinema-plein-air-locquemeau.svg",
+      "imageAlt": "Un écran de cinéma en plein air au bord de la mer, la nuit, qui projette un western devant des spectateurs assis",
+      "extrait": "Un soir d'été à Locquemeau, devant l'écran du cinéma de plein air : Il était une fois dans l'Ouest, de Sergio Leone. C'était le dernier été avec mon grand-père. TOUT est grand dans ce film.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Certains films, on ne les a pas seulement vus : on se souvient d'où et de quand. Pour moi, Il était une fois dans l'Ouest, c'est un soir d'été à Locquemeau, au cinéma de plein air. C'était le dernier été avec mon grand-père."
+        },
+        {
+          "type": "titre",
+          "texte": "La bande-annonce"
+        },
+        {
+          "type": "youtube",
+          "id": "591ov1tj3EQ",
+          "titre": "Il était une fois dans l'Ouest : bande-annonce VF (1969)"
+        },
+        {
+          "type": "titre",
+          "texte": "TOUT est grand dans ce film"
+        },
+        {
+          "type": "texte",
+          "texte": "Les paysages immenses, les visages filmés de si près qu'on y lit chaque ride, les silences qui durent, la musique qui prend toute la place. Sur un écran en plein air, sous le ciel de Bretagne, tout paraissait encore plus grand."
+        },
+        {
+          "type": "titre",
+          "texte": "Le film en quelques lignes"
+        },
+        {
+          "type": "texte",
+          "texte": "Dans l'Ouest américain, le chemin de fer avance vers le Pacifique et attise les convoitises. Jill McBain arrive de La Nouvelle-Orléans pour retrouver son mari, et découvre qu'il a été massacré avec ses enfants. Autour d'elle et de sa terre se croisent un tueur sans pitié, un bandit au grand cœur et un homme mystérieux qui joue de l'harmonica et cherche une vengeance."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Réalisé par Sergio Leone, sorti en 1968 en Italie et en 1969 en France.",
+            "Henry Fonda, à contre-emploi, en tueur (Frank), avec Claudia Cardinale (Jill), Charles Bronson (Harmonica) et Jason Robards (Cheyenne).",
+            "La musique est d'Ennio Morricone : chaque personnage a son thème, à commencer par l'harmonica.",
+            "Un immense succès en France, avec près de 15 millions d'entrées."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Pourquoi ce souvenir compte"
+        },
+        {
+          "type": "texte",
+          "texte": "Je ne peux pas revoir ce film sans repenser à cette soirée, ni à cet été-là à Locquemeau, le dernier passé avec mon grand-père."
+        }
+      ]
+    },
+    {
       "slug": "hotel-california-eagles",
       "titre": "Hotel California : l'histoire d'une chanson légendaire des Eagles",
       "date": "2026-10-17",

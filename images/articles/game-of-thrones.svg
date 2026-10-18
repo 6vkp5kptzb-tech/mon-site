@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Illustration : le Trône de fer, hérissé d'épées, sous la neige, avec un dragon qui crache du feu dans le ciel et un mur de glace à l'horizon">
+  <defs>
+    <radialGradient id="fond" cx="0.65" cy="0.5" r="0.9">
+      <stop offset="0" stop-color="#1e293b"/>
+      <stop offset="1" stop-color="#070a0f"/>
+    </radialGradient>
+    <linearGradient id="glace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cffafe"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="feu" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fef3c7"/>
+      <stop offset="0.5" stop-color="#ea580c"/>
+      <stop offset="1" stop-color="#7c2d12" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+    <style>
+      .big { font: 800 92px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .sub { font: 24px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#fond)"/>
+  <text x="120" y="150" class="eyebrow">SÉRIE TV · HBO · 2011-2019 · LE TOP DES TOPS</text>
+  <text x="120" y="250" class="big">Game of Thrones</text>
+  <!-- Le Mur de glace à l'horizon -->
+  <rect x="0" y="640" width="1600" height="90" fill="url(#glace)" opacity="0.5"/>
+  <!-- Le dragon et son feu -->
+  <path d="M1180,390 C1100,420 1020,470 940,560 C1020,520 1090,500 1160,470 Z" fill="url(#feu)" filter="url(#glow)"/>
+  <path d="M1180,390 C1110,420 1050,460 990,520 C1050,490 1110,470 1165,450 Z" fill="url(#feu)"/>
+  <g fill="#000" stroke="#334155" stroke-width="2" stroke-linejoin="round">
+    <path d="M1180,390 L1215,370 L1250,378 L1300,360 C1330,330 1360,290 1380,250 C1390,300 1380,330 1360,360 C1400,330 1440,320 1490,330 C1450,350 1410,370 1370,395 L1420,410 L1360,415 L1320,400 L1270,410 L1230,400 Z"/>
+    <path d="M1300,360 C1270,300 1230,260 1180,240 C1220,290 1240,330 1260,372 Z"/>
+  </g>
+  <!-- Le Trône de fer -->
+  <g fill="#475569" stroke="#94a3b8" stroke-width="2">
+    <!-- Épées en éventail -->
+    <g stroke-width="3">
+      <path d="M560,420 L575,860 L545,860 Z"/><path d="M500,450 L540,860 L515,860 Z"/><path d="M620,450 L605,860 L580,860 Z"/>
+      <path d="M440,500 L510,860 L485,860 Z"/><path d="M680,500 L635,860 L610,860 Z"/>
+      <path d="M390,560 L480,860 L455,860 Z"/><path d="M730,560 L665,860 L640,860 Z"/>
+    </g>
+    <rect x="460" y="700" width="200" height="40" rx="4" fill="#334155"/>
+    <rect x="470" y="740" width="180" height="120" fill="#1e293b"/>
+    <!-- Accoudoirs -->
+    <rect x="430" y="660" width="40" height="120" rx="6" fill="#334155"/>
+    <rect x="650" y="660" width="40" height="120" rx="6" fill="#334155"/>
+  </g>
+  <g fill="#94a3b8">
+    <rect x="555" y="400" width="10" height="24"/><rect x="540" y="398" width="40" height="6"/>
+    <rect x="495" y="430" width="10" height="24"/><rect x="480" y="428" width="40" height="6"/>
+    <rect x="615" y="430" width="10" height="24"/><rect x="600" y="428" width="40" height="6"/>
+  </g>
+  <!-- Marches -->
+  <rect x="380" y="860" width="360" height="30" fill="#1e293b"/>
+  <rect x="340" y="890" width="440" height="30" fill="#121a2a"/>
+  <!-- La neige -->
+  <g fill="#e6edf3" opacity="0.8">
+    <circle cx="160" cy="340" r="3"/><circle cx="300" cy="460" r="2.5"/><circle cx="820" cy="320" r="3"/>
+    <circle cx="900" cy="700" r="2.5"/><circle cx="1050" cy="300" r="2"/><circle cx="1480" cy="600" r="3"/>
+    <circle cx="240" cy="780" r="2"/><circle cx="1300" cy="820" r="2.5"/><circle cx="780" cy="520" r="2"/>
+    <circle cx="1520" cy="200" r="2"/><circle cx="1000" cy="860" r="3"/><circle cx="120" cy="600" r="2.5"/>
+  </g>
+  <text x="1480" y="960" text-anchor="end" class="sub">D'après George R. R. Martin · musique de Ramin Djawadi</text>
+</svg>

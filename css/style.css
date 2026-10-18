@@ -653,9 +653,24 @@ button.track-link { font-family: inherit; background: none; cursor: pointer; }
   aspect-ratio: 16 / 9;
 }
 
+/* Coups de cœur : carte façon YouTube Music (pochette, titre, actions) */
+.track-coeur { grid-template-columns: auto 1fr auto; }
+.track-cover {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+.track-actions { display: flex; }
+
 @media (max-width: 560px) {
   .track { grid-template-columns: 1fr; padding: 0.85rem 1rem; }
   .track-link { justify-self: start; margin-top: 0.4rem; }
+  .track-coeur { grid-template-columns: auto 1fr; }
+  .track-cover { width: 56px; height: 56px; }
+  .track-actions { grid-column: 1 / -1; }
+  .track-actions .track-link { margin-top: 0; }
 }
 
 .notice {

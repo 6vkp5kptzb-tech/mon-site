@@ -174,7 +174,8 @@
   }
 
   // Bouton « Écouter » + lecteur embarqué, chargé seulement au clic
-  function ajouterLecteur(li, titre, creerIframe, classe) {
+  // zoneBouton (facultatif) : élément où placer le bouton, sinon directement dans li
+  function ajouterLecteur(li, titre, creerIframe, classe, zoneBouton) {
     var btn = el("button", "track-link");
     btn.type = "button";
     btn.textContent = "▶ Écouter";
@@ -197,7 +198,7 @@
       btn.setAttribute("aria-expanded", String(open));
     });
 
-    li.appendChild(btn);
+    (zoneBouton || li).appendChild(btn);
     li.appendChild(player);
   }
 
@@ -228,7 +229,14 @@
 
   function renderCoupDeCoeur(m) {
     var id = youtubeId(m.lien);
-    var li = el("li", "track");
+    var li = el("li", "track track-coeur");
+
+    // Pochette : miniature YouTube recadrée en carré
+    var pochette = el("img", "track-cover");
+    pochette.src = "https://i.ytimg.com/vi/" + id + "/mqdefault.jpg";
+    pochette.alt = "";
+    pochette.loading = "lazy";
+    li.appendChild(pochette);
 
     var info = el("div");
     var title = el("p", "track-title");
@@ -245,17 +253,26 @@
       com.textContent = m.commentaire;
       meta.appendChild(com);
     }
+    if (m.ia) {
+      var ia = el("span", "track-auteur");
+      ia.textContent = "Généré par IA";
+      meta.appendChild(ia);
+    }
     info.appendChild(meta);
     li.appendChild(info);
 
-    ajouterLecteur(li, m.titre + (m.artiste ? " de " + m.artiste : ""), function () {
+    var actions = el("div", "track-actions");
+    li.appendChild(actions);
+
+    var nomComplet = m.titre + (m.artiste ? " de " + m.artiste : "");
+    ajouterLecteur(li, nomComplet, function () {
       var iframe = document.createElement("iframe");
       iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
       iframe.title = "Lecteur YouTube : " + m.titre;
       iframe.allow = "autoplay; encrypted-media; picture-in-picture";
       iframe.referrerPolicy = "strict-origin-when-cross-origin";
       return iframe;
-    }, "track-player-video");
+    }, "track-player-video", actions);
     return li;
   }
 

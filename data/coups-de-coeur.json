@@ -1,5 +1,7 @@
 {
   "morceaux": [
-    {"titre": "Bis nichts mehr von mir bleibt", "artiste": "Dark Pulse Society", "lien": "https://youtu.be/TxzGVV3mRGA", "commentaire": "German Gothic Rock"}
+    {"titre": "Bis nichts mehr von mir bleibt", "artiste": "Dark Pulse Society", "lien": "https://youtu.be/TxzGVV3mRGA", "commentaire": "German Gothic Rock", "ia": true},
+    {"titre": "Funeral Waltz", "artiste": "Electrohead66673", "lien": "https://youtu.be/ZknVP-CtLpQ", "commentaire": "Dark Electro", "ia": true},
+    {"titre": "Ich renn durch die Nacht", "artiste": "Rabinia", "lien": "https://youtu.be/qQDY1VuyLgg", "commentaire": "Dark New Wave", "ia": true}
   ]
 }

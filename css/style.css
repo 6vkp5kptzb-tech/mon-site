@@ -615,6 +615,12 @@ p  { margin: 0 0 1em; }
   font-family: var(--mono);
   font-size: 0.8rem;
 }
+.track-auteur {
+  padding: 0 0.5rem;
+  border: 1px solid var(--muted);
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
 
 .track-link {
   display: inline-flex;
@@ -640,6 +646,11 @@ button.track-link { font-family: inherit; background: none; cursor: pointer; }
   height: 240px;
   border: 0;
   border-radius: var(--radius-sm);
+}
+.track-player-video iframe {
+  max-width: 360px;
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 @media (max-width: 560px) {

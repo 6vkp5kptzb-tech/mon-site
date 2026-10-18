@@ -7,8 +7,8 @@
   <meta name="description" content="Mes compositions créées avec Suno, à écouter directement sur le site.">
   <meta name="theme-color" content="#0b0f14">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css?v=9">
-  <script src="js/main.js?v=9" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=12">
+  <script src="js/main.js?v=12" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -49,7 +49,8 @@
       <div class="container">
         <div class="section-head">
           <h2 id="top-titre">Mes compositions</h2>
-          <p>Mes morceaux, du plus récent au plus ancien. Clique sur « Écouter » pour les lancer directement ici.</p>
+          <p>Mes morceaux, du plus récent au plus ancien. Clique sur « Écouter » pour les lancer directement ici.
+            Quelques morceaux ne sont pas de moi : ils portent la mention « Morceau de… » avec le nom de leur auteur.</p>
         </div>
 
         <div class="toolbar">
@@ -74,6 +75,16 @@
 
         <p class="result-count" id="result-count" aria-live="polite"></p>
         <ul class="tracks" id="tracks"></ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="coeur-titre">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="coeur-titre">Mes coups de cœur</h2>
+          <p>Des morceaux d'autres artistes que j'aime écouter, trouvés sur YouTube Music. Clique sur « Écouter » pour les lancer ici.</p>
+        </div>
+        <ul class="tracks" id="coups-de-coeur"></ul>
       </div>
     </section>
   </main>

@@ -52,6 +52,9 @@
   // ---------- Page Sport : dernière sortie Strava ----------
   initDerniereSortie();
 
+  // ---------- Page Musique : coups de cœur YouTube Music ----------
+  initCoupsDeCoeur();
+
   // ---------- Page Musique et aperçu de l'accueil ----------
   var tracksEl = document.getElementById("tracks") || document.getElementById("tracks-preview");
   if (!tracksEl) return;
@@ -138,41 +141,26 @@
     date.textContent = formatDate(m.date);
     meta.appendChild(style);
     meta.appendChild(date);
+    if (m.auteur) {
+      // Morceau d'un autre créateur : on le signale clairement
+      var auteur = el("span", "track-auteur");
+      auteur.textContent = "Morceau de " + m.auteur;
+      meta.appendChild(auteur);
+    }
     info.appendChild(title);
     info.appendChild(meta);
 
     li.appendChild(info);
 
     if (m.sunoId) {
-      // Lecteur Suno embarqué, chargé seulement au clic
-      var btn = el("button", "track-link");
-      btn.type = "button";
-      btn.textContent = "▶ Écouter";
-      btn.setAttribute("aria-expanded", "false");
-      btn.setAttribute("aria-label", "Écouter " + m.titre);
-      var player = el("div", "track-player");
-      player.hidden = true;
-
-      btn.addEventListener("click", function () {
-        var open = player.hidden;
-        if (open && !player.firstChild) {
-          var iframe = document.createElement("iframe");
-          iframe.src = "https://suno.com/embed/" + encodeURIComponent(m.sunoId);
-          iframe.title = "Lecteur Suno : " + m.titre;
-          iframe.allow = "autoplay; encrypted-media; fullscreen";
-          iframe.allowFullscreen = true;
-          iframe.loading = "lazy";
-          iframe.referrerPolicy = "no-referrer-when-downgrade";
-          player.appendChild(iframe);
-        }
-        if (!open) player.innerHTML = ""; // arrête la lecture en refermant
-        player.hidden = !open;
-        btn.textContent = open ? "✕ Fermer" : "▶ Écouter";
-        btn.setAttribute("aria-expanded", String(open));
+      ajouterLecteur(li, m.titre, function () {
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://suno.com/embed/" + encodeURIComponent(m.sunoId);
+        iframe.title = "Lecteur Suno : " + m.titre;
+        iframe.allow = "autoplay; encrypted-media; fullscreen";
+        iframe.referrerPolicy = "no-referrer-when-downgrade";
+        return iframe;
       });
-
-      li.appendChild(btn);
-      li.appendChild(player);
     } else {
       var link = el("a", "track-link");
       link.href = m.lien;
@@ -182,6 +170,92 @@
       link.setAttribute("aria-label", "Écouter " + m.titre + " sur Suno (nouvel onglet)");
       li.appendChild(link);
     }
+    return li;
+  }
+
+  // Bouton « Écouter » + lecteur embarqué, chargé seulement au clic
+  function ajouterLecteur(li, titre, creerIframe, classe) {
+    var btn = el("button", "track-link");
+    btn.type = "button";
+    btn.textContent = "▶ Écouter";
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-label", "Écouter " + titre);
+    var player = el("div", "track-player" + (classe ? " " + classe : ""));
+    player.hidden = true;
+
+    btn.addEventListener("click", function () {
+      var open = player.hidden;
+      if (open && !player.firstChild) {
+        var iframe = creerIframe();
+        iframe.allowFullscreen = true;
+        iframe.loading = "lazy";
+        player.appendChild(iframe);
+      }
+      if (!open) player.innerHTML = ""; // arrête la lecture en refermant
+      player.hidden = !open;
+      btn.textContent = open ? "✕ Fermer" : "▶ Écouter";
+      btn.setAttribute("aria-expanded", String(open));
+    });
+
+    li.appendChild(btn);
+    li.appendChild(player);
+  }
+
+  // ---------- Page Musique : coups de cœur YouTube Music (data/coups-de-coeur.json) ----------
+  function initCoupsDeCoeur() {
+    var list = document.getElementById("coups-de-coeur");
+    if (!list) return;
+
+    fetch("data/coups-de-coeur.json", { cache: "no-cache" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        var morceaux = (data.morceaux || []).filter(function (m) { return youtubeId(m.lien); });
+        if (!morceaux.length) {
+          list.outerHTML = '<p class="notice">Aucun coup de cœur pour le moment.</p>';
+          return;
+        }
+        morceaux.forEach(function (m) { list.appendChild(renderCoupDeCoeur(m)); });
+      })
+      .catch(function () {
+        list.outerHTML =
+          '<p class="notice">Impossible de charger les coups de cœur. Si tu ouvres le fichier directement ' +
+          "depuis ton disque, lance plutôt un petit serveur local (voir le README).</p>";
+      });
+  }
+
+  function renderCoupDeCoeur(m) {
+    var id = youtubeId(m.lien);
+    var li = el("li", "track");
+
+    var info = el("div");
+    var title = el("p", "track-title");
+    title.textContent = m.titre;
+    info.appendChild(title);
+    var meta = el("div", "track-meta");
+    if (m.artiste) {
+      var artiste = el("span", "track-style");
+      artiste.textContent = m.artiste;
+      meta.appendChild(artiste);
+    }
+    if (m.commentaire) {
+      var com = el("span");
+      com.textContent = m.commentaire;
+      meta.appendChild(com);
+    }
+    info.appendChild(meta);
+    li.appendChild(info);
+
+    ajouterLecteur(li, m.titre + (m.artiste ? " de " + m.artiste : ""), function () {
+      var iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+      iframe.title = "Lecteur YouTube : " + m.titre;
+      iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      return iframe;
+    }, "track-player-video");
     return li;
   }
 

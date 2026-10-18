@@ -4,9 +4,10 @@ Lancement : double-clic sur mettre-a-jour-musique.bat (à la racine du site),
 ou `python outils/excel-vers-json.py`.
 
 Colonnes attendues sur la première ligne de la première feuille (l'ordre n'a pas d'importance) :
-  titre | style | date | lien | sunoId
+  titre | style | date | lien | sunoId | auteur
 `sunoId` est facultatif : s'il est vide et que `lien` est de la forme
 https://suno.com/song/<identifiant>, l'identifiant est repris automatiquement.
+`auteur` est facultatif : à remplir seulement pour un morceau qui n'est pas de moi.
 
 Aucune dépendance : seul Python est nécessaire.
 """
@@ -29,7 +30,7 @@ NS = {
     "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
     "rel": "http://schemas.openxmlformats.org/package/2006/relationships",
 }
-COLONNES = ["titre", "style", "date", "lien", "sunoId"]
+COLONNES = ["titre", "style", "date", "lien", "sunoId", "auteur"]
 SUNO_ID = re.compile(r"suno\.com/(?:song|embed)/([0-9a-fA-F-]{36})")
 
 
@@ -150,6 +151,9 @@ def main():
             suno_id = trouve.group(1) if trouve else ""
         if suno_id:
             m["sunoId"] = suno_id
+        auteur = texte(cellule(ligne, "auteur"))
+        if auteur:
+            m["auteur"] = auteur
         morceaux.append(m)
 
     contenu = "{\n  \"morceaux\": [\n"

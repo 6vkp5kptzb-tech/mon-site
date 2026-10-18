@@ -6,7 +6,7 @@ Site personnel statique : HTML, CSS et JavaScript vanilla. Pas de framework, pas
 
 ```
 index.html        Accueil
-musique.html      Mes compositions Suno (lecteur embarqué)
+musique.html      Mes compositions Suno et mes coups de cœur YouTube Music (lecteurs embarqués)
 videos.html       Vidéos YouTube coup de cœur
 sport.html        Course à pied (route) et trail, articles sport
 articles.html     Liste de tous les articles
@@ -19,6 +19,7 @@ data/musique.json Généré depuis l'Excel (ne pas modifier à la main)
 mettre-a-jour-musique.bat  Convertit l'Excel en JSON (double-clic)
 outils/           Script de conversion Excel → JSON (Python)
 data/videos.json  Vidéos YouTube de la page Vidéos
+data/coups-de-coeur.json  Morceaux YouTube Music que j'aime (page Musique)
 data/articles.json Articles (titre, date, image, contenu)
 data/site.json    Date de dernière mise à jour du site (pied de page)
 data/derniere-sortie.json  Ma dernière sortie Strava (page Sport)
@@ -29,12 +30,18 @@ favicon.svg       Icône de l'onglet
 ## Modifier le contenu
 
 - **Morceaux** : ouvre `data/musique.xlsx` dans Excel, une ligne par morceau
-  (colonnes `titre`, `style`, `date` au format JJ/MM/AAAA, `lien`, `sunoId`). Enregistre,
+  (colonnes `titre`, `style`, `date` au format JJ/MM/AAAA, `lien`, `sunoId`, `auteur`). Enregistre,
   puis **double-clique sur `mettre-a-jour-musique.bat`** : il régénère `data/musique.json`.
   `sunoId` est facultatif : s'il est vide et que le lien est de la forme `https://suno.com/song/...`,
   il est repris tout seul. Avec un `sunoId`, « Écouter » ouvre le lecteur embarqué ; sinon le lien
   s'ouvre dans un nouvel onglet. Les styles du filtre se remplissent tout seuls.
+  `auteur` est facultatif : remplis-le uniquement pour un morceau qui n'est pas de toi
+  (ex. `Cadidscha`), le site affiche alors « de Cadidscha » sous le titre.
   Pense à envoyer les deux fichiers (`.xlsx` et `.json`) sur GitHub. Seul Python est nécessaire.
+- **Coups de cœur musique** : édite `data/coups-de-coeur.json`, tableau `morceaux`. Un morceau =
+  `{ "titre": "...", "artiste": "...", "lien": "https://music.youtube.com/watch?v=...", "commentaire": "..." }`.
+  Dans YouTube Music : « Partager » → « Copier le lien », puis colle-le dans `lien`.
+  `artiste` et `commentaire` sont facultatifs. Le lecteur ne se charge qu'au clic sur « Écouter ».
 - **Vidéos** : édite `data/videos.json`, tableau `videos`. Une vidéo =
   `{ "titre": "...", "chaine": "...", "lien": "https://www.youtube.com/watch?v=...", "commentaire": "..." }`.
   Colle simplement le lien YouTube (watch, youtu.be ou shorts) ; `chaine` et `commentaire` sont facultatifs.

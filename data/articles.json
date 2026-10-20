@@ -1,6 +1,223 @@
 {
   "articles": [
     {
+      "slug": "agent-gemini-n8n",
+      "titre": "Mon premier agent IA avec n8n et Gemini : comment ça marche ?",
+      "date": "2026-10-20",
+      "categorie": "Intelligence artificielle",
+      "image": "images/articles/agent-gemini-n8n.svg",
+      "imageAlt": "Schéma de l'agent : une bulle de chat envoie la question à l'agent IA, relié au modèle Gemini, à une mémoire et à deux outils, une calculatrice et Wikipédia",
+      "extrait": "J'ai construit mon premier agent IA dans n8n, avec Gemini comme cerveau, une mémoire et deux outils : une calculatrice et Wikipédia. Six blocs seulement. Voici ce que fait chacun, et comment une question devient une réponse.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "J'ai construit mon premier agent d'intelligence artificielle. Pas un simple chatbot qui répond ce qui lui passe par la tête : un agent, c'est-à-dire une IA qui peut réfléchir, se souvenir de la conversation et utiliser des outils quand elle en a besoin. Je l'ai fait dans n8n, avec Gemini, le modèle de Google, comme cerveau. Il tient en six blocs. Cet article me sert à bien comprendre ce que fait chacun d'eux."
+        },
+        {
+          "type": "titre",
+          "texte": "n8n, c'est quoi ?"
+        },
+        {
+          "type": "texte",
+          "texte": "n8n (prononcer « n-eight-n ») est un outil d'automatisation. On y construit des « workflows » en posant des blocs, appelés nœuds, sur un tableau, puis en les reliant par des flèches. Chaque nœud fait une chose : recevoir un message, appeler un service, transformer des données… Pas besoin d'écrire de code : on assemble, on règle, on teste. Depuis quelque temps, n8n propose aussi des nœuds d'IA, avec lesquels on peut monter un agent en quelques minutes."
+        },
+        {
+          "type": "titre",
+          "texte": "Les six blocs de mon agent"
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Bloc",
+            "Son rôle",
+            "Mon réglage"
+          ],
+          "lignes": [
+            [
+              "Chat Trigger",
+              "La porte d'entrée : une fenêtre de chat où j'écris ma question",
+              "Par défaut"
+            ],
+            [
+              "AI Agent",
+              "Le chef d'orchestre : reçoit la question, réfléchit, décide s'il faut un outil, rédige la réponse",
+              "Un message système qui fixe sa personnalité"
+            ],
+            [
+              "Google Gemini Chat Model",
+              "Le cerveau : le modèle de langage qui comprend et écrit",
+              "Température 0,4"
+            ],
+            [
+              "Mémoire (Window Buffer)",
+              "Le carnet de notes : garde le fil de la conversation",
+              "Les 10 derniers échanges"
+            ],
+            [
+              "Calculator",
+              "Un outil : fait les calculs exacts",
+              "Aucun"
+            ],
+            [
+              "Wikipedia",
+              "Un outil : va chercher des informations sur Wikipédia",
+              "Aucun"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Seul le Chat Trigger est relié à l'agent par une flèche « normale » : c'est le chemin que suit la question. Les quatre autres blocs se branchent sous l'agent, chacun sur sa propre prise : une prise « Chat Model » pour le cerveau, une prise « Memory » pour la mémoire, une prise « Tool » pour les outils. Ils ne s'exécutent pas les uns après les autres : ce sont des ressources que l'agent utilise quand il en a besoin."
+        },
+        {
+          "type": "titre",
+          "texte": "1. Le Chat Trigger : la porte d'entrée"
+        },
+        {
+          "type": "texte",
+          "texte": "C'est le déclencheur. Dans n8n, il fait apparaître un bouton « Open chat » : une petite fenêtre s'ouvre, j'y tape ma question, et le workflow démarre. Chaque fenêtre de chat a son propre identifiant de session : c'est grâce à lui que la mémoire sait quelle conversation est en cours. Pour l'instant mon workflow n'est pas « activé » : il ne tourne que quand je le teste depuis l'éditeur. En l'activant, on peut aussi rendre le chat accessible par une adresse web."
+        },
+        {
+          "type": "titre",
+          "texte": "2. L'AI Agent : le chef d'orchestre"
+        },
+        {
+          "type": "texte",
+          "texte": "C'est le cœur du système. L'agent reçoit la question, la transmet au modèle avec la liste des outils disponibles, et le laisse décider : soit il sait répondre tout seul, soit il demande à utiliser un outil. Dans ce cas, l'agent lance l'outil, récupère le résultat, le redonne au modèle, et ainsi de suite jusqu'à obtenir une réponse finale. Je n'ai rien programmé de tout ça : c'est le modèle lui-même qui choisit, à partir du nom et de la description de chaque outil."
+        },
+        {
+          "type": "texte",
+          "texte": "Le seul réglage que j'ai fait, c'est le message système. C'est une consigne cachée, envoyée avant chaque conversation, qui fixe le comportement de l'agent :"
+        },
+        {
+          "type": "code",
+          "legende": "Message système",
+          "code": "Tu es un assistant utile, clair et concis. Tu réponds toujours\nen français, de façon structurée et pédagogique. Si tu ne sais\npas, tu le dis honnêtement."
+        },
+        {
+          "type": "texte",
+          "texte": "La dernière phrase est importante : un modèle de langage a tendance à inventer plutôt qu'à avouer qu'il ne sait pas. Le lui demander explicitement limite ce risque, sans le supprimer complètement."
+        },
+        {
+          "type": "titre",
+          "texte": "3. Gemini : le cerveau"
+        },
+        {
+          "type": "texte",
+          "texte": "Le nœud « Google Gemini Chat Model » branche le modèle de Google sur l'agent. Pour qu'il fonctionne, il faut une clé API, créée gratuitement sur Google AI Studio, puis enregistrée dans n8n comme « identifiant » (credential). Bonne nouvelle : la clé reste rangée dans n8n. Quand j'exporte mon workflow en fichier, il ne contient que le nom de l'identifiant, jamais la clé elle-même. Je peux donc partager le fichier sans risque."
+        },
+        {
+          "type": "texte",
+          "texte": "J'ai réglé la température à 0,4. La température dit à quel point le modèle peut prendre des libertés quand il choisit ses mots :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "proche de 0 : réponses sérieuses, prévisibles, presque toujours les mêmes ;",
+            "autour de 1 : réponses plus variées et plus créatives, mais aussi plus fantaisistes ;",
+            "0,4 : un bon compromis pour un assistant qui doit expliquer et rester fiable, tout en gardant un ton naturel."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "4. La mémoire : le carnet de notes"
+        },
+        {
+          "type": "texte",
+          "texte": "Un modèle de langage n'a aucune mémoire : chaque appel repart de zéro. Si je demande « Qui a peint la Joconde ? » puis « Il est né où ? », sans mémoire le modèle ne sait pas qui est « il ». Le nœud « Window Buffer Memory » règle ce problème : il garde les derniers échanges et les renvoie au modèle à chaque nouvelle question."
+        },
+        {
+          "type": "texte",
+          "texte": "« Window », c'est la fenêtre glissante : je l'ai réglée sur 10. L'agent se souvient des 10 derniers échanges ; au-delà, les plus anciens sont oubliés. C'est volontaire : tout renvoyer à chaque fois coûterait de plus en plus cher en « tokens » (les morceaux de texte que le modèle lit) et consommerait le quota plus vite. Cette mémoire est rangée dans n8n, le temps de la session : si je redémarre n8n, elle est vidée. Pour une mémoire permanente, il faudrait la brancher sur une base de données."
+        },
+        {
+          "type": "titre",
+          "texte": "5. Les outils : Calculator et Wikipedia"
+        },
+        {
+          "type": "texte",
+          "texte": "C'est ce qui fait la différence entre un chatbot et un agent. Les modèles de langage sont doués avec les mots, beaucoup moins avec les chiffres : ils « devinent » le résultat d'un calcul plutôt que de le faire. Et leurs connaissances s'arrêtent à la date de leur entraînement. Les outils comblent ces deux faiblesses."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Calculator : quand la question contient un calcul, l'agent l'envoie à la calculatrice et reçoit un résultat exact. Par exemple, pour « Combien font 17 % de 2 345 ? », il ne devine pas : il calcule.",
+            "Wikipedia : quand il lui manque une information, l'agent lance une recherche sur Wikipédia et lit le résumé de l'article avant de répondre. Ça l'aide à s'appuyer sur une source plutôt que sur ses seuls souvenirs."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Les deux outils n'ont aucun réglage : il suffit de les brancher sur la prise « Tool » de l'agent. Je peux en ajouter d'autres de la même façon."
+        },
+        {
+          "type": "titre",
+          "texte": "Le trajet d'une question"
+        },
+        {
+          "type": "texte",
+          "texte": "Prenons la question : « Quelle est la hauteur de la tour Eiffel, et combien de fois faudrait-il l'empiler pour atteindre 10 kilomètres ? »"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Le Chat Trigger reçoit le message et le passe à l'agent.",
+            "L'agent récupère les échanges précédents dans la mémoire.",
+            "Il envoie tout à Gemini : le message système, l'historique, la question et la liste des outils.",
+            "Gemini répond : « J'ai besoin de Wikipedia pour la hauteur. » L'agent lance la recherche et lui renvoie le résultat.",
+            "Gemini demande ensuite la calculatrice pour diviser 10 000 mètres par la hauteur trouvée. L'agent fait le calcul et lui renvoie le résultat.",
+            "Gemini rédige enfin la réponse, en français, comme le demande le message système.",
+            "La mémoire enregistre la question et la réponse, et la réponse s'affiche dans le chat."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Une seule question peut donc entraîner plusieurs appels à Gemini : un pour décider, un après chaque outil, un pour la réponse finale. Dans n8n, en cliquant sur une exécution, on voit chacune de ces étapes : c'est le meilleur moyen de comprendre ce que l'agent a « pensé »."
+        },
+        {
+          "type": "titre",
+          "texte": "Les quotas : attention à la clé gratuite"
+        },
+        {
+          "type": "texte",
+          "texte": "La clé Gemini gratuite est limitée : un nombre maximal de requêtes par minute et par jour, qui dépend du modèle choisi et que Google modifie de temps en temps (les chiffres à jour sont sur la page des limites de Google AI Studio). Quand on dépasse, Gemini renvoie une erreur 429, « Resource exhausted », et le nœud passe en rouge dans n8n. Ce n'est pas une panne : il suffit d'attendre une minute, ou le lendemain si c'est le quota du jour qui est épuisé."
+        },
+        {
+          "type": "texte",
+          "texte": "Comme une question qui utilise des outils coûte plusieurs appels, le quota part plus vite qu'on ne le croit. Pour l'économiser :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "éviter d'enchaîner les tests à toute vitesse ;",
+            "garder une fenêtre de mémoire raisonnable (10, c'est bien) ;",
+            "choisir dans le nœud Gemini un modèle « Flash », plus léger et plus généreux en quota que les modèles « Pro »."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que j'ai retenu"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Un agent, c'est un modèle de langage, plus une mémoire, plus des outils, le tout piloté par une consigne.",
+            "Le modèle ne fait rien lui-même : il décide, et c'est n8n qui exécute les outils pour lui.",
+            "Le message système façonne le caractère de l'agent : c'est le réglage le plus simple et le plus puissant.",
+            "Sans mémoire, pas de conversation ; avec trop de mémoire, on gaspille du quota.",
+            "Les clés restent dans n8n : le fichier exporté peut se partager."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Et après ?"
+        },
+        {
+          "type": "texte",
+          "texte": "La base est là, et le plus dur est fait. La suite, ce sera d'ajouter des outils : une recherche web pour l'actualité, Strava pour qu'il commente mes sorties de course, Google Agenda, ou un outil fait maison avec un nœud « HTTP Request ». Et pourquoi pas brancher l'agent sur autre chose qu'une fenêtre de chat, comme Telegram ou un formulaire de ce site. À suivre !"
+        }
+      ]
+    },
+    {
       "slug": "game-of-thrones",
       "video": true,
       "titre": "Game of Thrones : le top des tops, impossible d'attendre !",

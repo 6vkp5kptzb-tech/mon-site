@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Schéma de l'agent n8n : le Chat Trigger envoie la question à l'AI Agent, relié en dessous au modèle Google Gemini, à la mémoire et aux deux outils Calculator et Wikipedia">
+  <defs>
+    <radialGradient id="fond" cx="0.6" cy="0.5" r="0.9">
+      <stop offset="0" stop-color="#121a2a"/>
+      <stop offset="1" stop-color="#070a0f"/>
+    </radialGradient>
+    <linearGradient id="agent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+    <style>
+      .big { font: 800 80px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .label { font: 700 30px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; }
+      .sub { font: 22px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+      .lien { font: 600 20px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #64748b; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#fond)"/>
+  <text x="120" y="150" class="eyebrow">N8N · IA · AUTOMATISATION</text>
+  <text x="120" y="250" class="big">Mon premier agent Gemini</text>
+
+  <!-- Liaison principale : Chat Trigger → AI Agent -->
+  <path d="M480 450 H640" stroke="#22d3ee" stroke-width="6" fill="none"/>
+  <path d="M640 450 l-20 -12 v24 z" fill="#22d3ee"/>
+
+  <!-- Chat Trigger -->
+  <rect x="120" y="370" width="360" height="160" rx="22" fill="#0f2a33" stroke="#22d3ee" stroke-width="4"/>
+  <path d="M170 420 h70 a14 14 0 0 1 14 14 v36 a14 14 0 0 1 -14 14 h-38 l-22 18 v-18 h-10 a14 14 0 0 1 -14 -14 v-36 a14 14 0 0 1 14 -14 z" fill="#22d3ee" opacity="0.85"/>
+  <text x="280" y="445" class="label">Chat</text>
+  <text x="280" y="485" class="sub">la question</text>
+
+  <!-- AI Agent -->
+  <rect x="640" y="330" width="440" height="240" rx="26" fill="url(#agent)" opacity="0.35" filter="url(#glow)"/>
+  <rect x="640" y="330" width="440" height="240" rx="26" fill="#1e1538" stroke="#a78bfa" stroke-width="5"/>
+  <circle cx="730" cy="450" r="46" fill="url(#agent)"/>
+  <circle cx="714" cy="442" r="8" fill="#0b0f17"/><circle cx="746" cy="442" r="8" fill="#0b0f17"/>
+  <path d="M712 468 q18 14 36 0" stroke="#0b0f17" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <text x="800" y="440" class="label">AI Agent</text>
+  <text x="800" y="480" class="sub">réfléchit, décide</text>
+
+  <!-- Liaisons vers le bas -->
+  <g stroke="#475569" stroke-width="4" stroke-dasharray="10 8" fill="none">
+    <path d="M700 570 V640 H320 V690"/>
+    <path d="M800 570 V690"/>
+    <path d="M920 570 V640 H1120 V690"/>
+    <path d="M1020 570 V620 H1380 V690"/>
+  </g>
+
+  <!-- Gemini -->
+  <rect x="180" y="690" width="280" height="170" rx="20" fill="#13233b" stroke="#60a5fa" stroke-width="4"/>
+  <path d="M320 715 c4 26 14 36 40 40 c-26 4 -36 14 -40 40 c-4 -26 -14 -36 -40 -40 c26 -4 36 -14 40 -40 z" fill="#60a5fa"/>
+  <text x="320" y="825" class="label" text-anchor="middle">Gemini</text>
+  <text x="320" y="900" class="lien" text-anchor="middle">le cerveau</text>
+
+  <!-- Mémoire -->
+  <rect x="500" y="690" width="280" height="170" rx="20" fill="#14261f" stroke="#34d399" stroke-width="4"/>
+  <g fill="#34d399"><rect x="600" y="712" width="80" height="16" rx="5"/><rect x="600" y="736" width="80" height="16" rx="5" opacity="0.75"/><rect x="600" y="760" width="80" height="16" rx="5" opacity="0.5"/></g>
+  <text x="640" y="825" class="label" text-anchor="middle">Mémoire</text>
+  <text x="640" y="900" class="lien" text-anchor="middle">10 derniers échanges</text>
+
+  <!-- Calculator -->
+  <rect x="980" y="690" width="280" height="170" rx="20" fill="#2a1d10" stroke="#fdba74" stroke-width="4"/>
+  <text x="1120" y="775" text-anchor="middle" style="font: 800 54px ui-monospace, Consolas, monospace; fill: #fdba74;">2+2</text>
+  <text x="1120" y="825" class="label" text-anchor="middle">Calculator</text>
+
+  <!-- Wikipedia -->
+  <rect x="1290" y="690" width="200" height="170" rx="20" fill="#2a1d10" stroke="#fdba74" stroke-width="4"/>
+  <text x="1390" y="775" text-anchor="middle" style="font: 800 62px Georgia, 'Times New Roman', serif; fill: #fdba74;">W</text>
+  <text x="1390" y="825" class="label" text-anchor="middle">Wikipedia</text>
+  <text x="1235" y="900" class="lien" text-anchor="middle">les outils</text>
+</svg>

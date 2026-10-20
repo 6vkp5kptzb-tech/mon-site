@@ -1,6 +1,229 @@
 {
   "articles": [
     {
+      "slug": "agent-rag-gemini-qdrant",
+      "titre": "Un agent IA qui lit mes documents : le RAG avec n8n, Gemini et Qdrant",
+      "date": "2026-10-20",
+      "categorie": "Intelligence artificielle",
+      "image": "images/articles/agent-rag-gemini-qdrant.svg",
+      "imageAlt": "Schéma du RAG : en haut, un document est découpé en morceaux, transformés en vecteurs par Ollama et rangés dans Qdrant ; en bas, la question est transformée en vecteur, Qdrant renvoie les passages proches et Gemini rédige la réponse",
+      "extrait": "Mon premier agent ne savait que ce que Gemini avait appris. Celui-ci va d'abord chercher la réponse dans mes propres documents. C'est le principe du RAG : je l'ai monté avec n8n, Gemini, Ollama et Qdrant. Voici ce que veut dire ce sigle, et tout le trajet d'un document jusqu'à une réponse.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Mon premier agent avec n8n et Gemini savait discuter, se souvenir de la conversation et utiliser une calculatrice. Mais il ne connaissait que ce que Gemini avait appris pendant son entraînement. Si je lui demande le tarif de mon club de course ou le contenu d'un PDF rangé sur mon ordinateur, il n'en sait rien, et au pire il invente. Pour ce deuxième agent, j'ai voulu corriger ça : avant de répondre, il va chercher dans mes propres documents. Ce principe a un nom, le RAG. Cet article me sert à bien le comprendre, brique par brique."
+        },
+        {
+          "type": "titre",
+          "texte": "Le RAG, c'est quoi ?"
+        },
+        {
+          "type": "texte",
+          "texte": "RAG veut dire « Retrieval-Augmented Generation », que l'on peut traduire par « génération augmentée par la recherche ». Derrière ce nom compliqué, l'idée est simple et tient en deux mots :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Retrieval (la recherche) : avant de répondre, on va chercher dans une base de documents les passages qui parlent de la question.",
+            "Generation (la rédaction) : on donne ces passages au modèle de langage, qui rédige sa réponse à partir d'eux plutôt que de mémoire."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "C'est la différence entre un élève qui passe un examen par cœur et un élève qui a le droit d'ouvrir son classeur. Le second ne connaît pas forcément mieux le cours, mais il peut retrouver la bonne page et recopier la bonne information. Le modèle n'apprend rien de nouveau : on lui glisse simplement les bonnes pages sous les yeux au moment de la question."
+        },
+        {
+          "type": "texte",
+          "texte": "Ça règle deux problèmes d'un coup. D'abord, l'agent peut répondre sur des informations privées ou récentes, qu'aucun modèle ne peut connaître. Ensuite, il invente moins : s'il ne trouve rien dans les documents, on peut lui demander de le dire au lieu de deviner."
+        },
+        {
+          "type": "titre",
+          "texte": "Trouver le bon passage : les embeddings"
+        },
+        {
+          "type": "texte",
+          "texte": "Toute la difficulté est dans la recherche. Une recherche par mots-clés, comme le Ctrl+F d'un navigateur, ne suffit pas : si je demande « combien coûte l'inscription ? » et que le document parle de « cotisation annuelle », aucun mot ne correspond. Il faut chercher par le sens, pas par les mots."
+        },
+        {
+          "type": "texte",
+          "texte": "C'est le rôle des embeddings. Un modèle d'embeddings transforme un texte en une longue liste de nombres, appelée vecteur. Celui que j'utilise, nomic-embed-text, produit des vecteurs de 768 nombres. On peut imaginer chaque vecteur comme les coordonnées d'un point dans un espace à 768 dimensions. Le modèle est entraîné pour que deux textes au sens proche donnent deux points proches, même s'ils n'ont aucun mot en commun. « Inscription » et « cotisation » se retrouvent ainsi voisins, tandis qu'une recette de cuisine atterrit très loin."
+        },
+        {
+          "type": "texte",
+          "texte": "Chercher un passage revient alors à faire un calcul de distance : on transforme la question en vecteur, et on cherche les vecteurs de documents qui en sont les plus proches. Pour stocker des milliers de vecteurs et retrouver les plus proches en un clin d'œil, il faut une base de données spéciale : une base vectorielle. J'utilise Qdrant."
+        },
+        {
+          "type": "texte",
+          "texte": "Une règle d'or découle de ce fonctionnement : il faut utiliser le même modèle d'embeddings pour ranger les documents et pour transformer la question. Deux modèles différents ne placent pas les textes dans le même espace : leurs vecteurs ne sont pas comparables, et la recherche renvoie n'importe quoi."
+        },
+        {
+          "type": "titre",
+          "texte": "Les quatre briques"
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Brique",
+            "Son rôle",
+            "Où elle tourne"
+          ],
+          "lignes": [
+            [
+              "n8n",
+              "Le chef d'orchestre : enchaîne les étapes et pilote l'agent",
+              "Docker, sur mon ordinateur"
+            ],
+            [
+              "Gemini",
+              "Le cerveau : comprend la question et rédige la réponse",
+              "L'API de Google"
+            ],
+            [
+              "Ollama (nomic-embed-text)",
+              "Le traducteur : transforme le texte en vecteurs",
+              "Docker, sur mon ordinateur"
+            ],
+            [
+              "Qdrant",
+              "La bibliothèque : stocke les vecteurs et retrouve les passages proches",
+              "Docker, sur mon ordinateur"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Gemini rédige, mais ce n'est pas lui qui fabrique les vecteurs : c'est Ollama, un logiciel qui fait tourner des modèles d'IA en local. Ici, il ne sert qu'aux embeddings, avec un petit modèle d'environ 270 Mo. Ce travail reste rapide même sans carte graphique puissante, et mes documents ne quittent pas mon ordinateur pour être indexés. Seuls les passages retrouvés partent chez Google, au moment de la question."
+        },
+        {
+          "type": "texte",
+          "texte": "Le système se découpe en deux workflows n8n bien séparés : un pour ranger les documents, un pour répondre aux questions."
+        },
+        {
+          "type": "titre",
+          "texte": "Workflow 1 : ranger un document dans Qdrant"
+        },
+        {
+          "type": "texte",
+          "texte": "C'est l'ingestion. On ne la lance qu'une fois par document, pour l'ajouter à la base. Cinq nœuds se suivent :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Le formulaire : n8n ouvre une page web où je dépose un fichier PDF.",
+            "Le chargeur de document : il lit le PDF et en extrait le texte.",
+            "Le découpage en morceaux : il coupe le texte en « chunks » de 800 caractères.",
+            "Embeddings Ollama : il transforme chaque morceau en vecteur de 768 nombres.",
+            "Qdrant : il range chaque vecteur, avec le texte du morceau, dans une collection appelée « documents »."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Pourquoi découper ? Parce qu'un vecteur résume le sens de tout un texte. Le vecteur d'un document de vingt pages serait une moyenne floue de tous les sujets abordés, et ne ressemblerait vraiment à aucune question précise. Des morceaux courts, eux, parlent chacun d'une seule chose : le passage sur les tarifs ressemble beaucoup à une question sur les tarifs. Et l'agent n'aura à lire que quelques morceaux, au lieu du document entier."
+        },
+        {
+          "type": "texte",
+          "texte": "Les morceaux se chevauchent de 100 caractères : la fin de l'un est répétée au début du suivant. Sans ça, une phrase coupée pile au milieu serait perdue des deux côtés. Avec, chaque idée a de bonnes chances de se retrouver entière dans au moins un morceau."
+        },
+        {
+          "type": "texte",
+          "texte": "La collection, c'est le tiroir de Qdrant où sont rangés les vecteurs. Pas besoin de la créer à l'avance : elle apparaît toute seule à la première insertion."
+        },
+        {
+          "type": "titre",
+          "texte": "Workflow 2 : l'agent qui cherche avant de répondre"
+        },
+        {
+          "type": "texte",
+          "texte": "Le deuxième workflow ressemble beaucoup à mon premier agent : un Chat Trigger, un AI Agent, Gemini comme modèle et une mémoire. La différence, c'est l'outil branché sous l'agent. À la place de la calculatrice, il y a un nœud Qdrant Vector Store en mode outil, appelé base_documents, lui-même relié à son propre nœud Embeddings Ollama."
+        },
+        {
+          "type": "texte",
+          "texte": "Pour Gemini, base_documents est un outil comme un autre : il a un nom et une description, et c'est Gemini qui décide de l'appeler quand la question semble concerner les documents. La consigne de l'agent, son message système, lui demande de s'appuyer sur cette base et de dire honnêtement quand il n'y trouve pas l'information."
+        },
+        {
+          "type": "titre",
+          "texte": "Le trajet d'une question"
+        },
+        {
+          "type": "texte",
+          "texte": "Pour tester, j'ai rangé dans Qdrant un PDF de deux pages qui décrit un club de course imaginaire. Comme tout y est inventé, Gemini ne peut pas connaître les réponses par cœur : s'il répond juste, c'est forcément grâce au RAG. Prenons la question : « Combien coûte la cotisation pour un adulte ? »"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Le Chat Trigger reçoit la question et la passe à l'agent, qui récupère l'historique dans la mémoire.",
+            "L'agent envoie tout à Gemini, avec la description de l'outil base_documents.",
+            "Gemini juge que la question porte sur le club et demande à utiliser base_documents, en formulant lui-même sa recherche.",
+            "Ollama transforme cette recherche en vecteur, avec le même modèle nomic-embed-text que pour l'ingestion.",
+            "Qdrant compare ce vecteur à ceux de la collection et renvoie les 4 morceaux les plus proches, avec leur texte.",
+            "Gemini lit ces 4 passages et rédige la réponse : 85 €.",
+            "La mémoire enregistre l'échange, et la réponse s'affiche dans le chat."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Même chose pour « Qui détient le record du 21 km du Trail des Oliviers ? » : l'agent répond Thibault Marchetti, en 1 h 17 min 42 s, une information qui n'existe nulle part ailleurs que dans mon PDF de test."
+        },
+        {
+          "type": "texte",
+          "texte": "Dans le panneau des logs de n8n, on peut ouvrir le nœud base_documents et voir les passages que Qdrant a renvoyés. C'est là qu'on vérifie que la recherche trouve les bons morceaux. Si la réponse est fausse, on sait tout de suite où chercher : soit la recherche n'a pas ramené le bon passage, soit Gemini l'a mal lu."
+        },
+        {
+          "type": "titre",
+          "texte": "Le garde-fou : savoir dire « je ne sais pas »"
+        },
+        {
+          "type": "texte",
+          "texte": "Le test le plus important n'est pas une question à laquelle l'agent sait répondre, mais une question à laquelle il ne doit pas répondre. J'ai demandé : « Quel est le tarif pour un senior de plus de 65 ans ? ». Le PDF n'en parle pas. Qdrant renvoie quand même 4 morceaux, puisqu'il renvoie toujours les plus proches, même s'ils ne sont pas pertinents. Un modèle mal cadré prendrait alors le tarif adulte, ou inventerait un montant plausible."
+        },
+        {
+          "type": "texte",
+          "texte": "Mon agent répond qu'il ne trouve pas l'information. C'est la preuve que la consigne du message système fonctionne : il répond à partir des documents, et seulement d'eux. Pour un assistant censé être fiable, c'est sans doute le comportement le plus précieux."
+        },
+        {
+          "type": "titre",
+          "texte": "Ce qui m'a fait trébucher"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "La clé Gemini gratuite n'ouvre pas les modèles Pro. Le fichier de départ utilisait gemini-2.5-pro, et l'agent renvoyait une erreur 404 « The resource you are requesting could not be found ». Avec un modèle Flash, tout fonctionne. Astuce : la liste des modèles du nœud Gemini est interrogée en direct avec la clé, donc tout ce qu'elle affiche est utilisable.",
+            "L'abonnement Gemini Pro grand public ne donne pas de clé API : l'API a son propre accès, créé sur Google AI Studio, et ses propres limites de requêtes par minute et par jour.",
+            "Dans Docker, « localhost » ne veut pas dire ce qu'on croit. n8n tourne dans son propre conteneur : pour lui, localhost, c'est lui-même. Pour joindre Ollama, il faut utiliser le nom de son conteneur, http://ollama:11434, et de même http://qdrant:6333 pour Qdrant. Ça marche parce que les conteneurs partagent le même réseau Docker.",
+            "Le modèle d'embeddings doit d'abord être téléchargé dans le conteneur Ollama, avec la commande ci-dessous."
+          ]
+        },
+        {
+          "type": "code",
+          "legende": "PowerShell",
+          "code": "docker exec -it ollama ollama pull nomic-embed-text"
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que j'ai retenu"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Le RAG ne rend pas le modèle plus savant : il lui donne les bonnes pages à lire au moment de la question.",
+            "Un embedding transforme un texte en coordonnées : deux textes au sens proche donnent deux points proches.",
+            "On découpe les documents en petits morceaux qui se chevauchent, pour que chacun parle d'une seule chose.",
+            "Même modèle d'embeddings à l'ingestion et à la question, sinon les vecteurs ne sont pas comparables.",
+            "Qdrant renvoie toujours quelque chose : c'est la consigne de l'agent qui l'empêche d'inventer quand ce n'est pas pertinent.",
+            "Les logs de n8n montrent les passages retrouvés : c'est le premier endroit à regarder quand une réponse est fausse."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Et après ?"
+        },
+        {
+          "type": "texte",
+          "texte": "Pour l'instant, ma base ne contient qu'un PDF de test. La prochaine étape, c'est d'y ranger de vrais documents : mes notes d'entraînement, des guides, des articles de ce site. Il faudra aussi apprendre à mettre à jour la base quand un document change, sans créer de doublons. Et pourquoi pas combiner les deux agents : un seul assistant qui sait chercher dans mes documents, calculer et consulter Wikipédia. À suivre !"
+        }
+      ]
+    },
+    {
       "slug": "agent-gemini-n8n",
       "titre": "Mon premier agent IA avec n8n et Gemini : comment ça marche ?",
       "date": "2026-10-20",

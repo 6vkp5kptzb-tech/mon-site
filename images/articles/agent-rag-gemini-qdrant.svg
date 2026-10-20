@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Schéma du RAG : en haut, l'ingestion découpe un document en morceaux, Ollama les transforme en vecteurs et Qdrant les range ; en bas, la question passe par Ollama, Qdrant renvoie les 4 passages les plus proches et Gemini rédige la réponse">
+  <defs>
+    <radialGradient id="fond" cx="0.6" cy="0.5" r="0.9">
+      <stop offset="0" stop-color="#121a2a"/>
+      <stop offset="1" stop-color="#070a0f"/>
+    </radialGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f472b6"/>
+      <stop offset="1" stop-color="#be185d"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+    <style>
+      .big { font: 800 80px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .label { font: 700 28px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; }
+      .sub { font: 20px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+      .lien { font: 600 20px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #64748b; letter-spacing: 2px; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#fond)"/>
+  <text x="120" y="150" class="eyebrow">N8N · RAG · QDRANT</text>
+  <text x="120" y="250" class="big">Un agent qui lit mes documents</text>
+
+  <!-- Qdrant au centre, partagé par les deux workflows -->
+  <rect x="1180" y="470" width="300" height="230" rx="26" fill="url(#base)" opacity="0.35" filter="url(#glow)"/>
+  <rect x="1180" y="470" width="300" height="230" rx="26" fill="#2a1022" stroke="#f472b6" stroke-width="5"/>
+  <g fill="#f472b6">
+    <circle cx="1250" cy="530" r="7"/><circle cx="1280" cy="515" r="7" opacity="0.7"/><circle cx="1300" cy="545" r="7"/>
+    <circle cx="1360" cy="520" r="7" opacity="0.6"/><circle cx="1390" cy="550" r="7"/><circle cx="1415" cy="525" r="7" opacity="0.8"/>
+  </g>
+  <text x="1330" y="620" class="label" text-anchor="middle">Qdrant</text>
+  <text x="1330" y="660" class="sub" text-anchor="middle">les vecteurs</text>
+
+  <!-- Ligne 1 : ingestion -->
+  <text x="120" y="360" class="lien">1 · RANGER UN DOCUMENT</text>
+  <g stroke="#22d3ee" stroke-width="5" fill="none">
+    <path d="M370 470 H430"/><path d="M690 470 H750"/><path d="M1010 470 H1100 V540 H1170"/>
+  </g>
+  <g fill="#22d3ee"><path d="M440 470 l-18 -11 v22 z"/><path d="M760 470 l-18 -11 v22 z"/><path d="M1180 540 l-18 -11 v22 z"/></g>
+
+  <rect x="120" y="400" width="250" height="140" rx="20" fill="#0f2a33" stroke="#22d3ee" stroke-width="4"/>
+  <path d="M160 425 h40 l18 18 v62 h-58 z" fill="none" stroke="#22d3ee" stroke-width="4"/>
+  <text x="300" y="465" class="label" text-anchor="middle">PDF</text>
+  <text x="300" y="500" class="sub" text-anchor="middle">document</text>
+
+  <rect x="440" y="400" width="250" height="140" rx="20" fill="#0f2a33" stroke="#22d3ee" stroke-width="4"/>
+  <g fill="#22d3ee"><rect x="470" y="425" width="50" height="22" rx="5"/><rect x="470" y="455" width="50" height="22" rx="5" opacity="0.75"/><rect x="470" y="485" width="50" height="22" rx="5" opacity="0.5"/></g>
+  <text x="610" y="465" class="label" text-anchor="middle">Chunks</text>
+  <text x="610" y="500" class="sub" text-anchor="middle">800 car.</text>
+
+  <rect x="760" y="400" width="250" height="140" rx="20" fill="#14261f" stroke="#34d399" stroke-width="4"/>
+  <text x="885" y="455" class="label" text-anchor="middle">Ollama</text>
+  <text x="885" y="490" class="sub" text-anchor="middle">texte → vecteur</text>
+  <text x="885" y="520" class="sub" text-anchor="middle">[0.12, -0.4…]</text>
+
+  <!-- Ligne 2 : question -->
+  <text x="120" y="660" class="lien">2 · POSER UNE QUESTION</text>
+  <g stroke="#fdba74" stroke-width="5" fill="none">
+    <path d="M370 790 H430"/><path d="M690 790 H750"/><path d="M1010 790 H1100 V630 H1170"/>
+  </g>
+  <g fill="#fdba74"><path d="M440 790 l-18 -11 v22 z"/><path d="M760 790 l-18 -11 v22 z"/><path d="M1180 630 l-18 -11 v22 z"/></g>
+
+  <rect x="120" y="720" width="250" height="140" rx="20" fill="#2a1d10" stroke="#fdba74" stroke-width="4"/>
+  <path d="M155 750 h60 a12 12 0 0 1 12 12 v30 a12 12 0 0 1 -12 12 h-32 l-18 15 v-15 h-10 a12 12 0 0 1 -12 -12 v-30 a12 12 0 0 1 12 -12 z" fill="#fdba74" opacity="0.85"/>
+  <text x="300" y="785" class="label" text-anchor="middle">Chat</text>
+  <text x="300" y="820" class="sub" text-anchor="middle">question</text>
+
+  <rect x="440" y="720" width="250" height="140" rx="20" fill="#1e1538" stroke="#a78bfa" stroke-width="4"/>
+  <text x="565" y="785" class="label" text-anchor="middle">AI Agent</text>
+  <text x="565" y="820" class="sub" text-anchor="middle">base_documents</text>
+
+  <rect x="760" y="720" width="250" height="140" rx="20" fill="#14261f" stroke="#34d399" stroke-width="4"/>
+  <text x="885" y="785" class="label" text-anchor="middle">Ollama</text>
+  <text x="885" y="820" class="sub" text-anchor="middle">même modèle</text>
+
+  <!-- Retour : Qdrant → Gemini -->
+  <path d="M1330 700 V770" stroke="#60a5fa" stroke-width="5" fill="none"/>
+  <path d="M1330 780 l-11 -18 h22 z" fill="#60a5fa"/>
+  <text x="1350" y="745" class="sub">4 passages</text>
+  <rect x="1180" y="790" width="300" height="140" rx="20" fill="#13233b" stroke="#60a5fa" stroke-width="4"/>
+  <path d="M1240 825 c3 20 11 28 31 31 c-20 3 -28 11 -31 31 c-3 -20 -11 -28 -31 -31 c20 -3 28 -11 31 -31 z" fill="#60a5fa"/>
+  <text x="1360" y="855" class="label" text-anchor="middle">Gemini</text>
+  <text x="1360" y="890" class="sub" text-anchor="middle">rédige</text>
+</svg>

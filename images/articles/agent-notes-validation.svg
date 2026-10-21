@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Schéma de l'agent de notes : le chat envoie un texte à l'agent, qui propose une note structurée ; l'humain répond « oui », puis l'outil enregistre la note dans la table notes. Gemini est le modèle principal, Ollama le modèle de secours, et une branche d'erreur renvoie un message clair">
+  <defs>
+    <radialGradient id="fond" cx="0.6" cy="0.5" r="0.9">
+      <stop offset="0" stop-color="#121a2a"/>
+      <stop offset="1" stop-color="#070a0f"/>
+    </radialGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f472b6"/>
+      <stop offset="1" stop-color="#be185d"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+    <style>
+      .big { font: 800 80px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .label { font: 700 28px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; }
+      .sub { font: 20px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+      .lien { font: 600 20px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #64748b; letter-spacing: 2px; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#fond)"/>
+  <text x="120" y="150" class="eyebrow">N8N · AGENT · VALIDATION</text>
+  <text x="120" y="250" class="big">Proposer avant d'agir</text>
+
+  <!-- Flèches principales -->
+  <g stroke="#e6edf3" stroke-width="5" fill="none" opacity="0.8">
+    <path d="M310 490 H344"/><path d="M544 490 H578"/><path d="M778 490 H812"/><path d="M1012 490 H1046"/><path d="M1246 490 H1280"/>
+  </g>
+  <g fill="#e6edf3" opacity="0.8">
+    <path d="M354 490 l-18 -11 v22 z"/><path d="M588 490 l-18 -11 v22 z"/><path d="M822 490 l-18 -11 v22 z"/><path d="M1056 490 l-18 -11 v22 z"/><path d="M1290 490 l-18 -11 v22 z"/>
+  </g>
+
+  <!-- Boucle de correction : validation → proposition -->
+  <path d="M917 420 C917 350 683 350 683 400" stroke="#34d399" stroke-width="4" fill="none" stroke-dasharray="10 8"/>
+  <path d="M683 412 l-10 -18 h20 z" fill="#34d399"/>
+  <text x="800" y="345" class="sub" text-anchor="middle">à corriger</text>
+
+  <!-- 1 Chat -->
+  <rect x="120" y="420" width="190" height="140" rx="20" fill="#2a1d10" stroke="#fdba74" stroke-width="4"/>
+  <text x="215" y="485" class="label" text-anchor="middle">Chat</text>
+  <text x="215" y="520" class="sub" text-anchor="middle">un texte</text>
+
+  <!-- 2 Agent -->
+  <rect x="354" y="420" width="190" height="140" rx="20" fill="#1e1538" stroke="#a78bfa" stroke-width="4"/>
+  <text x="449" y="485" class="label" text-anchor="middle">AI Agent</text>
+  <text x="449" y="520" class="sub" text-anchor="middle">+ mémoire</text>
+
+  <!-- 3 Proposition -->
+  <rect x="588" y="420" width="190" height="140" rx="20" fill="#0f2a33" stroke="#22d3ee" stroke-width="4"/>
+  <g fill="#22d3ee"><rect x="612" y="438" width="70" height="10" rx="4"/><rect x="612" y="454" width="110" height="7" rx="3" opacity="0.6"/></g>
+  <text x="683" y="500" class="label" text-anchor="middle">Proposition</text>
+  <text x="683" y="535" class="sub" text-anchor="middle">JSON vérifié</text>
+
+  <!-- 4 Validation humaine -->
+  <rect x="822" y="420" width="190" height="140" rx="20" fill="#14261f" stroke="#34d399" stroke-width="4"/>
+  <text x="917" y="485" class="label" text-anchor="middle">« oui »</text>
+  <text x="917" y="520" class="sub" text-anchor="middle">validation</text>
+
+  <!-- 5 Outil -->
+  <rect x="1056" y="420" width="190" height="140" rx="20" fill="#2a1022" stroke="#f472b6" stroke-width="4"/>
+  <text x="1151" y="485" class="label" text-anchor="middle">Outil</text>
+  <text x="1151" y="520" class="sub" text-anchor="middle">n8n exécute</text>
+
+  <!-- 6 Table notes -->
+  <rect x="1290" y="420" width="190" height="140" rx="26" fill="url(#base)" opacity="0.35" filter="url(#glow)"/>
+  <rect x="1290" y="420" width="190" height="140" rx="26" fill="#2a1022" stroke="#f472b6" stroke-width="5"/>
+  <g stroke="#f472b6" stroke-width="3" fill="none" opacity="0.8"><path d="M1320 445 h130 M1320 462 h130 M1375 445 v30"/></g>
+  <text x="1385" y="510" class="label" text-anchor="middle">notes</text>
+  <text x="1385" y="540" class="sub" text-anchor="middle">data table</text>
+
+  <!-- Modèles sous l'agent -->
+  <text x="120" y="640" class="lien">MODÈLES</text>
+  <path d="M420 560 V730 H310" stroke="#60a5fa" stroke-width="4" fill="none"/>
+  <path d="M440 560 V880 H310" stroke="#34d399" stroke-width="4" fill="none" stroke-dasharray="10 8"/>
+  <rect x="120" y="670" width="190" height="120" rx="20" fill="#13233b" stroke="#60a5fa" stroke-width="4"/>
+  <path d="M155 712 c3 16 9 22 25 25 c-16 3 -22 9 -25 25 c-3 -16 -9 -22 -25 -25 c16 -3 22 -9 25 -25 z" fill="#60a5fa"/>
+  <text x="242" y="725" class="label" text-anchor="middle">Gemini</text>
+  <text x="242" y="762" class="sub" text-anchor="middle">principal</text>
+  <rect x="120" y="820" width="190" height="120" rx="20" fill="#14261f" stroke="#34d399" stroke-width="4" stroke-dasharray="12 8"/>
+  <text x="215" y="875" class="label" text-anchor="middle">Ollama</text>
+  <text x="215" y="908" class="sub" text-anchor="middle">secours</text>
+
+  <!-- Branche d'erreur -->
+  <path d="M520 560 V820 H812" stroke="#f87171" stroke-width="5" fill="none"/>
+  <path d="M822 820 l-18 -11 v22 z" fill="#f87171"/>
+  <text x="545" y="805" class="sub">si tout échoue</text>
+  <rect x="822" y="760" width="190" height="120" rx="20" fill="#2a1414" stroke="#f87171" stroke-width="4"/>
+  <text x="917" y="812" class="label" text-anchor="middle">Erreur</text>
+  <text x="917" y="845" class="sub" text-anchor="middle">message clair</text>
+</svg>

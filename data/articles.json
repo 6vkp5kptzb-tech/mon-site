@@ -1,6 +1,263 @@
 {
   "articles": [
     {
+      "slug": "agent-notes-validation-humaine",
+      "titre": "Un agent IA qui agit, mais seulement avec mon accord : sortie structurée, outil et validation humaine avec n8n",
+      "date": "2026-10-21",
+      "categorie": "Intelligence artificielle",
+      "image": "images/articles/agent-notes-validation.svg",
+      "imageAlt": "Schéma de l'agent de notes : le chat envoie un texte à l'agent, qui propose une note structurée (titre, résumé, mots-clés) ; l'humain répond « oui », puis seulement l'outil enregistre la note dans une table de données. Gemini est le modèle principal, Ollama le modèle de secours, et une branche d'erreur renvoie un message clair",
+      "extrait": "Mes deux premiers agents savaient parler et chercher dans mes documents. Celui-ci agit : il écrit des notes dans une base de données. Et dès qu'un agent agit, une question se pose : qui décide ? Voici comment je lui ai appris à proposer avant d'agir, à répondre dans un format fiable et à échouer proprement.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Mon premier agent discutait, mon deuxième lisait mes documents. Les deux avaient un point commun : ils ne faisaient que répondre. Si l'un d'eux se trompait, le pire qui pouvait arriver, c'était une mauvaise réponse dans le chat. Pour ce troisième agent, j'ai voulu franchir une étape : qu'il agisse vraiment. Je lui colle un texte, il en fait une note avec un titre, un résumé et des mots-clés, et il l'enregistre dans une base de données."
+        },
+        {
+          "type": "texte",
+          "texte": "Un agent qui agit pose des questions nouvelles. Que se passe-t-il s'il enregistre n'importe quoi ? S'il répond dans un format illisible ? Si le modèle est injoignable ? Je me suis fixé un plan d'apprentissage en six étapes, une notion par étape, et cet article les reprend dans l'ordre."
+        },
+        {
+          "type": "titre",
+          "texte": "Les briques du workflow"
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Nœud n8n",
+            "Son rôle"
+          ],
+          "lignes": [
+            [
+              "Chat Trigger",
+              "La porte d'entrée : la fenêtre de chat où je tape mes messages"
+            ],
+            [
+              "AI Agent",
+              "Le chef d'équipe : reçoit le message, consulte le modèle, décide d'utiliser ou non l'outil"
+            ],
+            [
+              "Gemini 2.5 Flash",
+              "Le modèle principal, dans le cloud de Google"
+            ],
+            [
+              "Ollama llama3.2",
+              "Le modèle de secours, en local, utilisé seulement si Gemini échoue"
+            ],
+            [
+              "Mémoire",
+              "Garde les 10 derniers messages de la conversation"
+            ],
+            [
+              "Structured Output Parser",
+              "Impose un format JSON précis à la réponse de l'agent"
+            ],
+            [
+              "enregistrer_note",
+              "L'outil : insère une ligne dans une table de données n8n appelée notes"
+            ],
+            [
+              "Code et Set",
+              "Mettent en forme la réponse finale, ou le message d'erreur"
+            ]
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Étape 1 : se connecter à un modèle"
+        },
+        {
+          "type": "texte",
+          "texte": "« Brancher un modèle » sonne un peu magique. En réalité, c'est très concret : le nœud du modèle a besoin de trois informations. Une adresse, c'est-à-dire où envoyer la demande. Un identifiant, pour prouver qu'on a le droit de l'utiliser. Et le nom exact du modèle à interroger."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Pour Gemini, l'adresse est celle de l'API de Google, l'identifiant est une clé API créée sur Google AI Studio, et le modèle s'appelle models/gemini-2.5-flash.",
+            "Pour Ollama, l'adresse est http://ollama:11434, le nom du conteneur Docker. Pas besoin de clé, puisque tout reste sur mon ordinateur. Le modèle s'appelle llama3.2:latest."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Vient ensuite le prompt système, le texte rangé dans les options de l'agent. C'est le règlement intérieur de l'agent : il est envoyé au modèle avant chaque message, et il fixe son rôle et ses limites. Le mien lui explique qu'il est un assistant de prise de notes, qu'il doit d'abord proposer une note, et surtout qu'il ne doit jamais l'enregistrer sans mon accord explicite."
+        },
+        {
+          "type": "titre",
+          "texte": "Étape 2 : comprendre comment circulent les données"
+        },
+        {
+          "type": "texte",
+          "texte": "C'est la notion qui fait tout comprendre dans n8n : chaque nœud reçoit une liste d'objets JSON, la transforme et en renvoie une autre au nœud suivant. Quand j'envoie un message dans le chat, le Chat Trigger produit par exemple cet objet :"
+        },
+        {
+          "type": "code",
+          "legende": "Sortie du Chat Trigger",
+          "code": "{\n  \"sessionId\": \"a3f9c2…\",\n  \"action\": \"sendMessage\",\n  \"chatInput\": \"Fais-moi une note sur ce texte : …\"\n}"
+        },
+        {
+          "type": "texte",
+          "texte": "Le nœud suivant lit ces valeurs avec des expressions. {{ $json.chatInput }} veut dire « le champ chatInput de l'objet que je viens de recevoir ». Pour aller chercher une valeur plus haut dans le workflow, on nomme le nœud : $('Chat').item.json.sessionId. Le sessionId sert justement à la mémoire, qui range l'historique conversation par conversation."
+        },
+        {
+          "type": "texte",
+          "texte": "Le meilleur réflexe pour apprendre : après chaque exécution, cliquer sur les nœuds un par un et regarder leur entrée à gauche et leur sortie à droite. On voit l'information se transformer d'étape en étape."
+        },
+        {
+          "type": "titre",
+          "texte": "Étape 3 : obtenir une réponse structurée"
+        },
+        {
+          "type": "texte",
+          "texte": "Un modèle de langage produit du texte, mot après mot. Si je lui demande « réponds en JSON », il le fera la plupart du temps, mais pas toujours : il ajoutera parfois une phrase avant, oubliera une virgule ou renommera un champ. Pour un humain qui lit, ce n'est pas grave. Pour un programme qui doit lire titre, résumé et mots-clés, c'est bloquant."
+        },
+        {
+          "type": "texte",
+          "texte": "Le Structured Output Parser règle ce problème. On lui donne un schéma, une description précise du format attendu, et il fait deux choses : il ajoute au prompt des instructions de format, puis il vérifie la réponse. Si elle ne respecte pas le schéma, l'agent échoue au lieu de laisser passer des données bancales. Voici, en simplifié, le format que j'impose :"
+        },
+        {
+          "type": "code",
+          "legende": "Format imposé à l'agent (simplifié)",
+          "code": "{\n  \"message\": \"Voici ma proposition de note.\",\n  \"statut\": \"proposition\",\n  \"note\": {\n    \"titre\": \"…\",\n    \"resume\": \"…\",\n    \"mots_cles\": [\"…\", \"…\", \"…\"]\n  }\n}"
+        },
+        {
+          "type": "texte",
+          "texte": "Le champ statut ne peut prendre que quatre valeurs : conversation, proposition, enregistree ou erreur. Grâce à lui, le nœud Code qui suit sait quoi afficher : la note et la question « on enregistre ? » pour une proposition, une simple confirmation une fois la note enregistrée."
+        },
+        {
+          "type": "titre",
+          "texte": "Étape 4 : donner un outil à l'agent"
+        },
+        {
+          "type": "texte",
+          "texte": "Les notes sont rangées dans une table de données n8n, une sorte de petit tableur intégré à n8n, avec trois colonnes : titre, resume et mots_cles. L'outil enregistrer_note est un nœud Data Table branché sous l'agent, qui insère une ligne dans cette table."
+        },
+        {
+          "type": "texte",
+          "texte": "C'est la notion la plus importante de l'article : l'agent n'exécute jamais l'outil lui-même. Le modèle ne fait que produire du texte. Quand il « utilise » un outil, il écrit en fait une demande : « je voudrais appeler enregistrer_note avec tel titre, tel résumé, tels mots-clés ». C'est n8n qui lit cette demande et exécute réellement l'insertion. Le modèle décide, n8n agit."
+        },
+        {
+          "type": "texte",
+          "texte": "Pour que le modèle sache quoi remplir, chaque colonne de l'outil contient une expression $fromAI :"
+        },
+        {
+          "type": "code",
+          "legende": "Colonne titre de l'outil enregistrer_note",
+          "code": "{{ $fromAI('titre', 'Titre de la note validée', 'string') }}"
+        },
+        {
+          "type": "texte",
+          "texte": "Elle veut dire : « cette valeur, c'est le modèle qui la fournira, sous le nom titre, et voici à quoi elle correspond ». n8n rassemble ces descriptions pour présenter l'outil au modèle, avec sa description générale."
+        },
+        {
+          "type": "titre",
+          "texte": "Étape 5 : séparer proposer et agir"
+        },
+        {
+          "type": "texte",
+          "texte": "Un agent qui écrit dans une base de données sans demander, c'est pratique jusqu'au jour où il enregistre une note fausse. J'ai donc séparé les deux temps : l'agent propose d'abord la note dans le chat, et ne l'enregistre que quand je réponds « oui »."
+        },
+        {
+          "type": "texte",
+          "texte": "Deux détails comptent. D'abord, je valide le contenu lui-même, pas une vague question « j'enregistre ? » : je vois le titre, le résumé et les mots-clés exacts qui seront écrits. Si quelque chose ne va pas, je demande une correction et l'agent refait une proposition. Ensuite, cette validation dans le chat n'est possible que grâce à la mémoire. Sans elle, l'agent recevrait un « oui » isolé, sans savoir à quoi il répond."
+        },
+        {
+          "type": "texte",
+          "texte": "Il faut être honnête sur la limite de cette méthode : la règle « n'enregistre pas sans mon accord » n'existe que dans le prompt système. Un modèle bien entraîné la respecte, mais rien ne l'y oblige techniquement. C'est une consigne, pas un verrou. Pour une vraie garantie, il faudrait une approbation imposée par n8n lui-même, avant que l'outil ne s'exécute."
+        },
+        {
+          "type": "titre",
+          "texte": "Étape 6 : prévoir l'échec"
+        },
+        {
+          "type": "texte",
+          "texte": "Un workflow qui ne marche que quand tout va bien n'est pas fini. J'ai prévu quatre filets de sécurité, du plus discret au plus visible :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "La nouvelle tentative : si l'agent échoue, n8n le relance une fois, une seconde plus tard. Beaucoup d'erreurs sont passagères.",
+            "Le modèle de secours : si Gemini ne répond pas, à cause d'un quota dépassé ou d'une coupure réseau, l'agent bascule sur Ollama.",
+            "La branche d'erreur : si tout échoue, par exemple parce que le modèle a renvoyé un JSON invalide, l'agent ne bloque pas le workflow. Il envoie l'erreur sur une sortie dédiée, qui mène à un message clair dans le chat. Le message précise que rien n'a été enregistré.",
+            "L'échec de l'outil : si l'insertion dans la table échoue, l'erreur est renvoyée à l'agent. Son prompt lui demande alors de répondre avec le statut erreur, plutôt que de prétendre que la note est enregistrée."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Le trajet d'une note"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Je colle un texte dans le chat et je demande une note.",
+            "L'agent récupère l'historique dans la mémoire et envoie le tout à Gemini, avec le prompt système, le format imposé et la description de l'outil.",
+            "Gemini rédige une note et répond avec le statut proposition, sans appeler l'outil.",
+            "Le parser vérifie le format, puis le nœud Code affiche la note et me demande de la valider.",
+            "Je réponds « oui ». Grâce à la mémoire, l'agent sait à quelle proposition je réponds.",
+            "Gemini demande cette fois à appeler enregistrer_note, avec exactement le titre, le résumé et les mots-clés validés.",
+            "n8n insère la ligne dans la table notes et renvoie le résultat à l'agent, qui confirme l'enregistrement dans le chat."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Gemini et Ollama : pourquoi un tel écart ?"
+        },
+        {
+          "type": "texte",
+          "texte": "Comme j'utilise les deux modèles, j'ai voulu comprendre pourquoi on m'annonçait des résultats si différents. llama3.2 compte environ 3 milliards de paramètres, et Ollama le fournit compressé pour qu'il tienne dans 2 Go. Google ne publie pas la taille de Gemini, mais il est certainement des dizaines de fois plus gros. Un petit modèle sait écrire, mais tient mal plusieurs consignes à la fois. Or ce workflow lui en demande beaucoup : résumer, respecter le format, attendre le « oui », remplir l'outil correctement."
+        },
+        {
+          "type": "texte",
+          "texte": "La machine compte aussi. Gemini tourne sur les puces spécialisées de Google et répond en une ou deux secondes. Ollama tourne sur mon PC, avec 8 Go de mémoire et sans carte graphique dédiée : une réponse peut prendre plusieurs dizaines de secondes. En échange, rien ne sort de mon ordinateur et c'est gratuit sans limite. D'où mon choix : Gemini en principal, Ollama en secours."
+        },
+        {
+          "type": "titre",
+          "texte": "Ce qui m'a fait trébucher"
+        },
+        {
+          "type": "texte",
+          "texte": "Cette fois, je n'ai pas construit le workflow à la souris dans n8n : je l'ai écrit en JSON dans mon éditeur de code, puis importé dans n8n. C'est là que se sont cachés la plupart des pièges."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Les workflows ne sont pas des fichiers. n8n les range dans sa base de données, à l'intérieur de Docker. Pour les ouvrir dans un éditeur, il faut d'abord les exporter en JSON, dans un dossier partagé entre Docker et Windows.",
+            "L'import en ligne de commande exige un identifiant. Je pensais qu'en l'omettant, n8n en créerait un. Avec ma version, l'import échoue avec une erreur « null value in column id ». Il faut donc en choisir un, différent de tous ceux qui existent, sinon on écrase le workflow qui le porte déjà.",
+            "La table doit exister avant le premier enregistrement. J'ai ajouté au workflow une petite branche « Créer la table notes », à lancer une seule fois à la main.",
+            "La ligne de commande de n8n sait importer et exporter, mais pas supprimer. Pour retirer un workflow, il faut passer par l'interface : d'abord l'archiver, puis le supprimer."
+          ]
+        },
+        {
+          "type": "code",
+          "legende": "PowerShell : exporter puis importer un workflow",
+          "code": "docker exec n8n n8n export:workflow --all --separate --pretty --output=/data/shared/workflows/\ndocker exec n8n n8n import:workflow --input=/data/shared/workflows/agent-notes/agent-notes.json"
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que j'ai retenu"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Se connecter à un modèle, c'est une adresse, un identifiant et un nom de modèle. Rien de magique.",
+            "Dans n8n, chaque nœud reçoit des objets JSON et en renvoie d'autres : cliquer sur les nœuds après une exécution est la meilleure façon d'apprendre.",
+            "Un modèle ne renvoie pas de JSON fiable tout seul : un schéma et un parser transforment « presque toujours » en « ou bien correct, ou bien une erreur claire ».",
+            "L'agent décide d'appeler un outil, c'est n8n qui l'exécute.",
+            "Proposer, valider, puis agir : on valide ce qui sera réellement écrit, pas une simple question « on y va ? ».",
+            "Une règle écrite dans le prompt est une consigne, pas une garantie.",
+            "Un bon workflow prévoit l'échec : nouvelle tentative, modèle de secours, branche d'erreur et message clair."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Et après ?"
+        },
+        {
+          "type": "texte",
+          "texte": "La suite logique, c'est de transformer la consigne en vrai verrou : une approbation imposée par n8n avant que l'outil ne s'exécute, quoi qu'en pense le modèle. J'aimerais aussi donner à l'agent un deuxième outil pour relire les notes déjà enregistrées, et pourquoi pas le relier à mon agent RAG, pour qu'il puisse résumer mes propres documents en notes. À suivre !"
+        }
+      ]
+    },
+    {
       "slug": "agent-rag-gemini-qdrant",
       "titre": "Un agent IA qui lit mes documents : le RAG avec n8n, Gemini et Qdrant",
       "date": "2026-10-20",

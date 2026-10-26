@@ -1,66 +1,72 @@
 {
   "source": "Strava",
-  "activite": "20616705644",
-  "titre": "5 KMS",
+  "activite": "20733390915",
+  "titre": "Course à pied le matin",
   "type": "Course à pied",
-  "date": "2026-10-17T08:09",
-  "lieu": "Gennevilliers",
-  "distanceKm": 5.68,
-  "duree": "35 min 56 s",
-  "allure": "6:19",
-  "denivele": 49,
-  "fcMoyenne": 154,
-  "fcMax": 178,
+  "date": "2026-10-26T06:02",
+  "lieu": "Asnières-sur-Seine",
+  "distanceKm": 6.04,
+  "duree": "43 min 00 s",
+  "allure": "7:07",
+  "denivele": 34,
+  "fcMoyenne": 152,
+  "fcMax": 160,
   "cadence": 187,
-  "calories": 459,
-  "effortRelatif": 51,
+  "calories": 543,
+  "effortRelatif": 58,
   "meilleursEfforts": [
     {
       "distance": "1 km",
-      "temps": "5 min 34 s"
+      "temps": "6 min 55 s"
     },
     {
       "distance": "5 km",
-      "temps": "31 min 06 s"
+      "temps": "36 min 07 s"
     }
   ],
   "splits": [
     {
       "km": "1",
-      "secondes": 412,
-      "allure": "6:52",
-      "fc": 138
+      "secondes": 440,
+      "allure": "7:20",
+      "fc": 139
     },
     {
       "km": "2",
-      "secondes": 386,
-      "allure": "6:26",
-      "fc": 149
+      "secondes": 426,
+      "allure": "7:06",
+      "fc": 153
     },
     {
       "km": "3",
-      "secondes": 384,
-      "allure": "6:24",
-      "fc": 154
+      "secondes": 451,
+      "allure": "7:31",
+      "fc": 152
     },
     {
       "km": "4",
-      "secondes": 378,
-      "allure": "6:18",
-      "fc": 155
+      "secondes": 441,
+      "allure": "7:21",
+      "fc": 154
     },
     {
       "km": "5",
-      "secondes": 368,
-      "allure": "6:08",
-      "fc": 163
+      "secondes": 425,
+      "allure": "7:05",
+      "fc": 157
     },
     {
-      "km": "0,68",
-      "secondes": 329,
-      "allure": "5:29",
-      "fc": 173
+      "km": "6",
+      "secondes": 427,
+      "allure": "7:07",
+      "fc": 158
+    },
+    {
+      "km": "0,04",
+      "secondes": 395,
+      "allure": "6:35",
+      "fc": 159
     }
   ],
-  "commentaire": "Une sortie en progression : chaque kilomètre plus rapide que le précédent, jusqu'à un final à 5:29 / km. Une semaine plus tôt, la même boucle m'avait pris 43 minutes."
+  "commentaire": "Une sortie à allure régulière : tous les kilomètres entre 7:05 et 7:31 / km, sans jamais dépasser 160 bpm. Plus longue que celle du 17 octobre (6,04 km contre 5,68), à une allure plus tranquille (7:07 / km contre 6:19)."
 }

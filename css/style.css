@@ -866,6 +866,7 @@ button.track-link { font-family: inherit; background: none; cursor: pointer; }
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid var(--border);
+  overflow-wrap: normal;
 }
 .table-wrap th {
   background: var(--surface-2);

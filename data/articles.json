@@ -1,6 +1,246 @@
 {
   "articles": [
     {
+      "slug": "aios-accessible-telephone-drive",
+      "titre": "Rendre mon AIOS accessible depuis mon téléphone : une copie sélective vers Google Drive avec n8n",
+      "date": "2026-10-28",
+      "categorie": "Intelligence artificielle",
+      "image": "images/articles/aios-telephone-drive.svg",
+      "imageAlt": "Schéma du workflow : le dossier AIOS sur le PC, monté en lecture seule dans n8n, passe par un filtre qui écarte les dossiers exclus et les secrets, puis les notes Markdown sont copiées dans le dossier Google Drive AIOS-lecture, que Claude lit depuis le téléphone",
+      "extrait": "Mon AIOS vit sur mon PC, et c'est précisément pour cela que mon téléphone ne le voyait pas. J'ai comparé trois façons de le rendre disponible en déplacement, et une seule permet à Claude de retrouver mes notes : une copie sélective vers Google Drive, orchestrée par n8n.",
+      "contenu": [
+        {
+          "type": "texte",
+          "texte": "Mon AIOS vit sur mon PC, et c'est précisément pour cela que mon téléphone ne le voyait pas."
+        },
+        {
+          "type": "titre",
+          "texte": "Le point de départ"
+        },
+        {
+          "type": "texte",
+          "texte": "L'AIOS est mon dossier central : un coffre Obsidian, mes skills Claude et mes notes de connaissance, rangés dans une arborescence numérotée (inbox, notes, skills, données, projets). Un fichier CLAUDE.md fixe les règles de fonctionnement, et une sauvegarde chiffrée part chaque jour vers Google Drive."
+        },
+        {
+          "type": "texte",
+          "texte": "Tout cela est stocké en local. Depuis mon téléphone, rien n'est visible : l'application mobile n'a pas accès au système de fichiers de mon ordinateur, et la sauvegarde chiffrée ne sert qu'à restaurer, pas à lire. Mon objectif était simple : en déplacement, pouvoir dire à Claude « va chercher ma note sur tel sujet » et qu'il la retrouve."
+        },
+        {
+          "type": "titre",
+          "texte": "Les trois pistes étudiées"
+        },
+        {
+          "type": "texte",
+          "texte": "J'ai comparé trois façons de rendre l'AIOS disponible hors de mon PC, et une seule rend les notes lisibles par Claude depuis le téléphone."
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Option",
+            "Coût",
+            "Principe",
+            "Limite principale"
+          ],
+          "lignes": [
+            [
+              "Obsidian Sync",
+              "Environ 4 à 5 $ par mois (tarif à vérifier sur obsidian.md)",
+              "Copie chiffrée du coffre via les serveurs d'Obsidian, appareils non simultanés",
+              "Payant ; seule l'application Obsidian voit les fichiers, pas Claude"
+            ],
+            [
+              "Syncthing",
+              "Gratuit",
+              "Synchronisation directe PC ↔ téléphone, sans cloud",
+              "Les deux appareils doivent être allumés ensemble ; pas d'historique ; sur iPhone, application tierce payante"
+            ],
+            [
+              "Copie sur Google Drive",
+              "Gratuit",
+              "Copie lisible de mes notes dans un dossier Drive",
+              "La copie n'est à jour qu'à la dernière exécution"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Les deux premières servent à consulter mes notes moi-même. Seule la troisième les met là où Claude sait aller les chercher."
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que Claude peut faire depuis le téléphone"
+        },
+        {
+          "type": "texte",
+          "texte": "Synchroniser mon coffre sur le téléphone ne donne pas accès à Claude : l'application Claude ne peut pas lire les fichiers d'une autre application, même synchronisés. Il existe en fait deux chemins vers mes notes."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Mon ordinateur, via l'application Claude de bureau. Si la conversation est liée à mon PC, je peux la reprendre depuis le téléphone et Claude lit et modifie directement l'AIOS. La contrainte : le PC doit rester allumé, connecté, avec l'application ouverte.",
+            "Google Drive, via le connecteur. Claude lit n'importe quel fichier lisible de mon Drive, PC éteint ou non. Il faut donc y déposer une copie claire de mes notes, et non la sauvegarde chiffrée."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "J'ai retenu la seconde piste : elle ne dépend pas de l'état de mon PC."
+        },
+        {
+          "type": "titre",
+          "texte": "La solution retenue : une copie sélective vers Drive"
+        },
+        {
+          "type": "texte",
+          "texte": "Un workflow n8n copie, à la demande, mes notes Markdown vers un dossier Drive, en laissant de côté tout ce qui est brut ou sensible. Voici ce qu'il fait, étape par étape."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Je clique sur « Execute workflow » dans n8n : le déclenchement est manuel, pas planifié.",
+            "n8n lit tous les fichiers .md du dossier AIOS, monté en lecture seule dans le conteneur Docker.",
+            "Il écarte les dossiers exclus (40-data, 00-inbox, .git, .obsidian, la corbeille) ainsi que tout fichier dont le nom ou le contenu ressemble à un secret : mot de passe, token, clé d'API.",
+            "Il aplatit les chemins pour Drive : 10-notes/dette.md devient 10-notes__dette.md.",
+            "Il liste le contenu actuel du dossier Drive.",
+            "Pour chaque note, il met à jour le fichier s'il existe déjà, sinon il le crée. Aucun doublon."
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Aucun modèle d'IA n'intervient, ni Ollama ni Gemini : des règles fixes suffisent à trier et copier. Lors de la première exécution, 45 notes ont été lues, 43 conservées après le tri et 43 créées dans Drive."
+        },
+        {
+          "type": "titre",
+          "texte": "La mise en place pas à pas"
+        },
+        {
+          "type": "texte",
+          "texte": "Quatre réglages, faits une seule fois, suffisent à brancher n8n sur l'AIOS et sur Drive."
+        },
+        {
+          "type": "texte",
+          "texte": "1. Monter le dossier AIOS dans le conteneur n8n. n8n tourne dans Docker : il ne voit que ce qu'on lui monte. J'ai ajouté une ligne à la liste volumes du service n8n dans le docker-compose.yml. Le suffixe :ro la rend lisible mais non modifiable."
+        },
+        {
+          "type": "code",
+          "legende": "docker-compose.yml : volume à ajouter au service n8n",
+          "code": "- C:/Users/<mon-utilisateur>/Documents/AIOS:/home/node/.n8n-files/AIOS:ro"
+        },
+        {
+          "type": "texte",
+          "texte": "Il faut ensuite recréer le conteneur, puis vérifier que n8n voit bien les dossiers de l'AIOS."
+        },
+        {
+          "type": "code",
+          "legende": "PowerShell : recréer le conteneur et vérifier le montage",
+          "code": "docker compose up -d\ndocker exec n8n ls /home/node/.n8n-files/AIOS"
+        },
+        {
+          "type": "texte",
+          "texte": "2. Créer le dossier Drive. Sur drive.google.com (le Drive en ligne, pas un dossier local), je crée AIOS-lecture et je copie son identifiant : la fin de l'adresse, après /folders/."
+        },
+        {
+          "type": "texte",
+          "texte": "3. Créer l'accès Google. Tout se passe dans la console Google Cloud :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "créer un projet et activer la Google Drive API ;",
+            "configurer l'écran de consentement en mode « Externe » et ajouter ma propre adresse comme utilisateur test ;",
+            "créer un client OAuth de type « Application Web », avec l'adresse de redirection ci-dessous."
+          ]
+        },
+        {
+          "type": "code",
+          "legende": "Adresse de redirection OAuth",
+          "code": "http://localhost:5678/rest/oauth2-credential/callback"
+        },
+        {
+          "type": "texte",
+          "texte": "4. Connecter n8n. Je colle l'identifiant et le secret du client dans les identifiants Google Drive de n8n, je clique sur « Sign in with Google » et j'accepte l'accès à Drive. Il ne reste qu'à coller l'identifiant du dossier dans le nœud de configuration du workflow et à lancer l'exécution."
+        },
+        {
+          "type": "titre",
+          "texte": "Les pièges rencontrés"
+        },
+        {
+          "type": "texte",
+          "texte": "Quatre erreurs m'ont fait perdre du temps, et aucune n'était évidente au premier regard."
+        },
+        {
+          "type": "tableau",
+          "entetes": [
+            "Symptôme",
+            "Cause réelle",
+            "Correction"
+          ],
+          "lignes": [
+            [
+              "Le nœud « Lire les notes » est vert mais renvoie 0 élément",
+              "Le dossier n'est pas monté dans Docker : lire un dossier vide n'est pas une erreur pour n8n",
+              "Ajouter le volume, puis docker compose up -d (un simple redémarrage ne suffit pas)"
+            ],
+            [
+              "docker compose refuse de démarrer : « did not find expected '-' indicator »",
+              "Une ligne mal alignée ou écrasée dans le YAML ; l'éditeur avait aussi ajouté une suggestion automatique - serviceName",
+              "Remplacer tout le bloc par un copier-coller et vérifier l'alignement des tirets"
+            ],
+            [
+              "Google : « Redirection non valide : le domaine ne peut pas contenir d'espace »",
+              "Un espace invisible ajouté par le copier-coller de l'adresse",
+              "Retaper l'adresse à la main"
+            ],
+            [
+              "Google : redirect_uri_mismatch",
+              "L'adresse enregistrée dans le client OAuth était fautive (lettres mélangées)",
+              "La corriger, enregistrer, attendre quelques minutes"
+            ]
+          ]
+        },
+        {
+          "type": "texte",
+          "texte": "Une cinquième difficulté n'était pas une erreur : Google affiche l'avertissement « application non validée » à la première connexion. C'est normal pour une application personnelle en mode test, et je peux continuer puisque j'en suis l'auteur."
+        },
+        {
+          "type": "texte",
+          "texte": "Le fil conducteur : ces blocages venaient de détails de saisie, pas du principe. Lire le message d'erreur exact, souvent accompagné d'un lien de détails, a toujours indiqué la bonne piste."
+        },
+        {
+          "type": "titre",
+          "texte": "Ce que j'en retiens"
+        },
+        {
+          "type": "texte",
+          "texte": "Il faut distinguer deux besoins : consulter mes notes moi-même, et les rendre accessibles à Claude. Ils n'appellent pas les mêmes outils. La copie sélective vers Drive répond au second, avec un avantage que la synchronisation complète n'offre pas : je décide précisément ce qui quitte mon PC. Les données brutes, les secrets et l'historique Git restent chez moi."
+        },
+        {
+          "type": "texte",
+          "texte": "Quelques limites sont à garder en tête :"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "la copie n'est à jour qu'à la dernière exécution du workflow ;",
+            "un fichier supprimé dans l'AIOS reste sur Drive, car je n'ai pas automatisé la suppression ;",
+            "seuls les fichiers .md sont copiés ;",
+            "tant que l'application Google reste en mode test, la connexion expire au bout de sept jours environ et demande de se reconnecter."
+          ]
+        },
+        {
+          "type": "titre",
+          "texte": "Et après ?"
+        },
+        {
+          "type": "texte",
+          "texte": "Plusieurs améliorations me tentent : un déclenchement planifié la nuit, pour ne plus avoir à y penser, la gestion des suppressions, et peut-être un résumé de chaque note par un modèle local comme Ollama. À suivre !"
+        },
+        {
+          "type": "texte",
+          "texte": "Source : les tarifs d'Obsidian Sync cités plus haut sont approximatifs (relevés sur Lark, Costbench et Subger) et à confirmer sur le site officiel obsidian.md."
+        }
+      ]
+    },
+    {
       "slug": "agent-notes-validation-humaine",
       "titre": "Un agent IA qui agit, mais seulement avec mon accord : sortie structurée, outil et validation humaine avec n8n",
       "date": "2026-10-21",

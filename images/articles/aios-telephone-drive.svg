@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Schéma du workflow : le dossier AIOS sur le PC, monté en lecture seule dans n8n, passe par un filtre qui écarte les dossiers exclus et les secrets, puis les notes Markdown sont copiées dans le dossier Google Drive AIOS-lecture, que Claude lit depuis le téléphone">
+  <defs>
+    <radialGradient id="fond" cx="0.6" cy="0.5" r="0.9">
+      <stop offset="0" stop-color="#121a2a"/>
+      <stop offset="1" stop-color="#070a0f"/>
+    </radialGradient>
+    <linearGradient id="drive" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+    <style>
+      .big { font: 800 80px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; letter-spacing: -1px; }
+      .eyebrow { font: 600 28px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #22d3ee; letter-spacing: 3px; }
+      .label { font: 700 28px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #e6edf3; }
+      .sub { font: 20px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #9aa7b5; }
+      .lien { font: 600 20px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #64748b; letter-spacing: 2px; }
+      .rejet { font: 18px ui-monospace, "Cascadia Code", Consolas, monospace; fill: #fca5a5; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#fond)"/>
+  <text x="120" y="150" class="eyebrow">N8N · GOOGLE DRIVE · CLAUDE</text>
+  <text x="120" y="250" class="big">Mes notes, même PC éteint</text>
+
+  <!-- Flèches principales -->
+  <g stroke="#e6edf3" stroke-width="5" fill="none" opacity="0.8">
+    <path d="M330 490 H384"/><path d="M594 490 H648"/><path d="M858 490 H912"/>
+  </g>
+  <g fill="#e6edf3" opacity="0.8">
+    <path d="M394 490 l-18 -11 v22 z"/><path d="M658 490 l-18 -11 v22 z"/><path d="M922 490 l-18 -11 v22 z"/>
+  </g>
+  <!-- Lecture par Claude (pointillés) -->
+  <path d="M1132 490 H1250" stroke="#a78bfa" stroke-width="4" fill="none" stroke-dasharray="10 8"/>
+  <path d="M1260 490 l-18 -11 v22 z" fill="#a78bfa"/>
+  <text x="1191" y="465" class="sub" text-anchor="middle">lit</text>
+
+  <!-- 1 AIOS sur le PC -->
+  <text x="120" y="390" class="lien">MON PC</text>
+  <rect x="120" y="410" width="210" height="160" rx="20" fill="#2a1d10" stroke="#fdba74" stroke-width="4"/>
+  <path d="M150 440 h40 l10 10 h50 v34 h-100 z" fill="#fdba74" opacity="0.85"/>
+  <text x="225" y="525" class="label" text-anchor="middle">AIOS</text>
+  <text x="225" y="555" class="sub" text-anchor="middle">coffre Obsidian</text>
+
+  <!-- 2 n8n lecture seule -->
+  <rect x="394" y="410" width="200" height="160" rx="20" fill="#2a1022" stroke="#f472b6" stroke-width="4"/>
+  <text x="494" y="480" class="label" text-anchor="middle">n8n</text>
+  <text x="494" y="515" class="sub" text-anchor="middle">Docker</text>
+  <text x="494" y="545" class="sub" text-anchor="middle">lecture :ro</text>
+
+  <!-- 3 Filtre -->
+  <rect x="658" y="410" width="200" height="160" rx="20" fill="#14261f" stroke="#34d399" stroke-width="4"/>
+  <path d="M718 435 h80 l-30 34 v26 l-20 10 v-36 z" fill="#34d399" opacity="0.85"/>
+  <text x="758" y="535" class="label" text-anchor="middle">Tri</text>
+  <text x="758" y="560" class="sub" text-anchor="middle">règles fixes</text>
+
+  <!-- Rejets du filtre -->
+  <path d="M758 570 V690" stroke="#f87171" stroke-width="4" fill="none"/>
+  <path d="M758 700 l-11 -18 h22 z" fill="#f87171"/>
+  <rect x="598" y="710" width="320" height="200" rx="20" fill="#2a1414" stroke="#f87171" stroke-width="4"/>
+  <text x="758" y="755" class="label" text-anchor="middle">Reste sur le PC</text>
+  <text x="628" y="800" class="rejet">× 40-data, 00-inbox</text>
+  <text x="628" y="835" class="rejet">× .git, .obsidian</text>
+  <text x="628" y="870" class="rejet">× mots de passe, clés</text>
+
+  <!-- 4 Drive -->
+  <text x="922" y="390" class="lien">LE CLOUD</text>
+  <rect x="922" y="410" width="210" height="160" rx="26" fill="url(#drive)" opacity="0.35" filter="url(#glow)"/>
+  <rect x="922" y="410" width="210" height="160" rx="26" fill="#13233b" stroke="#60a5fa" stroke-width="5"/>
+  <path d="M1000 432 h54 l27 46 l-27 0 z M1000 432 l-27 46 l14 24 l27 -46 z M987 502 h80 l14 -24 h-80 z" fill="#60a5fa" opacity="0.85"/>
+  <text x="1027" y="535" class="label" text-anchor="middle">Drive</text>
+  <text x="1027" y="560" class="sub" text-anchor="middle">AIOS-lecture</text>
+
+  <!-- 5 Téléphone + Claude -->
+  <rect x="1270" y="380" width="150" height="230" rx="28" fill="#1e1538" stroke="#a78bfa" stroke-width="4"/>
+  <rect x="1315" y="396" width="60" height="8" rx="4" fill="#a78bfa" opacity="0.6"/>
+  <path d="M1345 450 c4 22 12 30 34 34 c-22 4 -30 12 -34 34 c-4 -22 -12 -30 -34 -34 c22 -4 30 -12 34 -34 z" fill="#a78bfa"/>
+  <text x="1345" y="560" class="label" text-anchor="middle">Claude</text>
+  <text x="1345" y="588" class="sub" text-anchor="middle">téléphone</text>
+
+  <!-- Détail des notes copiées -->
+  <text x="1000" y="680" class="lien">COPIÉ</text>
+  <text x="1000" y="720" class="sub">10-notes__dette.md</text>
+  <text x="1000" y="755" class="sub">43 notes .md</text>
+  <text x="1000" y="790" class="sub">mise à jour, sans doublon</text>
+</svg>

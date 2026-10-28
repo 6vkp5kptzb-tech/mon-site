@@ -1,72 +1,72 @@
 {
   "source": "Strava",
-  "activite": "20733390915",
+  "activite": "20760557177",
   "titre": "Course à pied le matin",
   "type": "Course à pied",
-  "date": "2026-10-26T06:02",
+  "date": "2026-10-28T06:05",
   "lieu": "Asnières-sur-Seine",
-  "distanceKm": 6.04,
-  "duree": "43 min 00 s",
-  "allure": "7:07",
-  "denivele": 34,
-  "fcMoyenne": 152,
-  "fcMax": 160,
+  "distanceKm": 6.13,
+  "duree": "45 min 11 s",
+  "allure": "7:22",
+  "denivele": 29,
+  "fcMoyenne": 146,
+  "fcMax": 154,
   "cadence": 187,
-  "calories": 543,
-  "effortRelatif": 58,
+  "calories": 537,
+  "effortRelatif": 46,
   "meilleursEfforts": [
     {
       "distance": "1 km",
-      "temps": "6 min 55 s"
+      "temps": "7 min 05 s"
     },
     {
       "distance": "5 km",
-      "temps": "36 min 07 s"
+      "temps": "37 min 06 s"
     }
   ],
   "splits": [
     {
       "km": "1",
-      "secondes": 440,
-      "allure": "7:20",
-      "fc": 139
+      "secondes": 459,
+      "allure": "7:39",
+      "fc": 133
     },
     {
       "km": "2",
-      "secondes": 426,
-      "allure": "7:06",
-      "fc": 153
+      "secondes": 431,
+      "allure": "7:11",
+      "fc": 147
     },
     {
       "km": "3",
-      "secondes": 451,
-      "allure": "7:31",
-      "fc": 152
+      "secondes": 459,
+      "allure": "7:39",
+      "fc": 148
     },
     {
       "km": "4",
-      "secondes": 441,
-      "allure": "7:21",
-      "fc": 154
+      "secondes": 449,
+      "allure": "7:29",
+      "fc": 149
     },
     {
       "km": "5",
-      "secondes": 425,
-      "allure": "7:05",
-      "fc": 157
+      "secondes": 442,
+      "allure": "7:22",
+      "fc": 150
     },
     {
       "km": "6",
-      "secondes": 427,
-      "allure": "7:07",
-      "fc": 158
+      "secondes": 455,
+      "allure": "7:35",
+      "fc": 150
     },
     {
-      "km": "0,04",
-      "secondes": 395,
-      "allure": "6:35",
-      "fc": 159
+      "km": "0,13",
+      "secondes": 431,
+      "allure": "7:11",
+      "fc": 151
     }
   ],
-  "commentaire": "Une sortie à allure régulière : tous les kilomètres entre 7:05 et 7:31 / km, sans jamais dépasser 160 bpm. Plus longue que celle du 17 octobre (6,04 km contre 5,68), à une allure plus tranquille (7:07 / km contre 6:19)."
+  "commentaire": "Un peu plus longue que celle du 26 octobre (6,13 km contre 6,04), à une allure plus tranquille (7:22 / km contre 7:07) et avec une fréquence cardiaque plus basse : 146 bpm de moyenne contre 152, et jamais plus de 154 bpm."
 }

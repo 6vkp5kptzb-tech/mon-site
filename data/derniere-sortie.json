@@ -1,72 +1,66 @@
 {
   "source": "Strava",
-  "activite": "20760557177",
+  "activite": "20799492351",
   "titre": "Course à pied le matin",
   "type": "Course à pied",
-  "date": "2026-10-28T06:05",
-  "lieu": "Asnières-sur-Seine",
-  "distanceKm": 6.13,
-  "duree": "45 min 11 s",
-  "allure": "7:22",
-  "denivele": 29,
-  "fcMoyenne": 146,
-  "fcMax": 154,
-  "cadence": 187,
-  "calories": 537,
-  "effortRelatif": 46,
+  "date": "2026-10-31T08:10",
+  "lieu": "Gennevilliers",
+  "distanceKm": 5.68,
+  "duree": "37 min 25 s",
+  "allure": "6:35",
+  "denivele": 35,
+  "fcMoyenne": 151,
+  "fcMax": 171,
+  "cadence": 185,
+  "calories": 466,
+  "effortRelatif": 47,
   "meilleursEfforts": [
     {
       "distance": "1 km",
-      "temps": "7 min 05 s"
+      "temps": "5 min 58 s"
     },
     {
       "distance": "5 km",
-      "temps": "37 min 06 s"
+      "temps": "32 min 24 s"
     }
   ],
   "splits": [
     {
       "km": "1",
-      "secondes": 459,
-      "allure": "7:39",
-      "fc": 133
+      "secondes": 429,
+      "allure": "7:09",
+      "fc": 135
     },
     {
       "km": "2",
-      "secondes": 431,
-      "allure": "7:11",
-      "fc": 147
-    },
-    {
-      "km": "3",
-      "secondes": 459,
-      "allure": "7:39",
+      "secondes": 395,
+      "allure": "6:35",
       "fc": 148
     },
     {
+      "km": "3",
+      "secondes": 404,
+      "allure": "6:44",
+      "fc": 152
+    },
+    {
       "km": "4",
-      "secondes": 449,
-      "allure": "7:29",
-      "fc": 149
+      "secondes": 388,
+      "allure": "6:28",
+      "fc": 154
     },
     {
       "km": "5",
-      "secondes": 442,
-      "allure": "7:22",
-      "fc": 150
+      "secondes": 388,
+      "allure": "6:28",
+      "fc": 157
     },
     {
-      "km": "6",
-      "secondes": 455,
-      "allure": "7:35",
-      "fc": 150
-    },
-    {
-      "km": "0,13",
-      "secondes": 431,
-      "allure": "7:11",
-      "fc": 151
+      "km": "0,68",
+      "secondes": 351,
+      "allure": "5:51",
+      "fc": 163
     }
   ],
-  "commentaire": "Un peu plus longue que celle du 26 octobre (6,13 km contre 6,04), à une allure plus tranquille (7:22 / km contre 7:07) et avec une fréquence cardiaque plus basse : 146 bpm de moyenne contre 152, et jamais plus de 154 bpm."
+  "commentaire": "Plus courte mais nettement plus rapide que celle du 28 octobre (5,68 km à 6:35 / km contre 6,13 km à 7:22). Une sortie en accélération : de 7:09 au premier kilomètre à 6:28 aux quatrième et cinquième, puis un final à 5:51 / km."
 }

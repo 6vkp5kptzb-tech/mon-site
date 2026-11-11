@@ -1,66 +1,66 @@
 {
   "source": "Strava",
-  "activite": "20799492351",
+  "activite": "20916891678",
   "titre": "Course à pied le matin",
   "type": "Course à pied",
-  "date": "2026-10-31T08:10",
-  "lieu": "Gennevilliers",
-  "distanceKm": 5.68,
-  "duree": "37 min 25 s",
-  "allure": "6:35",
+  "date": "2026-11-09T07:51",
+  "lieu": "Tilly",
+  "distanceKm": 5.19,
+  "duree": "35 min 39 s",
+  "allure": "6:52",
   "denivele": 35,
-  "fcMoyenne": 151,
-  "fcMax": 171,
-  "cadence": 185,
-  "calories": 466,
-  "effortRelatif": 47,
+  "fcMoyenne": 153,
+  "fcMax": 169,
+  "cadence": 183,
+  "calories": 453,
+  "effortRelatif": 49,
   "meilleursEfforts": [
     {
       "distance": "1 km",
-      "temps": "5 min 58 s"
+      "temps": "6 min 24 s"
     },
     {
       "distance": "5 km",
-      "temps": "32 min 24 s"
+      "temps": "34 min 16 s"
     }
   ],
   "splits": [
     {
       "km": "1",
-      "secondes": 429,
-      "allure": "7:09",
+      "secondes": 438,
+      "allure": "7:18",
       "fc": 135
     },
     {
       "km": "2",
-      "secondes": 395,
-      "allure": "6:35",
-      "fc": 148
+      "secondes": 426,
+      "allure": "7:06",
+      "fc": 152
     },
     {
       "km": "3",
       "secondes": 404,
       "allure": "6:44",
-      "fc": 152
-    },
-    {
-      "km": "4",
-      "secondes": 388,
-      "allure": "6:28",
-      "fc": 154
-    },
-    {
-      "km": "5",
-      "secondes": 388,
-      "allure": "6:28",
       "fc": 157
     },
     {
-      "km": "0,68",
-      "secondes": 351,
-      "allure": "5:51",
-      "fc": 163
+      "km": "4",
+      "secondes": 397,
+      "allure": "6:37",
+      "fc": 160
+    },
+    {
+      "km": "5",
+      "secondes": 400,
+      "allure": "6:40",
+      "fc": 160
+    },
+    {
+      "km": "0,19",
+      "secondes": 380,
+      "allure": "6:20",
+      "fc": 161
     }
   ],
-  "commentaire": "Plus courte mais nettement plus rapide que celle du 28 octobre (5,68 km à 6:35 / km contre 6,13 km à 7:22). Une sortie en accélération : de 7:09 au premier kilomètre à 6:28 aux quatrième et cinquième, puis un final à 5:51 / km."
+  "commentaire": "Plus rapide que celle du 6 novembre (5,19 km à 6:52 / km contre 5,02 km à 7:33). Une sortie en accélération : de 7:18 au premier kilomètre, le plus vallonné, à 6:37 au quatrième, puis 6:20 / km sur les derniers mètres."
 }

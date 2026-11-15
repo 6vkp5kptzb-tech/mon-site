@@ -1,66 +1,66 @@
 {
   "source": "Strava",
-  "activite": "20916891678",
+  "activite": "20980035730",
   "titre": "Course à pied le matin",
   "type": "Course à pied",
-  "date": "2026-11-09T07:51",
-  "lieu": "Tilly",
-  "distanceKm": 5.19,
-  "duree": "35 min 39 s",
-  "allure": "6:52",
-  "denivele": 35,
-  "fcMoyenne": 153,
-  "fcMax": 169,
-  "cadence": 183,
-  "calories": 453,
-  "effortRelatif": 49,
+  "date": "2026-11-14T08:05",
+  "lieu": "Gennevilliers",
+  "distanceKm": 5.69,
+  "duree": "35 min 37 s",
+  "allure": "6:15",
+  "denivele": 60,
+  "fcMoyenne": 151,
+  "fcMax": 168,
+  "cadence": 188,
+  "calories": 442,
+  "effortRelatif": 45,
   "meilleursEfforts": [
     {
       "distance": "1 km",
-      "temps": "6 min 24 s"
+      "temps": "5 min 40 s"
     },
     {
       "distance": "5 km",
-      "temps": "34 min 16 s"
+      "temps": "32 min 16 s"
     }
   ],
   "splits": [
     {
       "km": "1",
-      "secondes": 438,
-      "allure": "7:18",
-      "fc": 135
+      "secondes": 434,
+      "allure": "7:14",
+      "fc": 132
     },
     {
       "km": "2",
-      "secondes": 426,
-      "allure": "7:06",
-      "fc": 152
+      "secondes": 366,
+      "allure": "6:06",
+      "fc": 147
     },
     {
       "km": "3",
-      "secondes": 404,
-      "allure": "6:44",
-      "fc": 157
+      "secondes": 369,
+      "allure": "6:09",
+      "fc": 155
     },
     {
       "km": "4",
-      "secondes": 397,
-      "allure": "6:37",
-      "fc": 160
+      "secondes": 366,
+      "allure": "6:06",
+      "fc": 157
     },
     {
       "km": "5",
-      "secondes": 400,
-      "allure": "6:40",
-      "fc": 160
+      "secondes": 363,
+      "allure": "6:03",
+      "fc": 159
     },
     {
-      "km": "0,19",
-      "secondes": 380,
-      "allure": "6:20",
-      "fc": 161
+      "km": "0,69",
+      "secondes": 340,
+      "allure": "5:40",
+      "fc": 163
     }
   ],
-  "commentaire": "Plus rapide que celle du 6 novembre (5,19 km à 6:52 / km contre 5,02 km à 7:33). Une sortie en accélération : de 7:18 au premier kilomètre, le plus vallonné, à 6:37 au quatrième, puis 6:20 / km sur les derniers mètres."
+  "commentaire": "Plus rapide que celle du 12 novembre (5,69 km à 6:15 / km contre 5,15 km à 6:40). Après un premier kilomètre en côte à 7:14, une allure très régulière autour de 6:05 / km, puis 5:40 / km sur les derniers mètres."
 }

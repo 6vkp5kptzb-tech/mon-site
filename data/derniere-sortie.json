@@ -1,66 +1,72 @@
 {
   "source": "Strava",
-  "activite": "20980035730",
+  "activite": "21030398565",
   "titre": "Course à pied le matin",
   "type": "Course à pied",
-  "date": "2026-11-14T08:05",
-  "lieu": "Gennevilliers",
-  "distanceKm": 5.69,
-  "duree": "35 min 37 s",
-  "allure": "6:15",
-  "denivele": 60,
-  "fcMoyenne": 151,
-  "fcMax": 168,
-  "cadence": 188,
-  "calories": 442,
-  "effortRelatif": 45,
+  "date": "2026-11-18T06:13",
+  "lieu": "Asnières-sur-Seine",
+  "distanceKm": 6.18,
+  "duree": "43 min 01 s",
+  "allure": "6:58",
+  "denivele": 14,
+  "fcMoyenne": 144,
+  "fcMax": 153,
+  "cadence": 187,
+  "calories": 502,
+  "effortRelatif": 33,
   "meilleursEfforts": [
     {
       "distance": "1 km",
-      "temps": "5 min 40 s"
+      "temps": "6 min 39 s"
     },
     {
       "distance": "5 km",
-      "temps": "32 min 16 s"
+      "temps": "35 min 05 s"
     }
   ],
   "splits": [
     {
       "km": "1",
-      "secondes": 434,
-      "allure": "7:14",
+      "secondes": 436,
+      "allure": "7:16",
       "fc": 132
     },
     {
       "km": "2",
-      "secondes": 366,
-      "allure": "6:06",
-      "fc": 147
+      "secondes": 410,
+      "allure": "6:50",
+      "fc": 144
     },
     {
       "km": "3",
-      "secondes": 369,
-      "allure": "6:09",
-      "fc": 155
+      "secondes": 407,
+      "allure": "6:47",
+      "fc": 145
     },
     {
       "km": "4",
-      "secondes": 366,
-      "allure": "6:06",
-      "fc": 157
+      "secondes": 427,
+      "allure": "7:07",
+      "fc": 146
     },
     {
       "km": "5",
-      "secondes": 363,
-      "allure": "6:03",
-      "fc": 159
+      "secondes": 430,
+      "allure": "7:10",
+      "fc": 147
     },
     {
-      "km": "0,69",
-      "secondes": 340,
-      "allure": "5:40",
-      "fc": 163
+      "km": "6",
+      "secondes": 441,
+      "allure": "7:21",
+      "fc": 148
+    },
+    {
+      "km": "0,18",
+      "secondes": 397,
+      "allure": "6:37",
+      "fc": 152
     }
   ],
-  "commentaire": "Plus rapide que celle du 12 novembre (5,69 km à 6:15 / km contre 5,15 km à 6:40). Après un premier kilomètre en côte à 7:14, une allure très régulière autour de 6:05 / km, puis 5:40 / km sur les derniers mètres."
+  "commentaire": "Sortie tranquille, dans la lignée de celle du 16 novembre (6,18 km à 6:58 / km contre 6,11 km à 6:56). Kilomètres complets entre 6:47 et 7:21 / km, avec une fréquence cardiaque contenue (144 bpm de moyenne)."
 }

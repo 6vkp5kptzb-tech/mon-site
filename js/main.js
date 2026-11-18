@@ -125,10 +125,19 @@
     styleSel.addEventListener("change", update);
     sortSel.addEventListener("change", update);
     update();
+
+    // Arrivée depuis le carrousel (musique.html#morceau-...) : la liste est construite
+    // après le chargement, il faut donc aller au morceau à la main
+    var cible = location.hash && document.getElementById(location.hash.slice(1));
+    if (cible) {
+      cible.classList.add("track-cible");
+      cible.scrollIntoView({ block: "center" });
+    }
   }
 
   function renderTrack(m) {
     var li = el("li", "track");
+    if (m.sunoId) li.id = "morceau-" + m.sunoId; // cible des liens du carrousel
 
     var info = el("div");
     var title = el("p", "track-title");
@@ -495,10 +504,12 @@
         // Les articles "sport": true ou "video": true sont réservés à la page Sport ou Vidéos.
         var publies = articles.filter(function (a) { return !a.sport && !a.video; });
         if (carouselEl) {
-          // La dernière sortie Strava (page Sport) compte aussi comme une publication
-          sortieCommePublication()
-            .then(function (sortie) {
-              var tout = sortie ? articles.concat(sortie) : articles;
+          // La dernière sortie Strava (page Sport) et les morceaux Suno (page Musique)
+          // comptent aussi comme des publications
+          Promise.all([sortieCommePublication(), morceauxCommePublications()])
+            .then(function (extra) {
+              var tout = articles.concat(extra[1]);
+              if (extra[0]) tout.push(extra[0]);
               tout.sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); });
               initCarousel(carouselEl, tout.slice(0, 5));
             });
@@ -547,6 +558,31 @@
         };
       })
       .catch(function () { return null; });
+  }
+
+  // data/musique.json : chaque morceau Suno présenté comme une carte du carrousel ([] si absent)
+  function morceauxCommePublications() {
+    return fetch("data/musique.json", { cache: "no-cache" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        return (data.morceaux || []).map(function (m) {
+          var genre = m.style ? "Un morceau " + m.style : "Un morceau";
+          return {
+            titre: (m.auteur ? "Coup de cœur Suno : " : "Nouveau morceau : ") + m.titre,
+            date: m.date,
+            categorie: "Musique",
+            image: "images/articles/musique-suno.svg",
+            extrait: m.auteur
+              ? genre + " de " + m.auteur + ", créé avec Suno. À écouter sur la page Musique."
+              : genre + " que j'ai créé avec Suno. À écouter directement sur la page Musique.",
+            lien: "musique.html" + (m.sunoId ? "#morceau-" + m.sunoId : "")
+          };
+        });
+      })
+      .catch(function () { return []; });
   }
 
   // Carte d'article (carrousel et liste)

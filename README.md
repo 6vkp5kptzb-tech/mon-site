@@ -38,6 +38,9 @@ favicon.svg       Icône de l'onglet
   `auteur` est facultatif : remplis-le uniquement pour un morceau qui n'est pas de toi
   (ex. `Cadidscha`), le site affiche alors « de Cadidscha » sous le titre.
   Pense à envoyer les deux fichiers (`.xlsx` et `.json`) sur GitHub. Seul Python est nécessaire.
+  Chaque morceau compte aussi comme une publication : sa carte « Musique » (image
+  `images/articles/musique-suno.svg`) entre dans le carrousel de l'accueil à sa date et mène
+  au morceau sur la page Musique (`musique.html#morceau-<sunoId>`).
 - **Coups de cœur musique** : édite `data/coups-de-coeur.json`, tableau `morceaux`. Un morceau =
   `{ "titre": "...", "artiste": "...", "lien": "https://music.youtube.com/watch?v=...", "commentaire": "..." }`.
   Dans YouTube Music : « Partager » → « Copier le lien », puis colle-le dans `lien`.

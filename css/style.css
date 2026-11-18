@@ -600,6 +600,7 @@ p  { margin: 0 0 1em; }
 }
 .track + .track { border-top: 1px solid var(--border); }
 .track:hover { background: var(--surface-2); }
+.track-cible { box-shadow: inset 3px 0 0 var(--accent); background: var(--surface-2); }
 
 
 .track-title { font-weight: 650; margin: 0; }
